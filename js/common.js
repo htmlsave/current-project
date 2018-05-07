@@ -115,4 +115,8 @@ $(document).ready(function() {
 			}
 		});
 	});
+
+	// index.html title filter
+	$('.prolific_title_filter').selectmenu();
+	$('.main_title_prolific_filter_wrp .ui-selectmenu-text').before('<span class="placeholder">Процедура:</span> ');
 });

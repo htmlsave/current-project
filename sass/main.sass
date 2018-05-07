@@ -398,7 +398,8 @@ div
 
 .prolific_filter_item,
 .filter_input_wrapper,
-.prolific_analytical_categores_filter_wrp
+.prolific_analytical_categores_filter_wrp,
+.main_title_prolific_filter_wrp
 	.ui-button
 		background: none
 		margin: 0
@@ -1538,4 +1539,237 @@ div
 .prolific_analytical_result_inner
 	display: none
 
-@import "_media"
+.main_title_prolific_filter_wrp
+	margin-top: 30px
+	.ui-button
+		width: 405px
+
+.mt_title_prolific
+	margin-bottom: 40px
+
+.prolific_result_graphic_wrp
+	width: 810px
+	padding: 46px 33px 42px 33px
+	background-color: #fff
+	display: flex
+	justify-content: space-between
+	img
+		margin-bottom: 33px
+	p
+		font-size: 14px
+		color: #000
+		font-family: TrebuchetMS, sans-serif
+		text-align: center
+		span
+			font-family: PragmaticaSlabBold, sans-serif
+			font-size: 22px
+			color: $red
+			display: block
+			padding-top: 3px
+
+.prolific_result_graphic_speedmentr_wrp
+	width: 276px
+
+.prolific_result_graphic
+	width: 438px
+	height: 273px
+	padding: 0 40px
+	border-bottom: 1px solid #e6e6e6
+	display: flex
+
+.prolific_result_graphic_item
+	width: 75px
+	align-self: flex-end
+	position: relative
+	&:not(:last-of-type)
+		margin-right: 65px
+	.prolific_result_graphic_item_fill
+		width: 100%
+		height: 100%
+		background-color: #001689
+	.fill_blue
+		opacity: .3
+	.fill_opacity_blue
+		opacity: .1
+	.fill_pink
+		background-color: #FAE5EB
+	.prolific_result_graphic_item_procent
+		position: absolute
+		left: 50%
+		top: -18px
+		transform: translate(-50%, -100%)
+		font-family: PragmaticaSlabBold, sans-serif
+		font-size: 22px
+		color: #001689
+		text-align: center
+	.prolific_result_graphic_item_name
+		position: absolute
+		text-align: center
+		left: 50%
+		bottom: -18px
+		transform: translate(-50%, 100%)
+		font-family: ArialMT, sans-serif
+		font-size: 12px
+		line-height: 18px
+		color: #a1a4c8
+		text-transform: uppercase
+
+.prolific_result
+	display: flex
+	justify-content: space-between
+	margin-bottom: 45px
+
+.prolific_result_right
+	width: 258px
+
+.prolific_result_right
+	h3
+		font-family: PragmaticaSlabBold, sans-serif
+		font-size: 16px
+		font-weight: normal
+		margin-bottom: 29px
+	p
+		font-family: TrebuchetMS, sans-serif
+		font-size: 14px
+		color: #a2a2a2
+		margin-bottom: 20px
+	a
+		display: flex
+		color: #000
+		img
+			margin-right: 10px
+		span
+			font-family: TrebuchetMS, sans-serif
+			font-size: 14px
+
+.prolific_dinamic_graphic
+	padding: 25px 30px
+	background-color: #fff
+
+.prolific_dinamic_graphic_description
+	ul
+		display: flex
+		li
+			display: flex
+			align-items: center
+			margin-right: 25px
+			span
+				font-family: ArialMT, sans-serif
+				font-size: 14px
+			.circle
+				width: 13px
+				height: 13px
+				border-radius: 50%
+				background-color: $blue
+				margin-right: 8px
+				margin-top: -2px
+			.circle_blue
+				opacity: .3
+			.circle_opacity_blue
+				opacity: .1
+			.circle_pink
+				background-color: #FAE5EB
+
+.prolific_dinamic_graphic_item
+	width: 207px
+	margin-top: 70px
+
+.prolific_dinamic_graphic_item_row
+	height: 289px
+	display: flex
+	justify-content: center
+	position: relative
+	display: flex
+	ul
+		display: flex
+		align-self: flex-end
+		height: 261px
+		li
+			width: 30px
+			position: relative
+			align-self: flex-end
+			&:not(:last-of-type)
+				margin-right: 10px
+			.fill_blue
+				opacity: .3
+			.fill_opacity_blue
+				opacity: .1
+			.fill_pink
+				background-color: #FAE5EB
+	&__procent
+		position: absolute
+		top: -6px
+		left: 50%
+		transform: translate(-50%, -100%)
+		text-align: center
+		font-size: 18px
+		color: $blue
+		font-family: PragmaticaSlabBold, sans-serif
+	&__fill
+		width: 100%
+		height: 100%
+		background-color: $blue
+
+.prolific_dinamic_graphic_item_name
+	width: 100%
+	padding: 19px 0 12px 0
+	text-align: center
+	font-family: ArialMT, sans-serif
+	font-size: 12px
+	text-transform: uppercase
+	color: #a1a4c8
+	border-top: 1px solid #e6e6e6
+	border-right: 1px solid #e6e6e6
+
+.prolific_dinamic_graphic_items
+	display: flex
+	flex-wrap: wrap
+
+.not_go
+	line-height: 289px
+	font-family: ArialMT, sans-serif
+	font-size: 14px
+	color: $red
+	background-image: url(../img/bg_not.png)
+	background-repeat: no-repeat
+	background-size: cover
+
+.not_go_wrp
+	width: 210px
+
+.prolific_dinamic_graphic_item_row_category
+	text-align: center
+	display: flex
+	p
+		font-family: PragmaticaSlabBold, sans-serif
+		font-size: 14px
+		color: $blue
+		align-self: flex-end
+		margin-bottom: 7px
+	.catecory_circle
+		width: 30px
+		height: 30px
+		border-radius: 50%
+		background-color: #e5e7f3
+		position: absolute
+		left: 50%
+		transform: translateX(-50%)
+		bottom: 56px
+		font-family: PragmaticaSlabBold, sans-serif
+		font-size: 20px
+		color: #fff
+	.catecory_circle_1
+		width: 42px
+		height: 42px
+		background-color: #b2b9db
+		line-height: 42px
+		bottom: 94px
+	.catecory_circle_2
+		width: 54px
+		height: 54px
+		line-height: 54px
+		bottom: 137px
+		background-color: rgba(0,22,137,.6)
+
+.prolific_dinamic
+	margin-bottom: 45px
