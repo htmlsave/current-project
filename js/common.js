@@ -125,5 +125,14 @@ $(document).ready(function() {
 		evt.preventDefault();
 		$('.prolific_tab_worker_nuv li').removeClass('prolific_tab_worker_nuv__active');
 		$(this).parent('li').addClass('prolific_tab_worker_nuv__active');
+
+		var takeHref = $(this).attr('href');
+		$('.prolific_tab_worker_content > div').hide();
+		$(takeHref).fadeIn();
 	});
+		// Inner show desription
+		$('.js-show_description_prlific_tab_worker').click(function() {
+			$(this).toggleClass('show_description_prlific_tab_worker_active');
+			$(this).parent().find('.prolific_tab_worker__effectivenessy_description').stop().slideToggle();
+		});
 });
