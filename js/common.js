@@ -119,4 +119,11 @@ $(document).ready(function() {
 	// index.html title filter
 	$('.prolific_title_filter').selectmenu();
 	$('.main_title_prolific_filter_wrp .ui-selectmenu-text').before('<span class="placeholder">Процедура:</span> ');
+
+	// Worker TAB
+	$('.prolific_tab_worker_nuv li a').click(function(evt) {
+		evt.preventDefault();
+		$('.prolific_tab_worker_nuv li').removeClass('prolific_tab_worker_nuv__active');
+		$(this).parent('li').addClass('prolific_tab_worker_nuv__active');
+	});
 });
