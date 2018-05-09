@@ -135,4 +135,9 @@ $(document).ready(function() {
 			$(this).toggleClass('show_description_prlific_tab_worker_active');
 			$(this).parent().find('.prolific_tab_worker__effectivenessy_description').stop().slideToggle();
 		});
+
+	// Table filters
+	$('.filter_table_date').selectmenu();
+	$('.filter_months').selectmenu();
+	$('.wrp_filter_months .ui-selectmenu-text').before('<span class="placeholder">Месяц:</span> ');
 });

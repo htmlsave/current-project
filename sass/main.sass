@@ -399,7 +399,9 @@ div
 .prolific_filter_item,
 .filter_input_wrapper,
 .prolific_analytical_categores_filter_wrp,
-.main_title_prolific_filter_wrp
+.main_title_prolific_filter_wrp,
+.wrp_filter_months,
+.wrp_filter_table_date
 	.ui-button
 		background: none
 		margin: 0
@@ -2327,3 +2329,303 @@ div
 .prolific_tab_worker__assessment_head,
 .prolific_tab_worker__result_test
 	display: none
+
+.prolific_tab_worker
+	margin-bottom: 45px
+
+.prolific_map_development
+	padding: 31px 24px 74px 24px
+	background-color: #fff
+
+.prolific_map_development_development
+	margin-bottom: 35px
+	p
+		font-family: ArialMT, sans-serif
+		font-size: 14px
+		color: #2f2f2f
+
+.prolific_map_development_craphic_wrp
+	display: flex
+	justify-content: space-between
+
+.prolific_map_development_craphic
+	width: 934px
+	height: 246px
+	margin-left: 4px
+	position: relative
+	margin-top: 50px
+	&-numbar
+		position: absolute
+		width: 100%
+		height: 246px
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		bottom: 0
+		left: 0
+		right: 0
+		li
+			&:nth-child(2)
+				span
+					display: inline-block
+					margin-left: -2px
+		li.prolific_map_development_craphic-numbar-last
+			position: absolute
+			bottom: 0
+			left: 0
+			right: 0
+			&:before
+				bottom: 0
+				top: auto
+			span
+				position: absolute
+				bottom: 0
+				left: 0
+				transform: translateY(50%)
+		.red_line
+			position: absolute
+			width: 100%
+			height: auto
+			left: 0
+			right: 0
+			padding-bottom: 2px 
+			border-bottom: 3px solid $red
+			text-align: right
+			span
+				transform: none
+				position: relative
+				z-index: 2
+				font-family: PragmaticaSlabBold, sans-serif
+				font-size: 16px
+				color: $red
+			&:before
+				display: none
+		li
+			position: relative
+			height: 20%
+			&:after
+				content: ''
+				display: block
+				position: absolute
+				left: 0
+				top: 0
+				bottom: 0
+				height: 100%
+				width: 37px
+				background-color: #fff
+			&:before
+				content: ''
+				display: block
+				width: 100%
+				height: 1px
+				background-color: #e6e6e6
+				position: absolute
+				top: 0
+				left: 0
+				right: 0
+			span
+				display: inline-block
+				font-family: PragmaticaSlabExtraLight, sans-serif
+				font-size: 20px
+				color: #c6c6c6
+				position: relative
+				padding-right: 10px
+				transform: translateY(-50%)
+				z-index: 9
+
+.prolific_map_development_craphic-items
+	position: absolute
+	z-index: 3
+	height: 100%
+	left: 78px
+	bottom: 0
+	right: 0
+	display: flex
+	align-items: flex-end
+	.fll_opacity_blue
+		background-color: rgba(0, 22, 137, 0.1)
+	.fll_pink
+		background-color: rgba(204,0,61,.1)
+	li
+		width: 75px
+		position: relative
+		&:not(:last-of-type)
+			margin-right: 65px
+		.procent_prolific_result_test_graphic
+			text-align: center
+			text-transform: uppercase
+			color: #001689
+			line-height: 19px
+			position: absolute
+			top: -29px
+			left: 50%
+			transform: translate(-50%, -100%)
+			font-size: 24px
+			font-family: PragmaticaSlabBold, sans-serif
+		.name_prolific_result_test_graphic
+			text-align: center
+			line-height: 18px
+			position: absolute
+			bottom: -16px
+			left: 50%
+			transform: translate(-50%, 100%)
+			font-family: ArialMT, sans-serif
+			font-size: 12px
+			color: #a1a4c8
+			text-transform: uppercase
+
+.prolific_map_development_development_title
+	color: #c6c6c6
+	font-family: ArialMT, sans-serif
+	font-size: 14px
+	line-height: 18px
+	margin-bottom: -16px
+
+.prolific_map_development_wrp
+	margin-bottom: 45px
+
+.prolific_plan_schedule
+	background-color: #fff
+	padding: 30px
+
+.wrp_filter_months
+	margin-bottom: 20px
+	.ui-selectmenu-button.ui-button
+		width: 245px
+
+.prolific_plan_schedule_functions
+	display: flex
+	justify-content: space-between
+	margin-bottom: 19px
+	.print_out
+		align-self: flex-end
+		&_btn
+			display: flex
+			align-items: center
+			transition: $tr
+			img
+				margin-right: 8px
+			span
+				font-size: 14px
+				color: $blue
+				text-decoration: underline
+
+.prolific_plan_schedule_functions_btn
+	li
+		display: inline-block
+		&:not(:last-of-type)
+			margin-right: 11px
+		&:first-child
+			button
+				padding: 12px 27px
+		button
+			outline: none
+			padding: 12px 48px
+			background-color: $blue
+			color: #fff
+			font-size: 14px
+			transition: $tr
+			&:hover
+				background-color: #1D34AD
+
+.table_plan
+	width: 100%
+	td
+		border: 1px solid #e6e6e6
+		padding: 19px 0
+	thead
+		td
+			text-align: center
+			font-size: 13px
+			color: #a1a4c8
+			text-transform: uppercase
+			padding: 17px 0 15px 0
+	tbody
+		tr
+			td
+				&:not(:first-of-type)
+					text-align: center
+	.table_plan_text
+		font-family: ArialMT, sans-serif
+		padding: 19px 11px 17px 11px
+		font-size: 14px
+		line-height: 20px
+	.table_plan_remove
+		a
+			text-decoration: underline
+			font-family: TrebuchetMS, sans-serif
+			font-size: 14px
+			color: $blue
+
+.wrp_filter_table_date
+	.ui-selectmenu-button.ui-button
+		width: 112px
+		height: 32px
+		line-height: 32px
+	.ui-selectmenu-text
+		color: #000
+		font-size: 14px
+		font-weight: normal
+		font-family: ArialMT, sans-serif
+	.ui-selectmenu-icon.ui-icon
+		right: 8px
+
+.table_checkbox
+	display: none
+
+.custom_table_checkbox
+	display: inline-block
+	width: 22px
+	height: 22px
+	border-radius: 2px
+	border: 1px solid #dadada
+	background-color: #ffffff
+	cursor: pointer
+	vertical-align: middle
+	
+.table_checkbox:checked + .custom_table_checkbox:before
+	content: ''
+	display: block
+	width: 100%
+	height: 100%
+	background-image: url(../img/icons/tick-sign.png)
+	background-repeat: no-repeat
+	background-position: center
+
+.table_checkbox:checked + .custom_table_checkbox
+	background-color: $red
+
+.wrp_creat_new_plan_btn
+	button
+		outline: none
+		text-align: right
+		display: flex
+		align-items: center
+		transition: $tr
+		margin-top: 18px
+		margin-left: auto
+		img
+			margin-right: 8px
+		span
+			font-size: 14px
+			color: $blue
+			text-decoration: underline
+
+.prolific_plan_schedule_result
+	margin-bottom: 30px
+	ul
+		li
+			&:not(:last-of-type)
+				margin-bottom: 16px
+			p
+				font-family: ArialMT, sans-serif
+				font-size: 14px
+				color: #000
+				margin-bottom: 5px
+			a
+				font-family: ArialMT, sans-serif
+				font-weight: bold
+				font-size: 14px
+				color: $blue
+				line-height: 24px
+				text-decoration: none
