@@ -1212,6 +1212,7 @@ div {
 
 .filter_input_wrapper {
   position: relative;
+  height: 41px;
 }
 
 .filter_input_wrapper input {
@@ -1247,9 +1248,9 @@ div {
   color: #b1b1b1;
 }
 
-.filter_input_wrapper button {
-  outline: none;
+.filter_input_wrapper .btn_submit_filter {
   position: absolute;
+  cursor: pointer;
   right: 9px;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -1259,12 +1260,12 @@ div {
   width: 13px;
 }
 
-.filter_input_wrapper button:hover svg polygon {
+.filter_input_wrapper .btn_submit_filter:hover svg polygon {
   fill: #cc003d;
   opacity: 1;
 }
 
-.filter_input_wrapper button svg {
+.filter_input_wrapper .btn_submit_filter svg {
   position: absolute;
   left: 0;
   top: 0;
@@ -1272,7 +1273,7 @@ div {
   bottom: 0;
 }
 
-.filter_input_wrapper button svg polygon {
+.filter_input_wrapper .btn_submit_filter svg polygon {
   -webkit-transition: fill .25s ease;
   -o-transition: fill .25s ease;
   transition: fill .25s ease;
@@ -1280,7 +1281,7 @@ div {
   opacity: 0.5;
 }
 
-.filter_input_wrapper button svg.active_icon_filter polygon {
+.filter_input_wrapper .btn_submit_filter svg.active_icon_filter polygon {
   fill: #cc003d;
   opacity: 1;
 }
@@ -3005,7 +3006,7 @@ div {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin-left: 200px;
+  margin-left: 162px;
 }
 
 .prolific_tab_worker__categories_craphic_item {
@@ -4038,7 +4039,7 @@ div {
 .wrp_filter_table_date .ui-selectmenu-button.ui-button {
   width: 112px;
   height: 32px;
-  line-height: 32px;
+  line-height: 27px;
 }
 
 .wrp_filter_table_date .ui-selectmenu-text {
