@@ -2922,7 +2922,7 @@ div {
   color: #a4a4bb;
 }
 
-.prolific_tab_worker__categories {
+.prolific_tab_worker__categories_flex {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2940,6 +2940,10 @@ div {
 
 .prolific_tab_worker_content {
   background-color: #fff;
+}
+
+.prolific_tab_worker_content > div {
+  display: none;
 }
 
 .prolific_tab_worker__categories_left {
@@ -3684,12 +3688,6 @@ div {
   color: #000;
 }
 
-.prolific_tab_worker__effectivenessy,
-.prolific_tab_worker__assessment_head,
-.prolific_tab_worker__result_test {
-  display: none;
-}
-
 .prolific_tab_worker {
   margin-bottom: 45px;
 }
@@ -4138,4 +4136,285 @@ div {
 
 .prolific_your_result {
   margin-bottom: 45px;
+}
+
+.prolific_your_result_items {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+
+.prolific_your_result_item {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  width: 456px;
+  margin-bottom: 35px;
+}
+
+.prolific_your_result_item__img {
+  width: 92px;
+  height: 92px;
+  background-color: #adadfa;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-right: 14px;
+}
+
+.prolific_your_result_item__info p {
+  font-family: TrebuchetMS, sans-serif;
+  font-size: 14px;
+  color: #a2a2a2;
+  margin-bottom: 5px;
+}
+
+.prolific_your_result_item__info span {
+  color: #cc003d;
+  font-family: PragmaticaSlabBold, sans-serif;
+  font-size: 18px;
+}
+
+.prolific_your_result_item__info .numbar {
+  font-size: 30px;
+}
+
+.prolific_tab_worker__effectivenessy_second_graphic {
+  height: 490px;
+  position: relative;
+  margin-left: 3px;
+}
+
+.prolific_tab_worker__effectivenessy_second_graphic-numbar {
+  position: absolute;
+  width: 100%;
+  height: 490px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.prolific_tab_worker__effectivenessy_second_graphic-numbar li.prolific_tab_worker__effectivenessy_second_graphic-numbar-last {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.prolific_tab_worker__effectivenessy_second_graphic-numbar li.prolific_tab_worker__effectivenessy_second_graphic-numbar-last:before {
+  bottom: 0;
+  top: auto;
+}
+
+.prolific_tab_worker__effectivenessy_second_graphic-numbar li.prolific_tab_worker__effectivenessy_second_graphic-numbar-last span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  -webkit-transform: translateY(50%);
+      -ms-transform: translateY(50%);
+          transform: translateY(50%);
+}
+
+.prolific_tab_worker__effectivenessy_second_graphic-numbar li {
+  position: relative;
+  height: 10%;
+}
+
+.prolific_tab_worker__effectivenessy_second_graphic-numbar li:after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  width: 42px;
+  background-color: #fff;
+}
+
+.prolific_tab_worker__effectivenessy_second_graphic-numbar li:before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #e6e6e6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.prolific_tab_worker__effectivenessy_second_graphic-numbar li span {
+  display: inline-block;
+  font-family: PragmaticaSlabExtraLight, sans-serif;
+  font-size: 20px;
+  color: #c6c6c6;
+  position: relative;
+  padding-right: 10px;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  z-index: 9;
+  width: 42px;
+  border-box: content-box;
+  text-align: right;
+}
+
+.prolific_tab_worker__effectivenessy_second_graphic-items {
+  position: absolute;
+  z-index: 3;
+  height: 350px;
+  width: -webkit-calc(100% - 40px);
+  width: calc(100% - 40px);
+  left: 42px;
+  bottom: 0;
+  right: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  padding-left: 92px !important;
+}
+
+.prolific_tab_worker__effectivenessy_second_graphic-items .fll_opacity_blue {
+  background-color: rgba(0, 22, 137, 0.1);
+}
+
+.prolific_tab_worker__effectivenessy_second_graphic-items .fll_pink {
+  background-color: rgba(204, 0, 61, 0.1);
+}
+
+.prolific_tab_worker__effectivenessy_second_graphic-items .red_line {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  left: 0;
+  right: 0;
+  padding-bottom: 2px;
+  border-bottom: 3px solid #cc003d;
+  text-align: right;
+}
+
+.prolific_tab_worker__effectivenessy_second_graphic-items .red_line span {
+  padding-right: 0;
+  -webkit-transform: none;
+      -ms-transform: none;
+          transform: none;
+  position: relative;
+  z-index: 2;
+  font-family: PragmaticaSlabBold, sans-serif;
+  font-size: 16px;
+  color: #cc003d;
+}
+
+.prolific_tab_worker__effectivenessy_second_graphic-items li {
+  width: 85px;
+  position: relative;
+}
+
+.prolific_tab_worker__effectivenessy_second_graphic-items li:not(:last-of-type) {
+  margin-right: 91px;
+}
+
+.prolific_tab_worker__effectivenessy_second_graphic-items li .procent_prolific_result_test_graphic {
+  text-align: center;
+  text-transform: uppercase;
+  color: #001689;
+  line-height: 19px;
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  -webkit-transform: translate(-50%, -100%);
+      -ms-transform: translate(-50%, -100%);
+          transform: translate(-50%, -100%);
+  font-size: 24px;
+  font-family: PragmaticaSlabBold, sans-serif;
+}
+
+.prolific_tab_worker__effectivenessy_second_graphic-items li .name_prolific_result_test_graphic {
+  text-align: center;
+  line-height: 18px;
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  -webkit-transform: translate(-50%, 100%);
+      -ms-transform: translate(-50%, 100%);
+          transform: translate(-50%, 100%);
+  font-family: ArialMT, sans-serif;
+  font-size: 12px;
+  color: #c6c6c6;
+  width: 94px;
+}
+
+.prolific_tab_worker__effectivenessy_second {
+  padding: 48px 48px 72px 26px;
+}
+
+.prolific_tab_worker__effectivenessy_second_flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.prolific_tab_worker__effectivenessy_second_left {
+  width: 840px;
+}
+
+.prolific_tab_worker__effectivenessy_second_left .prolific_tab_worker__result_test_left_title {
+  font-family: ArialMT, sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  color: #c6c6c6;
+  text-align: center;
+  display: block;
+  width: 50px;
+  position: relative;
+  z-index: 5;
+  margin-top: -3px;
+  margin-bottom: 32px;
 }

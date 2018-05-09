@@ -121,6 +121,7 @@ $(document).ready(function() {
 	$('.main_title_prolific_filter_wrp .ui-selectmenu-text').before('<span class="placeholder">Процедура:</span> ');
 
 	// Worker TAB
+	$( $('.prolific_tab_worker_nuv__active > a').attr('href') ).show();
 	$('.prolific_tab_worker_nuv li a').click(function(evt) {
 		evt.preventDefault();
 		$('.prolific_tab_worker_nuv li').removeClass('prolific_tab_worker_nuv__active');
