@@ -1,0 +1,267 @@
+@import url('normalize.min.css')
+@import "_vars"
+@import "_fonts"
+@import "_reset"
+
+@font-face 
+	font-family: 'simple-line-icons'
+	src: url('../fonts/Simple-Line-Icons/Simple-Line-Icons.eot?v=2.4.0')
+	src: url('../fonts/Simple-Line-Icons/Simple-Line-Icons.eot?v=2.4.0#iefix') format('embedded-opentype'), url('../fonts/Simple-Line-Icons/Simple-Line-Icons.woff2?v=2.4.0') format('woff2'), url('../fonts/Simple-Line-Icons/Simple-Line-Icons.ttf?v=2.4.0') format('truetype'), url('../fonts/Simple-Line-Icons/Simple-Line-Icons.woff?v=2.4.0') format('woff'), url('../fonts/Simple-Line-Icons/Simple-Line-Icons.svg?v=2.4.0#simple-line-icons') format('svg')
+	font-weight: normal
+	font-style: normal
+
+.icon-user:before 
+	content: "\e005"
+
+.icon-magic-wand:before
+	content: "\e017"
+
+*
+	font-family: 'Poppinsregular', sans-serif
+
+body
+	background-color: $black
+
+section
+	width: 100%
+	min-height: 100vh
+	position: relative
+
+.centerer
+	max-width: 1140px
+	margin: 0 auto
+
+#app
+	display: flex
+
+.nuv_block_active
+	height: 100vh
+	padding: 46px 56px 42px 56px
+	background-color: $black
+	position: relative
+	display: flex
+	align-items: center
+	transition: all .35s ease
+	border-right: 1px solid #000
+
+.switch_nuv
+	width: 25px
+	height: 25px
+	border: 1px solid #ccc
+	border-radius: 50%
+	position: relative
+	text-align: center
+	line-height: 25px
+	position: absolute
+	top: 20px
+	right: 35px
+	&:before
+		content: '<'
+		font-weight: bold
+		font-size: 22px
+		color: #ccc
+
+.nuv
+	ul
+		box-shadow: -3px 5px 12px #080808
+		li
+			width: 110px
+			padding: 15px 0
+			text-align: center
+			&:not(:last-of-type)
+				border-bottom: 2px solid #1d1d1d
+			a
+				display: inline-block
+				text-decoration: none
+				color: #ccc
+				font-size: 14px
+				&:before
+					font-family: 'simple-line-icons'
+					display: block
+					font-size: 16px
+					padding-bottom: 8px
+		.nuv_active
+			border-bottom: 2px solid $green !important
+			a
+				color: $green
+		li:nth-child(1)
+			a
+				&:before
+					content: '\e069'
+		li:nth-child(2)
+			a
+				&:before
+					content: '\e005'
+		li:nth-child(3)
+			a
+				&:before
+					content: '\e032'		
+		li:nth-child(4)
+			a
+				&:before
+					content: '\e043'
+		li:nth-child(5)
+			a
+				&:before
+					content: '\e086'
+
+.social_link_wrp
+	position: absolute
+	bottom: 25px
+	right: 0
+	left: 0
+	ul
+		width: 100%
+		display: flex
+		justify-content: center
+		li
+			&:not(:last-of-type)
+				margin-right: 12px
+			a
+				color: #ccc
+				font-size: 14px
+				transition: all .25s ease-in-out
+				&:hover
+					color: $green
+
+// Not active nuv
+.nuv_block
+	padding: 46px 16px 0 16px
+	.switch_nuv
+		&:before
+			content: '>'
+	.nuv
+		ul
+			li
+				width: 60px
+				a
+					display: block
+					height: 18px
+					overflow: hidden
+					&:before
+						padding: 0
+	.social_link_wrp
+		display: none
+
+.s-main
+	background-size: cover
+	background-position: center
+	display: none
+
+.welcome_block
+	position: absolute
+	top: 50%
+	left: 100px
+	transform: translateY(-50%)
+	z-index: 10
+	h1
+		font-family: 'Poppinsbold', sans-serif
+		font-size: 55px
+		color: #fff
+		margin-bottom: 8px
+	&__position
+		height: 25px
+		margin-bottom: 40px
+		position: relative
+		.js-type
+			color: #fff
+			font-size: 22px
+			letter-spacing: 0.7px
+			display: inline-block
+		.typed-cursor
+			display: none
+	a
+		text-decoration: none
+		display: inline-block
+		padding: 6px 34px 10px 34px
+		background-color: $green
+		color: #fff
+		font-size: 15px
+		letter-spacing: 1.4px
+		border-radius: 2px
+		transition: all .15s ease-in-out
+		&:hover
+			background-color: lighten($green, 5)
+
+#particles
+	position: absolute
+	right: 0
+	bottom: 0
+	left: 0
+	top: 0
+	width: 100%
+	height: 100%
+
+.title
+	padding: 60px 70px
+	h1
+		color: #fff
+
+.about
+	display: flex
+
+.my_img
+	width: 50%
+	height: 350px
+	border-radius: 5px
+	overflow: hidden
+	margin-right: 95px
+	background-size: cover
+	background-position: center
+
+.about_tab
+	width: 50%
+	&__nuv
+		border-bottom: 1px solid #1d1d1d
+		ul
+			display: flex
+			justify-content: center
+			li
+				&:not(:last-of-type)
+					margin-right: 45px
+				a
+					display: block
+					padding: 8px 16px 12px 16px
+					text-decoration: none
+					color: #eee
+					font-size: 15px
+					text-align: center
+					border-top: 2px solid transparent
+					span
+						display: block
+					i
+						font-family: 'simple-line-icons'
+						font-style: normal
+						display: block
+						font-size: 17px
+						padding-bottom: 6px
+
+			li.about_tab__active
+				a
+					color: $green
+					border-top: 1px solid $green
+
+.about_tab__content
+	padding: 30px 20px 0
+
+.short_history
+	color: #aaa
+	font-size: 14px
+	line-height: 21px
+
+.skills
+	&__item
+		display: flex
+		justify-content: space-between
+		color: #ccc
+		padding-bottom: 8px
+		border-bottom: 3px solid $green
+		&:not(:last-of-type)
+			margin-bottom: 17px
+		&_left
+			font-size: 14px
+		&_right
+			font-size: 12px
+
+
+@import "_media"

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/png">
+	<link rel="stylesheet" href="libs/font-awesome-4.7.0/css/font-awesome.min.css">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+	<div id="app">
+		<!-- Nuv -->
+		<div class="nuv_block_active">
+			<button class="switch_nuv js-switch_nuv"></button>
+			<div class="nuv">
+				<ul>
+					<li class="nuv_active"><a href="#">Главная</a></li>
+					<li><a href="#">Обо мне</a></li>
+					<li><a href="#">Портфолио</a></li>
+					<li><a href="#">Блог</a></li>
+					<li><a href="#">Контакты</a></li>
+				</ul>
+			</div>
+			<div class="social_link_wrp">
+				<ul class="social_link">
+					<li><a href="#"><i class="fa fa-codepen"></i></a></li>
+					<li><a href="#"><i class="fa fa-github"></i></a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- END Nuv -->
+
+
+		<!-- SECTIONS -->
+		<section class="s-main" style="background-image: url(img/main_banner.jpg);">
+			<div class="welcome_block">
+				<h1>Rustam Valyaev</h1>
+				<div class="welcome_block__position">
+					<p class="js-type"></p>
+				</div>
+				<a href="#">Портфолио</a>
+			</div>
+			<div id="particles"></div>
+		</section>
+
+
+		<section class="s-about">
+			<div class="centerer">
+				<div class="title">
+					<h1>Обо мне</h1>
+				</div>
+
+				<div class="about">
+					<div class="my_img" style="background-image: url(img/my_img.jpg);"></div>
+					<div class="about_tab">
+
+						<div class="about_tab__nuv">
+							<ul>
+								<li class="about_tab__active">
+									<a href=".short_history">
+										<i class="icon-user"></i>
+										<span>Краткая история</span>
+									</a>
+								</li>
+								<li>
+									<a href=".skills">
+										<i class="icon-magic-wand"></i>
+										<span>Навыки</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+
+						<div class="about_tab__content">
+							<!-- Short history -->
+							<div class="short_history">
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ipsam pariatur, modi voluptatem fugiat neque, magnam debitis impedit esse quibusdam rem quam eaque aliquam temporibus assumenda corrupti iusto praesentium iste.</p>
+							</div>
+							<!-- END Short history -->
+							<!-- Skills -->
+							<div class="skills">
+								<ul class="skills__items">
+									<li class="skills__item">
+										<div class="skills__item_left">HTML</div>
+										<div class="skills__item_right">&laquo;Уверенный пользователь&raquo;</div>
+									</li>
+									<li class="skills__item">
+										<div class="skills__item_left">CSS</div>
+										<div class="skills__item_right">&laquo;Уверенный пользователь&raquo;</div>
+									</li>
+									<li class="skills__item">
+										<div class="skills__item_left">jQuery</div>
+										<div class="skills__item_right">&laquo;Уверенный пользователь&raquo;</div>
+									</li>
+									<li class="skills__item">
+										<div class="skills__item_left">WordPress</div>
+										<div class="skills__item_right">&laquo;На уровне натянуть верстку&raquo;</div>
+									</li>
+									<li class="skills__item">
+										<div class="skills__item_left">JS</div>
+										<div class="skills__item_right">&laquo;Нативный DOM + основы&raquo;</div>
+									</li>
+									<li class="skills__item">
+										<div class="skills__item_left">NODE.JS (Puppeteer - тесты)</div>
+										<div class="skills__item_right">&laquo;Уверенный пользователь&raquo;</div>
+									</li>
+								</ul>
+							</div>
+							<!-- END Skills -->
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- END SECTIONS -->
+	</div>
+	
+
+	<!-- Scripts -->
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
+	<script src="libs/particles.js-master/particles.min.js"></script>
+	<script src="libs/typed.js-master/typed.min.js"></script>
+	<script src="js/common.js"></script>
+</body>
+</html>
