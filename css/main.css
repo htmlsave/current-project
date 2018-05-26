@@ -260,6 +260,11 @@ section {
   -webkit-background-size: cover;
           background-size: cover;
   background-position: center;
+}
+
+.s-main,
+.s-about,
+.s-contact {
   display: none;
 }
 
@@ -436,6 +441,187 @@ section {
 }
 
 .skills__item_right {
+  font-size: 12px;
+}
+
+.contact {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 85px;
+}
+
+.contact__left {
+  margin-right: 30px;
+  width: 50%;
+}
+
+.contact__right {
+  width: 50%;
+  background-color: #7CA95C;
+  -webkit-border-radius: 2px;
+          border-radius: 2px;
+  padding: 50px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contact__form {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+
+.input_group,
+.textarea_group {
+  width: -webkit-calc(50% - 15px);
+  width: calc(50% - 15px);
+  position: relative;
+  margin-bottom: 22px;
+}
+
+.input_group input,
+.input_group textarea,
+.textarea_group input,
+.textarea_group textarea {
+  background: none;
+  border: none;
+  width: 100%;
+  padding: 8px 12px;
+  background-color: #0C0C0C;
+  font-size: 14px;
+  color: #495057;
+  border-bottom: 2px solid #7CA95C;
+}
+
+.input_group input:focus + label,
+.input_group input:valid + label,
+.input_group textarea:focus + label,
+.input_group textarea:valid + label,
+.textarea_group input:focus + label,
+.textarea_group input:valid + label,
+.textarea_group textarea:focus + label,
+.textarea_group textarea:valid + label {
+  top: -10px;
+  font-size: 12px;
+}
+
+.input_group label,
+.textarea_group label {
+  pointer-events: none;
+  position: absolute;
+  top: 8px;
+  left: 12px;
+  font-size: 14px;
+  color: #aaa;
+  -webkit-transition: all .25s ease-in-out;
+  -o-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+}
+
+.input_group_big,
+.textarea_group {
+  width: 100%;
+}
+
+.textarea_group textarea {
+  outline: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 100px;
+}
+
+.btn_submit_wrp button {
+  font-size: 14px;
+  color: #fff;
+  text-transform: uppercase;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.btn_submit_wrp button:hover span {
+  -webkit-border-radius: 2px 0 0 2px;
+          border-radius: 2px 0 0 2px;
+}
+
+.btn_submit_wrp button:hover i {
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.btn_submit_wrp button span {
+  padding: 9px 20px;
+  background-color: #7CA95C;
+  -webkit-border-radius: 2px;
+          border-radius: 2px;
+  letter-spacing: 0.6px;
+  position: relative;
+  z-index: 2;
+  -webkit-transition: all .40s ease;
+  -o-transition: all .40s ease;
+  transition: all .40s ease;
+}
+
+.btn_submit_wrp button i {
+  padding: 10px 20px 10px 0;
+  background-color: #7CA95C;
+  -webkit-border-radius: 0 2px 2px 0;
+          border-radius: 0 2px 2px 0;
+  -webkit-transition: all .40s ease-in-out;
+  -o-transition: all .40s ease-in-out;
+  transition: all .40s ease-in-out;
+  -webkit-transform: translateX(-100%);
+      -ms-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+.my_contact li:not(:last-of-type) {
+  margin-bottom: 36px;
+}
+
+.my_contact li a {
+  text-decoration: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+  font-size: 15px;
+}
+
+.my_contact li a i {
+  font-size: 16px;
+  margin-right: 13px;
+}
+
+.footer {
+  padding: 25px;
+  text-align: center;
+  color: #ccc;
   font-size: 12px;
 }
 

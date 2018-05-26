@@ -146,6 +146,10 @@ section
 .s-main
 	background-size: cover
 	background-position: center
+
+.s-main,
+.s-about,
+.s-contact
 	display: none
 
 .welcome_block
@@ -263,5 +267,107 @@ section
 		&_right
 			font-size: 12px
 
+.contact
+	display: flex
+	margin-bottom: 85px
+	&__left
+		margin-right: 30px
+		width: 50%
+	&__right
+		width: 50%
+		background-color: $green
+		border-radius: 2px
+		padding: 50px
+		display: flex
+		align-items: center
+	&__form
+		display: flex
+		justify-content: space-between
+		flex-wrap: wrap
+
+.input_group,
+.textarea_group
+	width: calc(50% - 15px)
+	position: relative
+	margin-bottom: 22px
+	input,
+	textarea
+		background: none
+		border: none
+		width: 100%
+		padding: 8px 12px
+		background-color: $black
+		font-size: 14px
+		color: #495057
+		border-bottom: 2px solid $green
+		&:focus + label,
+		&:valid + label
+			top: -10px
+			font-size: 12px
+	label
+		pointer-events: none
+		position: absolute
+		top: 8px
+		left: 12px
+		font-size: 14px
+		color: #aaa
+		transition: all .25s ease-in-out
+
+.input_group_big,
+.textarea_group
+	width: 100%
+
+.textarea_group
+	textarea
+		outline: none
+		box-sizing: border-box
+		height: 100px
+
+.btn_submit_wrp
+	button
+		font-size: 14px
+		color: #fff
+		text-transform: uppercase
+		box-sizing: content-box
+		display: flex
+		&:hover
+			span
+				border-radius: 2px 0 0 2px
+			i
+				transform: translateX(0)
+		span
+			padding: 9px 20px
+			background-color: $green
+			border-radius: 2px
+			letter-spacing: 0.6px
+			position: relative
+			z-index: 2
+			transition: all .40s ease
+		i
+			padding: 10px 20px 10px 0
+			background-color: $green
+			border-radius: 0 2px 2px 0
+			transition: all .40s ease-in-out
+			transform: translateX(-100%)
+
+.my_contact
+	li
+		&:not(:last-of-type)
+			margin-bottom: 36px
+		a
+			text-decoration: none
+			display: flex
+			align-items: center
+			color: #fff
+			font-size: 15px
+			i
+				font-size: 16px
+				margin-right: 13px
+
+.footer
+	padding: 25px
+	text-align: center
+	color: #ccc
+	font-size: 12px
 
 @import "_media"
