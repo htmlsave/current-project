@@ -7,6 +7,28 @@ for(let i = 0; i < removeLinkEll.length; i++) {
 }
 
 window.onload = function() {
+	// Navigation
+	var nuvEll = document.querySelectorAll('.nuv > li > a'); 
+	nuvEll.forEach(function(el) {
+		el.addEventListener('click', function(e) {
+			// Toggle class
+			let removeClassEl = document.querySelectorAll('.nuv > li');
+			for(let i = 0; i < removeClassEl.length; i++) {
+				removeClassEl[i].classList.remove('nuv_active');
+			}
+			e.currentTarget.parentNode.classList.add('nuv_active');
+			// Toggle show
+			let takeHref  = e.currentTarget.getAttribute('href');
+			let removeEll = document.querySelectorAll('#sections > section');
+			for(let i = 0; i < removeEll.length; i++) {
+				if( takeHref[0] === '#' )
+					e.preventDefault();
+					removeEll[i].style.display = 'none';
+			}
+			if( takeHref[0] === '#' ) document.querySelector(takeHref).style.display = 'block';
+		});
+	});
+
 	// Switch nuv
 	var btnNuvSwitch = document.querySelector('.js-switch_nuv');
 	btnNuvSwitch.addEventListener('click', function(e) {

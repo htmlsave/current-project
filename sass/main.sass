@@ -34,6 +34,9 @@ section
 #app
 	display: flex
 
+#sections
+	width: 100%
+
 .nuv_block_active
 	height: 100vh
 	padding: 46px 56px 42px 56px
@@ -62,48 +65,47 @@ section
 		color: #ccc
 
 .nuv
-	ul
-		box-shadow: -3px 5px 12px #080808
-		li
-			width: 110px
-			padding: 15px 0
-			text-align: center
-			&:not(:last-of-type)
-				border-bottom: 2px solid #1d1d1d
-			a
-				display: inline-block
-				text-decoration: none
-				color: #ccc
-				font-size: 14px
-				&:before
-					font-family: 'simple-line-icons'
-					display: block
-					font-size: 16px
-					padding-bottom: 8px
-		.nuv_active
-			border-bottom: 2px solid $green !important
-			a
-				color: $green
-		li:nth-child(1)
-			a
-				&:before
-					content: '\e069'
-		li:nth-child(2)
-			a
-				&:before
-					content: '\e005'
-		li:nth-child(3)
-			a
-				&:before
-					content: '\e032'		
-		li:nth-child(4)
-			a
-				&:before
-					content: '\e043'
-		li:nth-child(5)
-			a
-				&:before
-					content: '\e086'
+	box-shadow: -3px 5px 12px #080808
+	li
+		width: 110px
+		padding: 15px 0
+		text-align: center
+		&:not(:last-of-type)
+			border-bottom: 2px solid #1d1d1d
+		a
+			display: inline-block
+			text-decoration: none
+			color: #ccc
+			font-size: 14px
+			&:before
+				font-family: 'simple-line-icons'
+				display: block
+				font-size: 16px
+				padding-bottom: 8px
+	.nuv_active
+		border-bottom: 2px solid $green !important
+		a
+			color: $green
+	li:nth-child(1)
+		a
+			&:before
+				content: '\e069'
+	li:nth-child(2)
+		a
+			&:before
+				content: '\e005'
+	li:nth-child(3)
+		a
+			&:before
+				content: '\e032'		
+	li:nth-child(4)
+		a
+			&:before
+				content: '\e086'
+	li:nth-child(5)
+		a
+			&:before
+				content: '\e043'
 
 .social_link_wrp
 	position: absolute
@@ -130,26 +132,25 @@ section
 	.switch_nuv
 		&:before
 			content: '>'
-	.nuv
-		ul
-			li
-				width: 60px
-				a
-					display: block
-					height: 18px
-					overflow: hidden
-					&:before
-						padding: 0
+	.nuv_wrp
+		li
+			width: 60px
+			a
+				display: block
+				height: 18px
+				overflow: hidden
+				&:before
+					padding: 0
 	.social_link_wrp
 		display: none
 
-.s-main
+#s-main
 	background-size: cover
 	background-position: center
 
-.s-main,
-.s-about,
-.s-contact
+#s-about,
+#s-contact,
+#s-portfolio
 	display: none
 
 .welcome_block
@@ -266,6 +267,90 @@ section
 			font-size: 14px
 		&_right
 			font-size: 12px
+
+.portfolio
+	&__filter
+		margin-bottom: 40px
+		ul
+			width: 100%
+			display: flex
+			justify-content: center
+			li
+				&:first-child
+					a
+						text-transform: uppercase
+				&:not(:last-of-type)
+					margin-right: 10px
+				a
+					text-decoration: none
+					display: block
+					padding: 5px 18px
+					font-size: 15px
+					border-radius: 20px
+					color: #eee
+					border: 1px solid $green
+			li.filter_active
+				a
+					background-color: $green
+					color: #fff
+	&__items
+		display: flex
+		justify-content: space-between
+		flex-wrap: wrap
+		&:after
+			content: ''
+			width: 365px
+
+.portfolio__item
+	width: 365px
+	margin-right: 22px
+	margin-bottom: 22px
+	position: relative
+	overflow: hidden
+	&:hover
+		img
+			transform: scale(1.2)
+		.portfolio__item_hover
+			opacity: 1
+	&:nth-child(3n+3)
+		margin-right: 0
+	img
+		width: 100%
+		height: 100%
+		transition: all 600ms ease-in-out
+	&_hover
+		width: 100%
+		height: 100%
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		background-color: rgba(000, 000, 000, .6)
+		padding: 20% 20px 20px 20px
+		color: #fff
+		opacity: 0
+		transition: all .8s ease-in-out
+		h3
+			font-size: 34px
+			margin-bottom: 5px
+		p
+			font-size: 17px
+			letter-spacing: 0.8px
+		.check_portfolio_item
+			text-decoration: none
+			position: absolute
+			bottom: 15px
+			right: 15px
+			color: #fff
+			font-size: 15px
+			letter-spacing: 0.8px
+			padding: 5px 15px
+			background-color: $green
+			transition: color .25s ease-in-out, background-color .25s ease
+			&:hover
+				background-color: #0C0C0C
+				color: #eee
 
 .contact
 	display: flex
