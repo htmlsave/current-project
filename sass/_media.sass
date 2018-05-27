@@ -3,14 +3,57 @@
 /*========================
 	@Media запросы
 	========================*/
-@media only screen and (max-width: 1280px)
-	/**/
+@media only screen and (max-width: 1140px)
+	.centerer
+		padding: 0 15px
+	.btn_show_nuv
+		display: block
+	.nuv_block_active
+		position: fixed
+		left: 0
+		top: 0
+		bottom: 0
+		transform: translateX(-100%)
+	.nuv_block_active__mobile
+		transform: translateX(0)
+	.title
+		padding: 70px 30px
 
 @media only screen and (max-width: 992px)
-	/**/
+	.centerer
+		max-width: 720px
+	.about
+		flex-direction: column
+		align-items: center
+		justify-content: center
+		.my_img
+			width: 100%
+			margin-right: 0
+			margin-bottom: 50px
+		.about_tab
+			width: 100%
+			margin-bottom: 50px
+	.portfolio__item
+		width: calc(50% - 8.5px)
+	.contact__right
+		padding: 20px 23px
 
 @media only screen and (max-width: 768px)
-	/**/
+	.centerer
+		max-width: 540px
+	.about_tab__content
+		padding: 30px 10px 0
+	.portfolio__item
+		width: 100%
+	.contact__left
+		margin-right: 0
+	.contact
+		flex-direction: column
+		&__left
+			margin-bottom: 45px
+		&__left,
+		&__right
+			width: 100%
 
 @media only screen and (max-width: 480px)
 	/**/

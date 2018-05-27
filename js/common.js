@@ -7,6 +7,13 @@ for(let i = 0; i < removeLinkEll.length; i++) {
 }
 
 window.onload = function() {
+	// Btn mobile toggle nuv
+	var mobileBtn = document.getElementById('btn_show_nuv');
+	mobileBtn.addEventListener('click', function(el) {
+		el.currentTarget.classList.toggle('btn_show_nuv__active');
+		document.querySelector('.nuv_block_active').classList.toggle('nuv_block_active__mobile');
+	});
+
 	// Navigation
 	var nuvEll = document.querySelectorAll('.nuv > li > a'); 
 	nuvEll.forEach(function(el) {
@@ -22,10 +29,15 @@ window.onload = function() {
 			let removeEll = document.querySelectorAll('#sections > section');
 			for(let i = 0; i < removeEll.length; i++) {
 				if( takeHref[0] === '#' )
-					e.preventDefault();
 					removeEll[i].style.display = 'none';
 			}
-			if( takeHref[0] === '#' ) document.querySelector(takeHref).style.display = 'block';
+			if( takeHref[0] === '#' ) {
+				// mobile after click hide
+				document.getElementById('btn_show_nuv').classList.remove('btn_show_nuv__active');
+				document.querySelector('.nuv_block_active').classList.remove('nuv_block_active__mobile');
+				// Show everywhere
+				document.querySelector(takeHref).style.display = 'block';
+			}
 		});
 	});
 
@@ -35,7 +47,10 @@ window.onload = function() {
 		e.target.parentNode.classList.toggle('nuv_block');
 	});
 
-	// Position type
+	// Particles main
+	particlesJS.load('particles', '../libs/particles.js-master/package.json');
+
+	// Type text
 	var typed = new Typed('.js-type', {
 		strings: ["Html верстальщик", "Junior Front-end"],
 		typeSpeed: 100,
@@ -44,15 +59,29 @@ window.onload = function() {
 		backSpeed: 20
 	});
 
-	// Particles main
-	particlesJS.load('particles', '../libs/particles.js-master/package.json');
+	// Link portfolio
+	var linkPortfolio = document.getElementById('banner_portfolio');
+	linkPortfolio.addEventListener('click', function(e) {
+		// Toggle class
+		let removeClassEl = document.querySelectorAll('.nuv > li');
+		for(let i = 0; i < removeClassEl.length; i++) {
+			removeClassEl[i].classList.remove('nuv_active');
+		}
+		// Toggle show
+		let takeHref = e.currentTarget.getAttribute('href');
+		let removeEll = document.querySelectorAll('#sections > section');
+		for(let i = 0; i < removeEll.length; i++) {
+			removeEll[i].style.display = 'none';
+		}
+		document.querySelector(takeHref).style.display = 'block';
+	});
 
 	// About tab
 	var tabElLnk = document.querySelectorAll('.about_tab__nuv > ul > li > a');
 	tabElLnk.forEach(function(el) {
 		el.addEventListener('click', function(e) {
 			e.preventDefault();
-			// Set class
+			// Toggle class
 			let removeClassEl = document.querySelectorAll('.about_tab__nuv > ul > li');
 			for(let i = 0; i < removeClassEl.length; i++) {
 				removeClassEl[i].classList.remove('about_tab__active');

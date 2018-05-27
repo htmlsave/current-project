@@ -11,6 +11,7 @@
 </head>
 <body>
 	<div id="app">
+		<button id="btn_show_nuv" class="btn_show_nuv"><span class="btn_show_nuv__line"></span></button>
 		<!-- Nuv -->
 		<div class="nuv_block_active">
 			<button class="switch_nuv js-switch_nuv"></button>
@@ -43,18 +44,18 @@
 					<div class="welcome_block__position">
 						<p class="js-type"></p>
 					</div>
-					<a href="#">Портфолио</a>
+					<a id="banner_portfolio" href="#s-portfolio">Портфолио</a>
 				</div>
 				<div id="particles"></div>
 			</section>
 
 
 			<section id="s-about">
-				<div class="centerer">
-					<div class="title">
-						<h1>Обо мне</h1>
-					</div>
+				<div class="title">
+					<h1 data-text="Обо мне">Обо мне</h1>
+				</div>
 
+				<div class="centerer">
 					<div class="about">
 						<div class="my_img" style="background-image: url(img/my_img.jpg);"></div>
 						<div class="about_tab">
@@ -121,11 +122,11 @@
 
 
 			<section id="s-portfolio">
+				<div class="title">
+					<h1 data-text="Портфолио">Портфолио</h1>
+				</div>
+
 				<div class="centerer">
-					<div class="title">
-						<h1>Портфолио</h1>
-					</div>
-					
 					<div class="portfolio">
 						<div class="portfolio__filter">
 							<ul>
@@ -202,11 +203,11 @@
 
 
 			<section id="s-contact">
-				<div class="centerer">
-					<div class="title">
-						<h1>Контакты</h1>
-					</div>
+				<div class="title">
+					<h1 data-text="Контакты">Контакты</h1>
+				</div>
 
+				<div class="centerer">
 					<div class="contact">
 						<div class="contact__left">
 
@@ -255,12 +256,11 @@
 
 						</div>
 					</div>
-
-					<footer class="footer">
-						<p>&copy; Copyright 2018.</p>
-					</footer>
-					
 				</div>
+
+				<footer class="footer">
+					<p>&copy; Copyright 2018.</p>
+				</footer>
 			</section>
 
 
