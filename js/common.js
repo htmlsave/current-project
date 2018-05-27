@@ -16,8 +16,8 @@ window.onload = function() {
 
 	// Navigation
 	var nuvEll = document.querySelectorAll('.nuv > li > a'); 
-	nuvEll.forEach(function(el) {
-		el.addEventListener('click', function(e) {
+	for(let el = 0; el < nuvEll.length; el++) {
+		nuvEll[el].addEventListener('click', function(e) {
 			// Toggle class
 			let removeClassEl = document.querySelectorAll('.nuv > li');
 			for(let i = 0; i < removeClassEl.length; i++) {
@@ -39,7 +39,8 @@ window.onload = function() {
 				document.querySelector(takeHref).style.display = 'block';
 			}
 		});
-	});
+	}
+	
 
 	// Switch nuv
 	var btnNuvSwitch = document.querySelector('.js-switch_nuv');
@@ -78,8 +79,8 @@ window.onload = function() {
 
 	// About tab
 	var tabElLnk = document.querySelectorAll('.about_tab__nuv > ul > li > a');
-	tabElLnk.forEach(function(el) {
-		el.addEventListener('click', function(e) {
+		for(let el = 0; el < tabElLnk.length; el++) {
+		tabElLnk[el].addEventListener('click', function(e) {
 			e.preventDefault();
 			// Toggle class
 			let removeClassEl = document.querySelectorAll('.about_tab__nuv > ul > li');
@@ -95,5 +96,5 @@ window.onload = function() {
 			}
 			document.querySelector(takeAttr).style.display = 'block';
 		});
-	});
+	}
 }
