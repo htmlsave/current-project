@@ -1,9 +1,17 @@
 // Show active tab
-let removeLinkEll = document.querySelectorAll('.about_tab__nuv > ul > li');
+let nuvEll = document.querySelectorAll('.about_tab__nuv > ul > li');
 let removeEll = document.querySelectorAll('.about_tab__content > div');
-for(let i = 0; i < removeLinkEll.length; i++) {
-	if ( !removeLinkEll[i].classList.contains('about_tab__active') ) 
+for(let i = 0; i < nuvEll.length; i++) {
+	if ( !nuvEll[i].classList.contains('about_tab__active') ) 
 		removeEll[i].style.display = 'none';
+}
+
+// Function deleteClass
+function deleteClass(ell) {
+	let removeClassEl = document.querySelectorAll(ell);
+	for(let i = 0; i < removeClassEl.length; i++) {
+		removeClassEl[i].classList.remove('nuv_active') || removeClassEl[i].classList.remove('about_tab__active');
+	}
 }
 
 window.onload = function() {
@@ -18,29 +26,23 @@ window.onload = function() {
 	var nuvEll = document.querySelectorAll('.nuv > li > a'); 
 	for(let el = 0; el < nuvEll.length; el++) {
 		nuvEll[el].addEventListener('click', function(e) {
-			// Toggle class
-			let removeClassEl = document.querySelectorAll('.nuv > li');
-			for(let i = 0; i < removeClassEl.length; i++) {
-				removeClassEl[i].classList.remove('nuv_active');
-			}
+			deleteClass('.nuv > li');
 			e.currentTarget.parentNode.classList.add('nuv_active');
 			// Toggle show
 			let takeHref  = e.currentTarget.getAttribute('href');
 			let removeEll = document.querySelectorAll('#sections > section');
 			for(let i = 0; i < removeEll.length; i++) {
-				if( takeHref[0] === '#' )
-					removeEll[i].style.display = 'none';
+				if( takeHref[0] === '#' ) removeEll[i].style.display = 'none';
 			}
 			if( takeHref[0] === '#' ) {
-				// mobile after click hide
+				// mobile nuv ellement click || hide nuv
 				document.getElementById('btn_show_nuv').classList.remove('btn_show_nuv__active');
 				document.querySelector('.nuv_block_active').classList.remove('nuv_block_active__mobile');
-				// Show everywhere
+				// Show everywhere main section
 				document.querySelector(takeHref).style.display = 'block';
 			}
 		});
 	}
-	
 
 	// Switch nuv
 	var btnNuvSwitch = document.querySelector('.js-switch_nuv');
@@ -64,9 +66,12 @@ window.onload = function() {
 	var linkPortfolio = document.getElementById('banner_portfolio');
 	linkPortfolio.addEventListener('click', function(e) {
 		// Toggle class
-		let removeClassEl = document.querySelectorAll('.nuv > li');
-		for(let i = 0; i < removeClassEl.length; i++) {
-			removeClassEl[i].classList.remove('nuv_active');
+		deleteClass('.nuv > li');
+		let addCls = document.querySelectorAll('.nuv > li > a');
+		for(let i = 0; i < addCls.length; i++) {
+			if( addCls[i].getAttribute('href') === '#s-portfolio' ) {
+				addCls[i].parentNode.classList.add('nuv_active');
+			}
 		}
 		// Toggle show
 		let takeHref = e.currentTarget.getAttribute('href');
@@ -77,16 +82,12 @@ window.onload = function() {
 		document.querySelector(takeHref).style.display = 'block';
 	});
 
-	// About tab
+	// TAB About
 	var tabElLnk = document.querySelectorAll('.about_tab__nuv > ul > li > a');
 		for(let el = 0; el < tabElLnk.length; el++) {
 		tabElLnk[el].addEventListener('click', function(e) {
 			e.preventDefault();
-			// Toggle class
-			let removeClassEl = document.querySelectorAll('.about_tab__nuv > ul > li');
-			for(let i = 0; i < removeClassEl.length; i++) {
-				removeClassEl[i].classList.remove('about_tab__active');
-			}
+			deleteClass('.about_tab__nuv > ul > li');
 			e.currentTarget.parentNode.classList.add('about_tab__active');
 			// Toggle show
 			let takeAttr  = e.currentTarget.getAttribute('href')
