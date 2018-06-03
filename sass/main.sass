@@ -310,6 +310,7 @@ section
 
 			li.about_tab__active
 				a
+					transition: all .25s ease
 					color: $green
 					border-top: 1px solid $green
 
@@ -432,6 +433,34 @@ section
 		padding: 50px
 		display: flex
 		align-items: center
+		position: relative
+		overflow: hidden
+		background-image: url('http://reva.bouthythemes.com/images/background-client.jpg')
+		background-size: cover
+		background-repeat: no-repeat
+		background-position: -170px
+		&:before
+			content: ''
+			display: block
+			width: 100%
+			height: 100%
+			background-color: rgba(124, 169, 92, 0.7)
+			position: absolute
+			right: 0
+			bottom: 0
+			left: 0
+			top: 0
+		.bg_text
+			display: none
+			position: absolute
+			right: -68px
+			top: -10px
+			font-family: 'Lobster', sans-serif
+			font-size: 102px
+			color: #fff
+			opacity: .1
+			transform: rotate(38deg)
+			text-align: center
 	&__form
 		display: flex
 		justify-content: space-between
@@ -503,6 +532,8 @@ section
 			transform: translateX(-100%)
 
 .my_contact
+	position: relative
+	z-index: 4
 	li
 		&:not(:last-of-type)
 			margin-bottom: 36px
@@ -522,5 +553,93 @@ section
 	color: #ccc
 	font-size: 12px
 	border-top: 1px solid #1D1D1D
+
+/* Start Loading */
+.loading
+  background-color: #FFF
+  color: #444
+  position: absolute
+  left: 0
+  top: 0
+  width: 100%
+  height: 100%
+  z-index: 99999
+
+.blob
+  width: 2rem
+  height: 2rem
+  background: rgba(0, 0, 0, 0.85)
+  border-radius: 50%
+  position: absolute
+  left: calc(50% - 1rem)
+  top: calc(50% - 1rem)
+  box-shadow: 0 0 1rem rgba(255, 255, 255, 0.25)
+
+.blob-2
+  animation: animate-to-2 1.5s infinite
+
+.blob-3
+  animation: animate-to-3 1.5s infinite
+
+.blob-1
+  animation: animate-to-1 1.5s infinite
+
+.blob-4
+  animation: animate-to-4 1.5s infinite
+
+.blob-0
+  animation: animate-to-0 1.5s infinite
+
+.blob-5
+  animation: animate-to-5 1.5s infinite
+
+@keyframes animate-to-2
+  25%, 75%
+    transform: translateX(-1.5rem) scale(0.75)
+  95%
+    transform: translateX(0rem) scale(1)
+
+@keyframes animate-to-3
+  25%, 75%
+    transform: translateX(1.5rem) scale(0.75)
+  95%
+    transform: translateX(0rem) scale(1)
+
+@keyframes animate-to-1
+  25%
+    transform: translateX(-1.5rem) scale(0.75)
+  50%, 75%
+    transform: translateX(-4.5rem) scale(0.6)
+  95%
+    transform: translateX(0rem) scale(1)
+
+@keyframes animate-to-4
+  25%
+    transform: translateX(1.5rem) scale(0.75)
+  50%, 75%
+    transform: translateX(4.5rem) scale(0.6)
+  95%
+    transform: translateX(0rem) scale(1)
+
+@keyframes animate-to-0
+  25%
+    transform: translateX(-1.5rem) scale(0.75)
+  50%
+    transform: translateX(-4.5rem) scale(0.6)
+  75%
+    transform: translateX(-7.5rem) scale(0.5)
+  95%
+    transform: translateX(0rem) scale(1)
+
+@keyframes animate-to-5
+  25%
+    transform: translateX(1.5rem) scale(0.75)
+  50%
+    transform: translateX(4.5rem) scale(0.6)
+  75%
+    transform: translateX(7.5rem) scale(0.5)
+  95%
+    transform: translateX(0rem) scale(1)
+/* End Loading */
 
 @import "_media"
