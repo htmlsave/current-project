@@ -3,632 +3,129 @@
 @import "_fonts"
 @import "_reset"
 
-@font-face 
-	font-family: 'simple-line-icons'
-	src: url('../fonts/Simple-Line-Icons/Simple-Line-Icons.eot?v=2.4.0')
-	src: url('../fonts/Simple-Line-Icons/Simple-Line-Icons.eot?v=2.4.0#iefix') format('embedded-opentype'), url('../fonts/Simple-Line-Icons/Simple-Line-Icons.woff2?v=2.4.0') format('woff2'), url('../fonts/Simple-Line-Icons/Simple-Line-Icons.ttf?v=2.4.0') format('truetype'), url('../fonts/Simple-Line-Icons/Simple-Line-Icons.woff?v=2.4.0') format('woff'), url('../fonts/Simple-Line-Icons/Simple-Line-Icons.svg?v=2.4.0#simple-line-icons') format('svg')
-	font-weight: normal
-	font-style: normal
-
-.icon-user:before 
-	content: "\e005"
-
-.icon-magic-wand:before
-	content: "\e017"
-
 *
-	font-family: 'Poppinsregular', sans-serif
-
-body
-	background-color: $black
-
-section
-	width: 100%
-	min-height: 100vh
-	position: relative
+	font-family: Roboto, sans-serif
 
 .centerer
-	max-width: 1140px
+	max-width: 1200px
+	padding: 0 15px
 	margin: 0 auto
 
-#app
-	display: flex
-	position: relative
-
-.btn_show_nuv
-	outline: 1px #815A0F
-	width: 50px
-	height: 43px
-	background-color: $black
-	position: fixed
-	right: 15px
-	top: 15px
-	border-radius: 4px
-	border: 1px solid #1d1d1d
-	z-index: 9
-	padding: 10px
-	display: none
-	&__line
-		display: block
-		width: 28px
-		height: 2px
-		background-color: $green
-		position: absolute
-		top: 50%
-		left: 10px
-		transform: translateY(-50%)
-		transition: all 320ms cubic-bezier(0.42, 0, 0.38, 1.54)
-		&:before
-			content: ''
-			display: block
-			width: 28px
-			height: 2px
-			background-color: $green
-			transform: translateY(-100%)
-			position: absolute
-			top: -6px
-		&:after
-			content: ''
-			display: block
-			width: 28px
-			height: 2px
-			background-color: $green
-			transform: translateY(100%)
-			position: absolute
-			bottom: -6px
-
-.btn_show_nuv__active
-	.btn_show_nuv__line
-		transform: rotate(45deg)
-		&:before
-			transform: translateY(0)
-			top: 0
-		&:after
-			transform: translateY(0) rotate(-90deg)
-			bottom: 0
-
-#sections
-	width: 100%
-
-.nuv_block_active
-	height: 100vh
-	padding: 46px 56px 42px 56px
-	background-color: $black
-	position: relative
+.header_inner
 	display: flex
 	align-items: center
-	transition: all .35s ease
-	border-right: 1px solid #000
-	z-index: 999
+	justify-content: space-between
 
-.switch_nuv
-	width: 25px
-	height: 25px
-	border: 1px solid #ccc
-	border-radius: 50%
-	position: relative
-	text-align: center
-	line-height: 25px
-	position: absolute
-	top: 20px
-	right: 35px
-	&:before
-		content: '<'
-		font-weight: bold
-		font-size: 22px
-		color: #ccc
-
-.nuv
-	box-shadow: -3px 5px 12px #080808
-	li
-		width: 110px
-		padding: 15px 0
-		text-align: center
-		&:not(:last-of-type)
-			border-bottom: 2px solid #1d1d1d
-		a
-			display: inline-block
-			text-decoration: none
-			color: #ccc
-			font-size: 14px
-			&:before
-				font-family: 'simple-line-icons'
-				display: block
-				font-size: 16px
-				padding-bottom: 8px
-	.nuv_active
-		border-bottom: 2px solid $green !important
-		a
-			color: $green
-	li:nth-child(1)
-		a
-			&:before
-				content: '\e069'
-	li:nth-child(2)
-		a
-			&:before
-				content: '\e005'
-	li:nth-child(3)
-		a
-			&:before
-				content: '\e032'		
-	li:nth-child(4)
-		a
-			&:before
-				content: '\e086'
-	li:nth-child(5)
-		a
-			&:before
-				content: '\e043'
-
-.social_link_wrp
-	position: absolute
-	bottom: 25px
-	right: 0
-	left: 0
-	ul
-		width: 100%
+.header
+	border-bottom: 1px solid #eaeaea
+	&_logo
+		img
+			height: 40px
+	&_nuv
 		display: flex
-		justify-content: center
+		margin-right: 13px
 		li
-			&:not(:last-of-type)
-				margin-right: 12px
+			display: flex
+			margin: 0 13px
 			a
-				color: #ccc
-				font-size: 14px
-				transition: all .25s ease-in-out
-				&:hover
-					color: $green
-
-// Not active nuv
-.nuv_block
-	padding: 46px 16px 0 16px
-	.switch_nuv
-		&:before
-			content: '>'
-	.nuv_wrp
-		li
-			width: 60px
-			a
-				display: block
-				height: 18px
-				overflow: hidden
+				text-decoration: none
+				display: flex
+				align-items: center
+				justify-content: center
+				height: 80px
+				font-family: OpenSansSemiBold, sans-serif
+				font-size: 16px
+				color: #222
+				position: relative
+				&:hover:before
+					width: 100%
 				&:before
-					padding: 0
-	.social_link_wrp
-		display: none
+					content: ''
+					display: block
+					position: absolute
+					bottom: -1px
+					left: 0
+					width: 0
+					height: 4px
+					background-image: linear-gradient(to right top, #e04693, #fd5477, #ff705a, #ff923e, #f8b529)
+					transition: all .25s ease-in-out
 
-#s-main
-	background-size: cover
-	background-position: center
+.header_nuv_wrp
+	display: flex
+	align-items: center
+	.header_search
+		font-size: 17px
 
-#s-about,
-#s-contact,
-#s-portfolio
+.popup_search
 	display: none
-
-.welcome_block
 	position: absolute
-	top: 50%
-	left: 7%
-	transform: translateY(-50%)
-	z-index: 10
-	h1
-		font-family: 'Poppinsbold', sans-serif
-		font-size: 55px
-		color: #fff
-		margin-bottom: 8px
-	&__position
-		height: 25px
-		margin-bottom: 40px
-		position: relative
-		.js-type
-			color: #fff
-			font-size: 22px
-			letter-spacing: 0.7px
-			display: inline-block
-		.typed-cursor
-			display: none
-	a
-		text-decoration: none
-		display: inline-block
-		padding: 10px 34px
-		background-color: $green
-		color: #fff
-		font-size: 15px
-		letter-spacing: 1.4px
-		border-radius: 2px
-		transition: all .15s ease-in-out
-		&:hover
-			background-color: lighten($green, 5)
-
-#particles
-	position: absolute
+	width: 100%
+	height: 100%
+	top: 0
 	right: 0
 	bottom: 0
 	left: 0
-	top: 0
-	width: 100%
-	height: 100%
-
-.title
-	padding: 60px 70px
-	h1
-		font-family: 'Lobster', sans-serif
-		font-size: 40px
-		font-style: italic
+	background-color: rgba(255,255,255,.97)
+	z-index: 999
+	&_close
+		width: 40px
+		height: 40px
+		border-radius: 50%
+		background-color: #000000
 		color: #fff
-		position: relative
-		&:before
-			content: attr(data-text)
-			display: block
-			text-transform: uppercase
-			position: absolute
-			color: #232323
-			z-index: -1
-			top: 12px
-			left: -5px
+		font-size: 16px
+		position: absolute
+		top: 40px
+		right: 40px
+	input
+		border: none
+		font-size: 60px
+		position: absolute
+		left: 50%
+		top: 50%
+		transform: translate(-50%, -50%)
+		border-bottom: 2px solid #222
+		color: #222
+		padding-bottom: 15px
+		font-family: RobotoBlack, sans-serif
+		&::placeholder
+			color: #222
 
-.about
-	display: flex
+.grid_item
+	width: 25%
 
-.my_img
-	width: 50%
-	height: 350px
-	border-radius: 5px
-	overflow: hidden
-	margin-right: 95px
+.grid_item_inner
+	width: 100%
+	padding-bottom: 100%
+	position: relative
 	background-size: cover
+	background-repeat: no-repeat
 	background-position: center
 
-.about_tab
-	width: 50%
-	&__nuv
-		border-bottom: 1px solid #1d1d1d
-		ul
-			display: flex
-			justify-content: center
-			li
-				&:not(:last-of-type)
-					margin-right: 45px
-				a
-					display: block
-					padding: 8px 16px 12px 16px
-					text-decoration: none
-					color: #eee
-					font-size: 15px
-					text-align: center
-					border-top: 2px solid transparent
-					span
-						display: block
-					i
-						font-family: 'simple-line-icons'
-						font-style: normal
-						display: block
-						font-size: 17px
-						padding-bottom: 6px
-
-			li.about_tab__active
-				a
-					transition: all .25s ease
-					color: $green
-					border-top: 1px solid $green
-
-.about_tab__content
-	padding: 30px 20px 0
-
-.short_history
-	color: #aaa
-	font-size: 14px
-	line-height: 21px
-
-.skills
-	&__item
-		display: flex
-		justify-content: space-between
-		color: #ccc
-		padding-bottom: 8px
-		border-bottom: 3px solid $green
-		&:not(:last-of-type)
-			margin-bottom: 17px
-		&_left
-			font-size: 14px
-		&_right
-			font-size: 12px
-			text-align: right
-
-.portfolio
-	&__filter
-		margin-bottom: 40px
-		ul
-			width: 100%
-			display: flex
-			justify-content: center
-			li
-				&:first-child
-					a
-						text-transform: uppercase
-				&:not(:last-of-type)
-					margin-right: 10px
-				a
-					text-decoration: none
-					display: block
-					padding: 5px 18px
-					font-size: 15px
-					border-radius: 20px
-					color: #eee
-					border: 1px solid $green
-			li.filter_active
-				a
-					background-color: $green
-					color: #fff
-	&__items
-		display: flex
-		justify-content: space-between
-		flex-wrap: wrap
-		&:after
-			content: ''
-			width: 32.333333%
-
-.portfolio__item
-	width: 32.333333%
-	margin-bottom: 17px
-	position: relative
-	overflow: hidden
-	&:hover
-		img
-			transform: scale(1.2)
-		.portfolio__item_hover
-			opacity: 1
-	&:nth-child(3n+3)
-		margin-right: 0
-	img
-		width: 100%
-		height: 100%
-		transition: all 600ms ease-in-out
-	&_hover
-		width: 100%
-		height: 100%
-		position: absolute
-		top: 0
-		right: 0
-		bottom: 0
-		left: 0
-		background-color: rgba(000, 000, 000, .6)
-		padding: 20% 20px 20px 20px
-		color: #fff
-		opacity: 0
-		transition: all .8s ease-in-out
-		h3
-			font-size: 34px
-			margin-bottom: 5px
-		p
-			font-size: 17px
-			letter-spacing: 0.8px
-		.check_portfolio_item
-			text-decoration: none
-			position: absolute
-			bottom: 15px
-			right: 15px
-			color: #fff
-			font-size: 15px
-			letter-spacing: 0.8px
-			padding: 5px 15px
-			background-color: $green
-			transition: color .25s ease-in-out, background-color .25s ease
-			&:hover
-				background-color: #0C0C0C
-				color: #eee
-
-.contact
-	display: flex
-	margin-bottom: 85px
-	&__left
-		margin-right: 30px
-		width: 50%
-	&__right
-		width: 50%
-		background-color: $green
-		border-radius: 2px
-		padding: 50px
-		display: flex
-		align-items: center
-		position: relative
-		overflow: hidden
-		background-image: url('../img/bg_contact.jpg')
-		background-size: cover
-		background-repeat: no-repeat
-		background-position: -170px
-		&:before
-			content: ''
-			display: block
-			width: 100%
-			height: 100%
-			background-color: rgba(124, 169, 92, 0.7)
-			position: absolute
-			right: 0
-			bottom: 0
-			left: 0
-			top: 0
-	&__form
-		display: flex
-		justify-content: space-between
-		flex-wrap: wrap
-
-.input_group,
-.textarea_group
-	width: calc(50% - 15px)
-	position: relative
-	margin-bottom: 22px
-	input,
-	textarea
-		background: none
-		border: none
-		width: 100%
-		padding: 8px 12px
-		background-color: $black
-		font-size: 14px
-		color: #495057
-		border-bottom: 2px solid $green
-		&:focus + label,
-		&:valid + label
-			top: -10px
-			font-size: 12px
-	label
-		pointer-events: none
-		position: absolute
-		top: 8px
-		left: 12px
-		font-size: 14px
-		color: #aaa
-		transition: all .25s ease-in-out
-
-.input_group_big,
-.textarea_group
+.grid_permalink
+	position: absolute
 	width: 100%
+	height: 100%
+	top: 0
+	right: 0
+	bottom: 0
+	left: 0
 
-.textarea_group
-	textarea
-		outline: none
-		box-sizing: border-box
-		height: 100px
-
-.btn_submit_wrp
-	button
-		font-size: 14px
+.grid_title
+	position: absolute
+	bottom: 0
+	right: 0
+	left: 0
+	padding: 0 30px 30px 30px
+	background-image: linear-gradient(to bottom,rgba(0,0,0,0) 0,rgba(0,0,0,1) 150%)
+	p
 		color: #fff
-		text-transform: uppercase
-		box-sizing: content-box
-		display: flex
+		font-family: RobotoBold, sans-serif
+		font-size: 27px
+		line-height: 28px
+		letter-spacing: -0.025em
+		transition: all .25s ease
 		&:hover
-			span
-				border-radius: 2px 0 0 2px
-			i
-				transform: translateX(0)
-		span
-			padding: 9px 20px
-			background-color: $green
-			border-radius: 2px
-			letter-spacing: 0.6px
-			position: relative
-			z-index: 2
-			transition: all .40s ease
-		i
-			padding: 10px 20px 10px 0
-			background-color: $green
-			border-radius: 0 2px 2px 0
-			transition: all .40s ease-in-out
-			transform: translateX(-100%)
-
-.my_contact
-	position: relative
-	z-index: 4
-	li
-		&:not(:last-of-type)
-			margin-bottom: 36px
-		a
-			text-decoration: none
-			display: flex
-			align-items: center
-			color: #fff
-			font-size: 15px
-			i
-				font-size: 16px
-				margin-right: 13px
-
-.footer
-	padding: 25px
-	text-align: center
-	color: #ccc
-	font-size: 12px
-	border-top: 1px solid #1D1D1D
-
-/* Start Loading */
-.loading
-  background-color: #FFF
-  color: #444
-  position: absolute
-  left: 0
-  top: 0
-  width: 100%
-  height: 100%
-  z-index: 99999
-
-.blob
-  width: 2rem
-  height: 2rem
-  background: rgba(0, 0, 0, 0.85)
-  border-radius: 50%
-  position: absolute
-  left: calc(50% - 1rem)
-  top: calc(50% - 1rem)
-  box-shadow: 0 0 1rem rgba(255, 255, 255, 0.25)
-
-.blob-2
-  animation: animate-to-2 1.5s infinite
-
-.blob-3
-  animation: animate-to-3 1.5s infinite
-
-.blob-1
-  animation: animate-to-1 1.5s infinite
-
-.blob-4
-  animation: animate-to-4 1.5s infinite
-
-.blob-0
-  animation: animate-to-0 1.5s infinite
-
-.blob-5
-  animation: animate-to-5 1.5s infinite
-
-@keyframes animate-to-2
-  25%, 75%
-    transform: translateX(-1.5rem) scale(0.75)
-  95%
-    transform: translateX(0rem) scale(1)
-
-@keyframes animate-to-3
-  25%, 75%
-    transform: translateX(1.5rem) scale(0.75)
-  95%
-    transform: translateX(0rem) scale(1)
-
-@keyframes animate-to-1
-  25%
-    transform: translateX(-1.5rem) scale(0.75)
-  50%, 75%
-    transform: translateX(-4.5rem) scale(0.6)
-  95%
-    transform: translateX(0rem) scale(1)
-
-@keyframes animate-to-4
-  25%
-    transform: translateX(1.5rem) scale(0.75)
-  50%, 75%
-    transform: translateX(4.5rem) scale(0.6)
-  95%
-    transform: translateX(0rem) scale(1)
-
-@keyframes animate-to-0
-  25%
-    transform: translateX(-1.5rem) scale(0.75)
-  50%
-    transform: translateX(-4.5rem) scale(0.6)
-  75%
-    transform: translateX(-7.5rem) scale(0.5)
-  95%
-    transform: translateX(0rem) scale(1)
-
-@keyframes animate-to-5
-  25%
-    transform: translateX(1.5rem) scale(0.75)
-  50%
-    transform: translateX(4.5rem) scale(0.6)
-  75%
-    transform: translateX(7.5rem) scale(0.5)
-  95%
-    transform: translateX(0rem) scale(1)
-/* End Loading */
+			opacity: 0.8
 
 @import "_media"

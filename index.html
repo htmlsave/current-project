@@ -4,292 +4,133 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="shortcut icon" href="img/d.ico" type="image/png">
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/png">
+	<title>Мужской журнал</title>
 	<link rel="stylesheet" href="libs/font-awesome-4.7.0/css/font-awesome.min.css">
-	<title>My Portfolio</title>
 	<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-	<div id="app">
-		<button id="btn_show_nuv" class="btn_show_nuv"><span class="btn_show_nuv__line"></span></button>
-		<!-- Nuv -->
-		<div class="nuv_block_active">
-			<button class="switch_nuv js-switch_nuv"></button>
-			<div class="nuv_wrp">
-				<ul class="nuv">
-					<li class="nuv_active"><a href="#s-main">Главная</a></li>
-					<li><a href="#s-about">Обо мне</a></li>
-					<li><a href="#s-portfolio">Портфолио</a></li>
-					<li><a href="#s-contact">Контакты</a></li>
-					<li><a href="">Блог</a></li>
-				</ul>
+	<!-- Header -->
+	<header class="header">
+		<div class="centerer header_inner">
+			<div class="header_logo">
+				<img src="img/logo.png" alt="logo">
 			</div>
-			<div class="social_link_wrp">
-				<ul class="social_link">
-					<li><a href="#"><i class="fa fa-codepen"></i></a></li>
-					<li><a href="#"><i class="fa fa-github"></i></a></li>
+			<div class="header_nuv_wrp">
+				<ul class="header_nuv">
+					<li><a href="#">Психология</a></li>
+					<li><a href="#">Питание</a></li>
+					<li><a href="#">Секс</a></li>
+					<li><a href="#">Карьера</a></li>
+					<li><a href="#">Девушки</a></li>
 				</ul>
+				<button class="header_search"><i class="fa fa-search"></i></button>
 			</div>
 		</div>
-		<!-- END Nuv -->
-
-
-		<!-- SECTIONS -->
-		<div id="sections">
-
-
-			<section id="s-main" style="background-image: url(img/main_banner.jpg);">
-				<div class="welcome_block">
-					<h1>Rustam Valyaev</h1>
-					<div class="welcome_block__position">
-						<p class="js-type"></p>
-					</div>
-					<a id="banner_portfolio" href="#s-portfolio">Портфолио</a>
-				</div>
-				<div id="particles"></div>
-			</section>
-
-
-			<section id="s-about">
-				<div class="title">
-					<h1 data-text="Обо мне">Обо мне</h1>
-				</div>
-
-				<div class="centerer">
-					<div class="about">
-						<div class="my_img" style="background-image: url(img/my_img.jpg);"></div>
-						<div class="about_tab">
-
-							<div class="about_tab__nuv">
-								<ul>
-									<li class="about_tab__active">
-										<a href=".short_history">
-											<i class="icon-user"></i>
-											<span>Краткая история</span>
-										</a>
-									</li>
-									<li>
-										<a href=".skills">
-											<i class="icon-magic-wand"></i>
-											<span>Навыки</span>
-										</a>
-									</li>
-								</ul>
-							</div>
-
-							<div class="about_tab__content">
-								<!-- Short history -->
-								<div class="short_history">
-									<p>Я задротил в игры, игры надоели наткнулся на курс по html/css, курс - прошел, 
-										писал ручкой теги, атрибуты, свойства и их значения на ладони что бы лучше запоминать, 
-										я сверстал боле менее приличный сайт и был в экстазе, после этого понеслась))) 
-										Катки заменились проектами, жизненые приоритеты сместились в сторону web.</p>
-								</div>
-								<!-- END Short history -->
-								<!-- Skills -->
-								<div class="skills">
-									<ul class="skills__items">
-										<li class="skills__item">
-											<div class="skills__item_left">Html</div>
-											<div class="skills__item_right">&laquo;Уверенный пользователь&raquo;</div>
-										</li>
-										<li class="skills__item">
-											<div class="skills__item_left">Css (Sass)</div>
-											<div class="skills__item_right">&laquo;Уверенный пользователь&raquo;</div>
-										</li>
-										<li class="skills__item">
-											<div class="skills__item_left">jQuery</div>
-											<div class="skills__item_right">&laquo;Уверенный пользователь&raquo;</div>
-										</li>
-										<li class="skills__item">
-											<div class="skills__item_left">WordPress</div>
-											<div class="skills__item_right">&laquo;На уровне натянуть верстку&raquo;</div>
-										</li>
-										<li class="skills__item">
-											<div class="skills__item_left">JS</div>
-											<div class="skills__item_right">&laquo;Нативный DOM + ООП&raquo;</div>
-										</li>
-										<li class="skills__item">
-											<div class="skills__item_left">Puppeteer.js тесты</div>
-											<div class="skills__item_right">&laquo;Пишу ботов + парсеры&raquo;</div>
-										</li>
-										<li class="skills__item">
-											<div class="skills__item_left">Vue.js</div>
-											<div class="skills__item_right">&laquo;На этапе осваивания&raquo;</div>
-										</li>
-									</ul>
-								</div>
-								<!-- END Skills -->
-							</div>
-
-						</div>
-					</div>
-				</div>
-			</section>
-
-
-			<section id="s-portfolio">
-				<div class="title">
-					<h1 data-text="Портфолио">Портфолио</h1>
-				</div>
-
-				<div class="centerer">
-					<div class="portfolio">
-						<div class="portfolio__filter">
-							<ul>
-								<li class="filter_active"><a href="#">Все</a></li>
-								<li><a href="#">Codepen</a></li>
-							</ul>
-						</div>
-
-						<div class="portfolio__items">
-							<!-- item -->
-							<div class="portfolio__item">
-								<img src="img/1.jpg" alt="item">
-								<div class="portfolio__item_hover">
-									<h3>RATIOO</h3>
-									<p>HTML/CSS/JS (jQuery)</p>
-									<a href="#" class="check_portfolio_item">Смотреть</a>
-								</div>
-							</div>
-							<!-- END item -->
-							<!-- item -->
-							<div class="portfolio__item">
-								<img src="img/1.jpg" alt="item">
-								<div class="portfolio__item_hover">
-									<h3>RATIOO</h3>
-									<p>HTML/CSS/JS (jQuery)</p>
-									<a href="#" class="check_portfolio_item">Смотреть</a>
-								</div>
-							</div>
-							<!-- END item -->
-							<!-- item -->
-							<div class="portfolio__item">
-								<img src="img/1.jpg" alt="item">
-								<div class="portfolio__item_hover">
-									<h3>RATIOO</h3>
-									<p>HTML/CSS/JS (jQuery)</p>
-									<a href="#" class="check_portfolio_item">Смотреть</a>
-								</div>
-							</div>
-							<!-- END item -->
-							<!-- item -->
-							<div class="portfolio__item">
-								<img src="img/1.jpg" alt="item">
-								<div class="portfolio__item_hover">
-									<h3>RATIOO</h3>
-									<p>HTML/CSS/JS (jQuery)</p>
-									<a href="#" class="check_portfolio_item">Смотреть</a>
-								</div>
-							</div>
-							<!-- END item -->
-							<!-- item -->
-							<div class="portfolio__item">
-								<img src="img/1.jpg" alt="item">
-								<div class="portfolio__item_hover">
-									<h3>RATIOO</h3>
-									<p>HTML/CSS/JS (jQuery)</p>
-									<a href="#" class="check_portfolio_item">Смотреть</a>
-								</div>
-							</div>
-							<!-- END item -->
-							<!-- item -->
-							<div class="portfolio__item">
-								<img src="img/1.jpg" alt="item">
-								<div class="portfolio__item_hover">
-									<h3>RATIOO</h3>
-									<p>HTML/CSS/JS (jQuery)</p>
-									<a href="#" class="check_portfolio_item">Смотреть</a>
-								</div>
-							</div>
-							<!-- END item -->
-						</div>
-					</div>
-				</div>
-			</section>
-
-
-			<section id="s-contact">
-				<div class="title">
-					<h1 data-text="Контакты">Контакты</h1>
-				</div>
-
-				<div class="centerer">
-					<div class="contact">
-						<div class="contact__left">
-
-							<form action="#" class="contact__form">
-								<div class="input_group">
-									<input type="text" name="name" id="input_name" required>
-									<label for="input_name">Имя</label>
-								</div>
-								<div class="input_group">
-									<input type="email" name="email" id="input_email" required>
-									<label for="input_email">Email</label>
-								</div>
-								<div class="input_group input_group_big">
-									<input type="text" name="ofject" id="input_ofject" required>
-									<label for="input_ofject">Тема</label>
-								</div>
-								<div class="textarea_group">
-									<textarea name="text" id="message" required></textarea>
-									<label for="message">Введите сообщение</label>
-								</div>
-								<div class="btn_submit_wrp">
-									<button title="При отправке формы вы автоматически соглашаетесь на политику конфиденциальности">
-										<span>Отправить сообщение</span>
-										<i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-									</button>
-								</div>
-							</form>
-
-						</div>
-						<div class="contact__right">
-							
-							<ul class="my_contact">
-								<li>
-									<a href="mailto:rustamvalyaev@yandex.ru">
-										<i class="fa fa-envelope"></i>
-										<span>rustamvalyaev@yandex.ru</span>
-									</a>
-								</li>							
-								<li>
-									<a href="mailto:rustam.metis@yandex.ru">
-										<i class="fa fa-envelope"></i>
-										<span>rustam.metis@yandex.ru</span>
-									</a>
-								</li>
-							</ul>
-
-						</div>
-					</div>
-				</div>
-
-				<footer class="footer">
-					<p>&copy; Copyright 2018.</p>
-				</footer>
-			</section>
-
-
-		</div>
-		<!-- END SECTIONS -->
+	</header>
+	<div class="popup_search">
+		<button class="popup_search_close"><i class="fa fa-close"></i></button>
+		<input type="text" name="search" placeholder="Введите запрос...">
 	</div>
+	<!-- END Header -->
+	
 
-	<div class="loading">
-		<div class="blob-grid">
-			<div class="blob blob-0"></div>
-			<div class="blob blob-1"></div>
-			<div class="blob blob-2"></div>
-			<div class="blob blob-3"></div>
-			<div class="blob blob-4"></div>
-			<div class="blob blob-5"></div>
+	<!-- Content -->
+	<div id="masonry_items">
+		<!-- item -->
+		<div class="grid_item">
+			<div class="grid_item_inner" style="background-image: url(http://jellywp.com/theme/mawiss/demo/wp-content/uploads/2018/04/pexels-photo-1036623-779x520.jpeg);">
+				<a href="#" class="grid_permalink">
+					<div class="grid_title">
+						<p>Тестовое названия статьи, для этого сайта</p>
+					</div>
+				</a>
+			</div>
 		</div>
+		<!-- END item -->
+		<!-- item -->
+		<div class="grid_item">
+			<div class="grid_item_inner" style="background-image: url(http://jellywp.com/theme/mawiss/demo/wp-content/uploads/2018/05/miguel-bruna-636923-unsplash-416x520.jpg);">
+				<a href="#" class="grid_permalink">
+					<div class="grid_title">
+						<p>Тестовое названия статьи, для этого сайта</p>
+					</div>
+				</a>
+			</div>
+		</div>
+		<!-- END item -->
+		<!-- item -->
+		<div class="grid_item">
+			<div class="grid_item_inner" style="background-image: url(http://jellywp.com/theme/mawiss/demo/wp-content/uploads/2018/04/pexels-photo-452738-1000x520.jpeg);">
+				<a href="#" class="grid_permalink">
+					<div class="grid_title">
+						<p>Тестовое названия статьи, для этого сайта</p>
+					</div>
+				</a>
+			</div>
+		</div>
+		<!-- END item -->
+		<!-- item -->
+		<div class="grid_item">
+			<div class="grid_item_inner" style="background-image: url(http://jellywp.com/theme/mawiss/demo/wp-content/uploads/2018/05/jordan-whitfield-525166-unsplash-347x520.jpg);">
+				<a href="#" class="grid_permalink">
+					<div class="grid_title">
+						<p>Тестовое названия статьи, для этого сайта</p>
+					</div>
+				</a>
+			</div>
+		</div>
+		<!-- END item -->
+		<!-- item -->
+		<div class="grid_item">
+			<div class="grid_item_inner" style="background-image: url(http://jellywp.com/theme/mawiss/demo/wp-content/uploads/2018/04/pexels-photo-780x520.jpg);">
+				<a href="#" class="grid_permalink">
+					<div class="grid_title">
+						<p>Тестовое названия статьи, для этого сайта</p>
+					</div>
+				</a>
+			</div>
+		</div>
+		<!-- END item -->
+		<!-- item -->
+		<div class="grid_item">
+			<div class="grid_item_inner" style="background-image: url(http://jellywp.com/theme/mawiss/demo/wp-content/uploads/2018/05/pexels-photo-821345-390x520.jpeg);">
+				<a href="#" class="grid_permalink">
+					<div class="grid_title">
+						<p>Тестовое названия статьи, для этого сайта</p>
+					</div>
+				</a>
+			</div>
+		</div>
+		<!-- END item -->
+		<!-- item -->
+		<div class="grid_item">
+			<div class="grid_item_inner" style="background-image: url(http://jellywp.com/theme/mawiss/demo/wp-content/uploads/2018/05/pexels-photo-533678-925x520.jpeg);">
+				<a href="#" class="grid_permalink">
+					<div class="grid_title">
+						<p>Тестовое названия статьи, для этого сайта</p>
+					</div>
+				</a>
+			</div>
+		</div>
+		<!-- END item -->
+		<!-- item -->
+		<div class="grid_item">
+			<div class="grid_item_inner" style="background-image: url(http://jellywp.com/theme/mawiss/demo/wp-content/uploads/2018/04/girl-portrait-carnival-retro-46244-780x520.jpeg);">
+				<a href="#" class="grid_permalink">
+					<div class="grid_title">
+						<p>Тестовое названия статьи, для этого сайта</p>
+					</div>
+				</a>
+			</div>
+		</div>
+		<!-- END item -->
 	</div>
-
+	<!-- END Content -->
 
 	<!-- Scripts -->
-	<script src="libs/particles.js-master/particles.min.js"></script>
-	<script src="libs/typed.js-master/typed.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="libs/masonry/masonry_min.js"></script>
 	<script src="js/common.js"></script>
 </body>
 </html>
