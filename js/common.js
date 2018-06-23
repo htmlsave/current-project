@@ -1,15 +1,27 @@
 $(document).ready(function() {
-	// Pressed header
+	// Pressed header and btn to top
 	var takeH = $('.header').innerHeight();
 	$(window).scroll(function() {
+		var currentScroll = $(window).scrollTop();
 		if($(window).innerWidth() < 992) {
-			var currentScroll = $(window).scrollTop();
 			if(currentScroll > takeH) {
 				$('.header_logo > img').css('height', '25px');
 			} else {
 				$('.header_logo > img').css('height', '30px');
 			}
 		}
+		if(currentScroll > $(window).innerHeight()/2) {
+			$('.to_top').show();
+		} else {
+			$('.to_top').hide();
+		}
+	});
+
+	// Btn to top
+	$('#btn_top_top').click(function() {
+		$('html, body').animate({
+			scrollTop: 0
+		});
 	});
 
 	// Search modal
