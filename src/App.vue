@@ -1,47 +1,59 @@
 <template>
-  <div id="app" @click="deskMenuHide">
-   
+  <div id="app" @click="deskMenuHide(); addCardsHide();">
+   	<!-- Desks -->
 		<div class="desks">
 
-			<div class="desk" v-for="(item, index) in desks">
-				<!-- Menu with top-->
-				<div class="desk__top">
-					<textarea name="name" class="input_title" :value="item.name"></textarea>
-					<button class="btn_desk_menu" @click.stop="desksMenuToggleShow(index);">
-						<span></span>
-					</button>
-				</div>
-				<div class="desk__menu" v-if="desksMenuBoolean[index]" @click.stop>
-					<h3>Действия со списком</h3>
-					<button class="close_btn" @click="deskMenuHide">х</button>
-					<ul>
-						<li><button>Добавить карточку...</button></li>
-						<li><button @click="removeDesk(index);">Удалить Список...</button></li>
-					</ul>
-				</div>
-				<!-- END Menu with top-->
-
-				<!-- Add card -->
-				<div class="desk__addСard" v-if="addCardsBoolean[index]">
-					<textarea name="name" placeholder="Введите заголовок для этой карточки"></textarea>
-					<div class="desk__addСard_bottom">
-						<div class="desk__addСard_left">
-							<button class="btn_addCard">Добавить карточку</button>
-							<button class="close_btn" @click="$set(addCardsBoolean, index, false);">x</button>
-						</div>
-						<div class="desk__addСard_right"></div>
+			<draggable class="desks__inner">
+				<div class="desk" v-for="(item, index) in desks">
+					<!-- Menu with top-->
+					<div class="desk__top">
+						<textarea name="name" class="input_title" :value="item.name"></textarea>
+						<button class="btn_desk_menu" @click.stop="desksMenuToggleShow(index);">
+							<span></span>
+						</button>
 					</div>
-				</div>
-				<button class="desk__btnAddСard" v-else @click="$set(addCardsBoolean, index, true);">
-					<i>+</i> 
-					<span>Добавить карточку</span>
-				</button>
-				<!-- END Add card -->
-			</div>
+					<div class="desk__menu" v-if="desksMenuBoolean[index]" @click.stop>
+						<h3>Действия со списком</h3>
+						<button class="close_btn" @click="deskMenuHide"><i class="fa fa-times" aria-hidden="true"></i></button>
+						<ul>
+							<li><button>Добавить карточку...</button></li>
+							<li><button @click="removeDesk(index);">Удалить Список...</button></li>
+						</ul>
+					</div>
+					<!-- END Menu with top-->
 
-			<!-- Add desk -->
+					<!-- Cards -->
+					<div class="cards">
+						<draggable>
+							<div class="card" v-for="(item, cardIndex) in item.cards" @click="infoToPopup(item, index, cardIndex);">
+								<span class="card__name">{{ item.cardName }}</span>
+							</div>
+						</draggable>
+					</div>
+					<!-- END Cards -->
+
+					<!-- Add card -->
+					<div class="desk__addСard" v-if="addCardsBoolean[index]" @click.stop="deskMenuHide">
+						<textarea name="name" placeholder="Введите заголовок для этой карточки" v-model="addCardValue"></textarea>
+						<div class="desk__addСard_bottom">
+							<div class="desk__addСard_left">
+								<button class="btn_addCard" @click="addCard(index);">Добавить карточку</button>
+								<button class="close_btn" @click="$set(addCardsBoolean, index, false);"><i class="fa fa-times" aria-hidden="true"></i></button>
+							</div>
+							<div class="desk__addСard_right"></div>
+						</div>
+					</div>
+					<button class="desk__btnAddСard" v-else @click.stop="addCardsToggleShow(index);"> 
+						<i>+</i> 
+						<span>Добавить карточку</span>
+					</button>
+					<!-- END Add card -->
+				</div>
+			</draggable>
+
+			<!-- Btn Add desk -->
 			<div class="wrp_add_desk">
-				<button class="add_desk" v-if="addDeskBoolean" @click="addDeskBoolean = !addDeskBoolean">
+				<button class="add_desk" v-if="addDeskBoolean" @click="addDeskBoolean = !addDeskBoolean"> 
 					<i>+</i> 
 					<span>{{ addDeskText }}</span>
 				</button>
@@ -49,30 +61,90 @@
 					<textarea name="name" class="input_title" placeholder="Введите заголовок списка" v-model="addDeskValue"></textarea>
 					<div class="desk__addСard_bottom">
 						<div class="desk__addСard_left">
-							<button class="btn_addCard" @click="addDesk">Добавить карточку</button>
-							<button class="close_btn" @click="addDeskBoolean = !addDeskBoolean">x</button>
+							<button class="btn_addCard" @click="addDesk">Добавить список</button>
+							<button class="close_btn" @click="addDeskBoolean = !addDeskBoolean"><i class="fa fa-times" aria-hidden="true"></i></button>
 						</div>
 						<div class="desk__addСard_right"></div>
 					</div>
 				</div>
 			</div>
-			<!-- END Add desk -->
+			<!-- END Btn Add desk -->
 
 		</div>
+		<!-- END Desks -->
 
+		<!-- Popup -->
+		<div class="card_popup" v-if="toggleShowPupup">
+			<div class="card_popup__mask" @click="toggleShowPupup = false"></div>
+			<div class="card_popup__content">
+
+				<button class="card_popup__close" @click="toggleShowPupup = false"><i class="fa fa-times"></i></button>
+
+				<div class="card_popup__item">
+					<i class="fa fa-columns" aria-hidden="true"></i>
+					<textarea name="name" class="input_title" :value="pupupName"></textarea>
+				</div>
+
+				<div class="card_popup__left">
+					<div class="card_popup__item">
+						<i class="fa fa-align-left" aria-hidden="true"></i>
+						<div class="add_description">
+
+							<h3>Описание</h3>
+							<div class="add_description_inner">
+								<h3 class="description" v-if="popupDescriptionToggleShow" @click="description">{{ popupDescription }}</h3>
+								<div class="add_description_form" v-else>
+									<textarea name="description" placeholder="Добавить более подробное описание…" v-model="popupDescription"></textarea>
+									<div class="desk__addСard_left">
+										<button class="btn_addCard" @click="saveDescription">Сохранить</button> 
+										<button class="close_btn" v-if ="pupupDescritpionBtnClose" @click="popupDescriptionToggleShow = true">
+											<i aria-hidden="true" class="fa fa-times"></i>
+										</button>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<!-- END Popup -->
   </div>
 </template>
 
 <script>
+import draggable from 'vuedraggable'
 export default {
+	components: {
+		draggable: draggable
+	},
 	data: function() {
 		return {
-			addDeskText: 'Добавить список',
 			addDeskBoolean: true,
 			addDeskValue: '',
-			desks: [],
+			addDeskText: 'Добавить список',
+			desks: [
+				{
+					name: 'Desk #1',
+					cards: [
+						{
+							cardName: 'каточка'
+						}
+					]
+				}
+			],
 			desksMenuBoolean: [],
-			addCardsBoolean: []
+			addCardsBoolean: [],
+			addCardValue: '',
+			toggleShowPupup: false,
+			pupupName: '',
+			popupDescription: '',
+			popupDescriptionToggleShow: false,
+			pupupDescritpionBtnClose: false,
+			currentDeskIndex: '',
+			currentCardIndex: ''
 		}
 	},
 	created: function() {
@@ -84,7 +156,7 @@ export default {
 	methods: {
 		addDesk: function() {
 			if( this.addDeskValue.length ) {
-				this.desks.push({});
+				this.desks.push('');
 				this.$set(this.desks, this.desks.length-1, {name: this.addDeskValue});
 				this.addDeskValue = '';
 				this.addDeskText = 'Добавьте еще одну колонку';
@@ -102,6 +174,53 @@ export default {
 		desksMenuToggleShow: function(index) {
 			this.deskMenuHide(index);
 			this.$set(this.desksMenuBoolean, index, !this.desksMenuBoolean[index]);
+		},
+		addCardsHide: function() {
+			for(let i = 0; i < this.addCardsBoolean.length; i++) {
+				this.$set(this.addCardsBoolean, i, false);
+			}
+		},
+		addCardsToggleShow: function(index) {
+			this.deskMenuHide();
+			this.addCardsHide();
+			this.$set(this.addCardsBoolean, index, true);
+		},
+		addCard: function(index) {
+			if( this.addCardValue.length ) {
+				if(!this.desks[index].cards) this.desks[index].cards = [];
+				this.desks[index].cards.length += 1;
+				this.$set(this.desks[index].cards, this.desks[index].cards.length - 1, {cardName: this.addCardValue});
+				this.addCardValue = '';
+			}
+		},
+		infoToPopup: function(obj, index, cardIndex) {
+			// Name
+			this.toggleShowPupup = true;
+			this.pupupName = obj.cardName;
+			// Description
+			let el = this.desks[index].cards[cardIndex].description;
+			if( el ) {
+				this.popupDescription = el;
+				this.popupDescriptionToggleShow = true;
+				this.pupupDescritpionBtnClose = true;
+			} else {
+				this.popupDescription = '';
+				this.popupDescriptionToggleShow = false;
+			}
+			//  Indexes
+			this.currentDeskIndex = index;
+			this.currentCardIndex = cardIndex;
+		},
+		description: function() {
+			this.popupDescriptionToggleShow = false;
+			this.pupupDescritpionBtnClose = true;
+		},
+		saveDescription: function() {
+			if( this.popupDescription.length ) {
+				let el = this.desks[this.currentDeskIndex].cards[this.currentCardIndex];
+				el.description = this.popupDescription;
+				this.popupDescriptionToggleShow = true;
+			}
 		}
 	}
 }
@@ -109,6 +228,81 @@ export default {
 
 <style lang="sass">
 @import '/sass/reset'
+
+.add_description
+	font-size: 0
+	flex-grow: 1
+	h3
+		font-weight: bold
+		font-size: 16px
+		margin-bottom: 12px
+	textarea
+		outline: none
+		border: none
+		resize: none
+		width: 100%
+		height: 62px
+		padding: 6px 8px
+		background: rgba(0, 0, 0, 0.03)
+		border-radius: 3px
+		border: 1px solid #cdd2d4
+		box-shadow: inset 0 1px 6px rgba(0,0,0,.1)
+		font-size: 14px
+		margin-bottom: 8px
+	.description
+		cursor: pointer
+		font-weight: normal
+		font-size: 14px
+
+.card_popup
+	position: fixed
+	width: 100%
+	min-height: 100vh
+	top: 0
+	right: 0
+	bottom: 0
+	left: 0
+	overflow-y: scroll
+	&__mask
+		position: absolute
+		height: 100%
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		background-color: rgba(0,0,0,.7)
+	&__content
+		width: 768px
+		min-height: 600px
+		position: absolute
+		left: 50%
+		top: 50%
+		transform: translate(-50%, -50%)
+		background-color: #EDEFF0
+		border-radius: 3px
+		padding: 20px 16px
+	&__close
+		position: absolute
+		right: 16px
+		top: 20px
+		font-size: 25px
+		color: #999
+	&__item
+		display: flex
+		align-items: center
+		margin-bottom: 35px
+		i
+			font-size: 16px
+			color: #999
+			margin-right: 15px
+		.input_title
+			padding-left: 0 !important
+			flex-grow: 1
+			margin-right: 25px
+	&__left
+		width: 576px
+		i
+			align-self: flex-start
 
 #app
 	min-height: 100vh
@@ -127,7 +321,8 @@ export default {
 	&:hover
 		color: #4d4d4d
 
-.desks
+.desks,
+.desks__inner
 	display: flex
 	padding-top: 94px
 	& > *
@@ -135,6 +330,9 @@ export default {
 		margin-right: 8px
 		&:first-child
 			margin-left: 8px
+
+.desks__inner
+	padding-top: 0
 
 .desk
 	min-width: 272px
@@ -335,4 +533,17 @@ export default {
 			right: 0
 			top: 0
 			left: 0
+
+.card
+	cursor: pointer
+	background: #fff
+	border-radius: 3px
+	padding: 6px 8px
+	margin: 8px 8px 8px 8px
+	box-shadow: 0 1px 0 #ccc
+	&:hover
+		background: #EDEFF0
+	span
+		color: #444
+		font-size: 14px
 </style>
