@@ -2,7 +2,8 @@
   <div id="app" @click="deskMenuHide(); addCardsHide();">
    	<!-- Desks -->
 		<div class="desks">
-
+			
+			<!-- desk -->
 			<draggable class="desks__inner">
 				<div class="desk" v-for="(item, index) in desks">
 					<!-- Menu with top-->
@@ -16,12 +17,11 @@
 						<h3>Действия со списком</h3>
 						<button class="close_btn" @click="deskMenuHide"><i class="fa fa-times" aria-hidden="true"></i></button>
 						<ul>
-							<li><button>Добавить карточку...</button></li>
+							<li><button @click="addCardsToggleShow(index);">Добавить карточку...</button></li>
 							<li><button @click="removeDesk(index);">Удалить Список...</button></li>
 						</ul>
 					</div>
 					<!-- END Menu with top-->
-
 					<!-- Cards -->
 					<div class="cards">
 						<draggable>
@@ -31,7 +31,6 @@
 						</draggable>
 					</div>
 					<!-- END Cards -->
-
 					<!-- Add card -->
 					<div class="desk__addСard" v-if="addCardsBoolean[index]" @click.stop="deskMenuHide">
 						<textarea name="name" placeholder="Введите заголовок для этой карточки" v-model="addCardValue"></textarea>
@@ -50,6 +49,7 @@
 					<!-- END Add card -->
 				</div>
 			</draggable>
+			<!-- desk -->
 
 			<!-- Btn Add desk -->
 			<div class="wrp_add_desk">
@@ -85,27 +85,87 @@
 					<textarea name="name" class="input_title" :value="pupupName"></textarea>
 				</div>
 
-				<div class="card_popup__left">
-					<div class="card_popup__item">
-						<i class="fa fa-align-left" aria-hidden="true"></i>
-						<div class="add_description">
+				<div class="card_popup__flexWrp">
+					<!-- Left block -->
+					<div class="card_popup__left">
+						<div class="card_popup__item">
+							<i class="fa fa-align-left" aria-hidden="true"></i>
+							<div class="add_description">
 
-							<h3>Описание</h3>
-							<div class="add_description_inner">
-								<h3 class="description" v-if="popupDescriptionToggleShow" @click="description">{{ popupDescription }}</h3>
-								<div class="add_description_form" v-else>
-									<textarea name="description" placeholder="Добавить более подробное описание…" v-model="popupDescription"></textarea>
-									<div class="desk__addСard_left">
-										<button class="btn_addCard" @click="saveDescription">Сохранить</button> 
-										<button class="close_btn" v-if ="pupupDescritpionBtnClose" @click="popupDescriptionToggleShow = true">
-											<i aria-hidden="true" class="fa fa-times"></i>
-										</button>
+								<h3 class="h3">Описание</h3>
+								<div class="add_description_inner">
+									<h3 class="description" v-if="popupDescriptionToggleShow" @click="description">{{ popupDescription }}</h3>
+									<div class="add_description_form" v-else>
+										<textarea name="description" placeholder="Добавить более подробное описание…" v-model="popupDescription"></textarea>
+										<div class="desk__addСard_left">
+											<button class="green_btn" @click="saveDescription">Сохранить</button> 
+											<button class="close_btn" v-if ="pupupDescritpionBtnClose" @click="popupDescriptionToggleShow = true">
+												<i aria-hidden="true" class="fa fa-times"></i>
+											</button>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+
+						<div class="card_popup__left">
+							<div class="card_popup__item" v-for="items in checkListPrint">
+								<i class="fa fa-check-square-o" aria-hidden="true"></i>
+								<div class="check_list">
+									<h3 class="h3">{{ items.name }}</h3>
+
+									<div class="check_list_add_form_wrp">
+										<div class="check_list_add_form__label" v-if="checkListFormShow" @click="checkListFormShow = false">Добавить элемент....</div>
+										<div class="check_list_add_form" v-else>
+											<textarea name="name" placeholder="Добавить элемент...."></textarea>
+											<div class="desk__addСard_left">
+												<button class="green_btn">Сохранить</button> 
+												<button class="close_btn" @click="checkListFormShow = true">
+													<i aria-hidden="true" class="fa fa-times"></i>
+												</button>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
-
 						</div>
 					</div>
+					<!-- END Left block -->
+					<!-- Right block -->
+					<div class="card_popup__right">
+						<div class="pupup_function">
+							<h3>Функции</h3>
+							<ul>
+								<li>
+									<button class="pupup_function_btn" @click="widgetShow('сheckListWidgetShow');">
+										<i class="fa fa-check-square-o" aria-hidden="true"></i>
+										Чек лист
+									</button>
+									<div class="popup_widget" v-if="сheckListWidgetShow">
+										<div class="popup_widget__title">
+											<h3>Добавление чек-листа</h3>
+											<button class="close_btn" @click="widgetHide('сheckListWidgetShow');"><i class="fa fa-times" aria-hidden="true"></i></button>
+										</div>
+										<div class="popup_widget__content">
+											<div class="add_checklist">
+												<label for="name_checklist">Название</label>
+												<input type="text" name="name" id="name_checklist" v-model="checkListName">
+												<button class="green_btn" @click="addCheckList">Добавить</button>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<button class="pupup_function_btn" @click="removeCard">
+										<i class="fa fa-trash-o" aria-hidden="true"></i>
+										Удалить карточку
+									</button>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!-- END Right block -->
 				</div>
 
 			</div>
@@ -130,7 +190,10 @@ export default {
 					name: 'Desk #1',
 					cards: [
 						{
-							cardName: 'каточка'
+							cardName: "test"
+						},
+						{
+							cardName: "test 2"
 						}
 					]
 				}
@@ -144,7 +207,11 @@ export default {
 			popupDescriptionToggleShow: false,
 			pupupDescritpionBtnClose: false,
 			currentDeskIndex: '',
-			currentCardIndex: ''
+			currentCardIndex: '',
+			сheckListWidgetShow: false,
+			checkListName: 'Чек-лист',
+			checkListPrint: [],
+			checkListFormShow: true
 		}
 	},
 	created: function() {
@@ -193,20 +260,32 @@ export default {
 				this.addCardValue = '';
 			}
 		},
+		removeCard: function() {
+			this.$delete(this.desks[this.currentDeskIndex].cards, this.currentCardIndex);
+			this.toggleShowPupup = false;
+		},
 		infoToPopup: function(obj, index, cardIndex) {
 			// Name
 			this.toggleShowPupup = true;
 			this.pupupName = obj.cardName;
 			// Description
-			let el = this.desks[index].cards[cardIndex].description;
-			if( el ) {
-				this.popupDescription = el;
+			let description = this.desks[index].cards[cardIndex].description;
+			if( description ) {
+				this.popupDescription = description;
 				this.popupDescriptionToggleShow = true;
 				this.pupupDescritpionBtnClose = true;
 			} else {
 				this.popupDescription = '';
 				this.popupDescriptionToggleShow = false;
 			}
+			// CheckLists
+			let checkLists = this.desks[index].cards[cardIndex].checkLists;
+			if( checkLists ) {
+				this.checkListPrint = checkLists;
+			} else {
+				this.checkListPrint = [];
+			}
+			console.log(this.checkListPrint);
 			//  Indexes
 			this.currentDeskIndex = index;
 			this.currentCardIndex = cardIndex;
@@ -221,6 +300,30 @@ export default {
 				el.description = this.popupDescription;
 				this.popupDescriptionToggleShow = true;
 			}
+		},
+		widgetShow: function(el) {
+			this[el] = !this[el];
+		},
+		widgetHide: function(el) {
+			this[el] = false;
+		},
+		addCheckList: function() {
+			// Close widget
+			this.widgetHide('сheckListWidgetShow');
+			// Push checklists
+			let el = this.desks[this.currentDeskIndex].cards[this.currentCardIndex].checkLists;
+			if( el ) {
+				el.push({name: this.checkListName});
+				// Print to loyout
+				this.checkListPrint.push({name: this.checkListName});
+			} else {
+				this.desks[this.currentDeskIndex].cards[this.currentCardIndex].checkLists = [];
+				this.desks[this.currentDeskIndex].cards[this.currentCardIndex].checkLists.push({name: this.checkListName});
+				// Print to loyout
+				this.checkListPrint.push({name: this.checkListName})
+			}
+			// Reset value
+			this.checkListName = 'Чек-лист';
 		}
 	}
 }
@@ -229,19 +332,145 @@ export default {
 <style lang="sass">
 @import '/sass/reset'
 
+.check_list
+	flex-grow: 1
+	margin-bottom: 35px
+
+.check_list_add_form__label
+	cursor: pointer
+	font-size: 14px
+	color: #8c8c8c
+	width: 100%
+	height: 30px
+
+.check_list_add_form
+	textarea
+		border: none
+		outline: none
+		width: 100% !important
+		height: 40px
+		padding: 6px 8px
+		border-radius: 3px
+		background: transparent
+		color: #444
+		border: 1px solid #298fca
+		box-shadow: 0 0 2px #298fca
+		margin-bottom: 8px !important
+
+.add_checklist
+	label
+		display: block
+		font-weight: bold
+		font-size: 12px
+		color: #8c8c8c
+		margin-bottom: 5px
+	input
+		border: none
+		outline: none
+		width: 100%
+		padding: 6px 8px
+		border-radius: 3px
+		background: #E2E4E6
+		border: 1px solid #cdd2d4
+		font-size: 14px
+		transition: all .15s ease
+		margin-bottom: 20px
+		&:focus
+			background: #fff
+			border-color: #298fca
+			box-shadow: 0 0 2px #298fca
+
+.green_btn
+	background: #5AAC44
+	color: #fff
+	box-shadow: 0 1px 0 #519839
+	padding: 6px 16px
+	border-radius: 3px
+	font-size: 14px
+	font-weight: bold
+	transition: all .25s ease
+	margin-right: 5px
+	&:hover
+		background: #519839
+
+.popup_widget
+	display: block
+	width: 304px
+	background: #FFFFFF
+	position: absolute
+	top: 36px
+	left: 0
+	border-radius: 3px 
+	box-shadow: 0 1px 6px rgba(0,0,0,.15)
+	padding-bottom: 12px
+	z-index: 9
+	&__title
+		h3
+			display: block
+			text-align: center
+			margin: 0 13px
+			font-size: 15px
+			height: 40px
+			line-height: 40px
+			color: #8c8c8c
+			border-bottom: 1px solid #d6dadc
+			margin-bottom: 8px
+			text-transform: normal
+	&__content
+		padding: 8px 13px
+	.close_btn
+		position: absolute
+		right: 13px
+		top: 0
+
+.pupup_function
+	&>h3
+		font-size: 12px
+		text-transform: uppercase
+		letter-spacing: 1.5px
+		color: #8c8c8c
+	ul
+		li
+			position: relative
+			margin-top: 8px
+			.pupup_function_btn
+				display: flex
+				align-items: center
+				width: 168px
+				padding: 6px 8px
+				border-radius: 3px 
+				box-shadow: 0 1px 0 0 #c4c9cc
+				background: #E2E4E6
+				font-size: 14px
+				color: #444
+				font-weight: bold
+				&:hover
+					background: #cdd2d4
+					box-shadow: 0 1px 0 0 #a5acb0
+				i
+					color: #999
+					margin-right: 8px
+					font-size: 12px
+
+.card_popup__flexWrp
+	display: flex
+
+.h3
+	font-weight: bold
+	font-size: 16px
+	margin-bottom: 12px
+	color: #333
+
 .add_description
 	font-size: 0
 	flex-grow: 1
-	h3
-		font-weight: bold
-		font-size: 16px
-		margin-bottom: 12px
 	textarea
 		outline: none
 		border: none
 		resize: none
+		box-sizing: border-box
 		width: 100%
-		height: 62px
+		height: 90px
 		padding: 6px 8px
 		background: rgba(0, 0, 0, 0.03)
 		border-radius: 3px
@@ -255,16 +484,17 @@ export default {
 		font-size: 14px
 
 .card_popup
-	position: fixed
+	position: absolute
 	width: 100%
-	min-height: 100vh
+	min-height: 100%
 	top: 0
 	right: 0
 	bottom: 0
 	left: 0
 	overflow-y: scroll
 	&__mask
-		position: absolute
+		position: fixed
+		width: 100%
 		height: 100%
 		top: 0
 		right: 0
@@ -274,10 +504,9 @@ export default {
 	&__content
 		width: 768px
 		min-height: 600px
-		position: absolute
-		left: 50%
-		top: 50%
-		transform: translate(-50%, -50%)
+		position: relative
+		z-index: 9
+		margin: 60px auto
 		background-color: #EDEFF0
 		border-radius: 3px
 		padding: 20px 16px
@@ -289,6 +518,7 @@ export default {
 		color: #999
 	&__item
 		display: flex
+		flex-wrap: wrap
 		align-items: center
 		margin-bottom: 35px
 		i
@@ -300,7 +530,8 @@ export default {
 			flex-grow: 1
 			margin-right: 25px
 	&__left
-		width: 576px
+		width: 552px
+		margin-right: 16px
 		i
 			align-self: flex-start
 
