@@ -88,10 +88,10 @@
 				<div class="card_popup__flexWrp">
 					<!-- Left block -->
 					<div class="card_popup__left">
+						<!-- Description -->
 						<div class="card_popup__item">
 							<i class="fa fa-align-left" aria-hidden="true"></i>
 							<div class="add_description">
-
 								<h3 class="h3">Описание</h3>
 								<div class="add_description_inner">
 									<h3 class="description" v-if="popupDescriptionToggleShow" @click="description">{{ popupDescription }}</h3>
@@ -105,31 +105,46 @@
 										</div>
 									</div>
 								</div>
-
 							</div>
 						</div>
-
-						<div class="card_popup__left">
-							<div class="card_popup__item" v-for="items in checkListPrint">
-								<i class="fa fa-check-square-o" aria-hidden="true"></i>
-								<div class="check_list">
-									<h3 class="h3">{{ items.name }}</h3>
-
-									<div class="check_list_add_form_wrp">
-										<div class="check_list_add_form__label" v-if="checkListFormShow" @click="checkListFormShow = false">Добавить элемент....</div>
-										<div class="check_list_add_form" v-else>
-											<textarea name="name" placeholder="Добавить элемент...."></textarea>
-											<div class="desk__addСard_left">
-												<button class="green_btn">Сохранить</button> 
-												<button class="close_btn" @click="checkListFormShow = true">
-													<i aria-hidden="true" class="fa fa-times"></i>
-												</button>
-											</div>
+						<!-- END Description -->
+						<!-- CheckLists -->
+						<div class="card_popup__item" v-for="(item, index) in checkListPrint">
+							<i class="fa fa-check-square-o" aria-hidden="true"></i>
+							<div class="check_list">
+								<h3 class="h3">{{ item.name }}</h3>
+								<div class="check_list_add_form_wrp">
+									<div class="check_list_add_form__label" v-if="item.checkListFormShow" @click="item.checkListFormShow = false">Добавить элемент....</div>
+									<div class="check_list_add_form" v-else>
+										<textarea name="name" placeholder="Добавить элемент...."></textarea>
+										<div class="desk__addСard_left">
+											<button class="green_btn">Сохранить</button> 
+											<button class="close_btn" @click="item.checkListFormShow = true">
+												<i aria-hidden="true" class="fa fa-times"></i>
+											</button>
 										</div>
 									</div>
 								</div>
 							</div>
+							<!-- Windget remove CheckLists -->
+							<div class="remove_checklist_wrp">
+								<button class="removeCheckList" @click="item.checkListRemoveWidgetShow = !item.checkListRemoveWidgetShow"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+								<div class="popup_widget" v-if="item.checkListRemoveWidgetShow">
+									<div class="popup_widget__title">
+										<h3>Удаление чек-листа Чек-лист</h3>
+										<button class="close_btn" @click="item.checkListRemoveWidgetShow = false"><i class="fa fa-times" aria-hidden="true"></i></button>
+									</div>
+									<div class="popup_widget__content">
+										<div class="remove_checklist">
+											<p>Удаление чек-листа необратимо и не будет возможности его вернуть.</p>
+											<button class="red_btn" @click="removeCheckList(index);">Удалить чек лист</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- END Windget remove CheckLists -->
 						</div>
+						<!-- END CheckLists -->
 					</div>
 					<!-- END Left block -->
 					<!-- Right block -->
@@ -210,8 +225,7 @@ export default {
 			currentCardIndex: '',
 			сheckListWidgetShow: false,
 			checkListName: 'Чек-лист',
-			checkListPrint: [],
-			checkListFormShow: true
+			checkListPrint: []
 		}
 	},
 	created: function() {
@@ -231,7 +245,6 @@ export default {
 		},
 		removeDesk: function(index) {
 			this.$delete(this.desks, index);
-			this.deskMenuHide();
 		},
 		deskMenuHide: function(index) {
 			for(let i = 0; i < this.desksMenuBoolean.length; i++) {
@@ -285,7 +298,6 @@ export default {
 			} else {
 				this.checkListPrint = [];
 			}
-			console.log(this.checkListPrint);
 			//  Indexes
 			this.currentDeskIndex = index;
 			this.currentCardIndex = cardIndex;
@@ -313,17 +325,40 @@ export default {
 			// Push checklists
 			let el = this.desks[this.currentDeskIndex].cards[this.currentCardIndex].checkLists;
 			if( el ) {
-				el.push({name: this.checkListName});
+				el.push(
+					{
+						name: this.checkListName, 
+						checkListFormShow: true,
+						checkListRemoveWidgetShow: false
+					}
+				);
 				// Print to loyout
-				this.checkListPrint.push({name: this.checkListName});
+				this.checkListPrint.push(
+					{
+						name: this.checkListName, 
+						checkListFormShow: true,
+						checkListRemoveWidgetShow: false
+					}
+				);
 			} else {
 				this.desks[this.currentDeskIndex].cards[this.currentCardIndex].checkLists = [];
-				this.desks[this.currentDeskIndex].cards[this.currentCardIndex].checkLists.push({name: this.checkListName});
+				this.desks[this.currentDeskIndex].cards[this.currentCardIndex].checkLists.push(
+					{
+						name: this.checkListName, 
+						checkListFormShow: true,
+						checkListRemoveWidgetShow: false
+					}
+				);
 				// Print to loyout
-				this.checkListPrint.push({name: this.checkListName})
+				this.checkListPrint.push({name: this.checkListName, checkListFormShow: true})
 			}
 			// Reset value
 			this.checkListName = 'Чек-лист';
+		},
+		removeCheckList: function(index) {
+			this.$delete(this.desks[this.currentDeskIndex].cards[this.currentCardIndex].checkLists, index);
+			// Remove to loyout
+			this.checkListPrint.splice(index, 1);
 		}
 	}
 }
@@ -332,9 +367,22 @@ export default {
 <style lang="sass">
 @import '/sass/reset'
 
+.remove_checklist_wrp
+	position: absolute
+	right: 0
+	top: 0
+	i
+		margin-right: 0 !important
+
+.remove_checklist
+	p
+		font-size: 14px
+		line-height: 16px
+		color: #333
+		margin-bottom: 16px
+
 .check_list
 	flex-grow: 1
-	margin-bottom: 35px
 
 .check_list_add_form__label
 	cursor: pointer
@@ -345,6 +393,7 @@ export default {
 
 .check_list_add_form
 	textarea
+		box-sizing: border-box
 		border: none
 		outline: none
 		width: 100% !important
@@ -380,7 +429,8 @@ export default {
 			border-color: #298fca
 			box-shadow: 0 0 2px #298fca
 
-.green_btn
+.green_btn,
+.red_btn
 	background: #5AAC44
 	color: #fff
 	box-shadow: 0 1px 0 #519839
@@ -392,6 +442,14 @@ export default {
 	margin-right: 5px
 	&:hover
 		background: #519839
+
+.red_btn
+	box-shadow: none
+	width: 100%
+	text-align: center
+	background: #EB5A46
+	&:hover
+		background: #cf513d
 
 .popup_widget
 	display: block
@@ -521,6 +579,7 @@ export default {
 		flex-wrap: wrap
 		align-items: center
 		margin-bottom: 35px
+		position: relative
 		i
 			font-size: 16px
 			color: #999
