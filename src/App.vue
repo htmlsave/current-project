@@ -1,5 +1,5 @@
 <template>
-  <div id="app" @click="deskMenuHide(); addCardsHide();">
+  <div id="app" @click="mainHideElements();">
    	<!-- Desks -->
 		<div class="desks">
 			
@@ -74,7 +74,7 @@
 		<!-- END Desks -->
 
 		<!-- Popup -->
-		<div class="card_popup" v-if="toggleShowPupup">
+		<div class="card_popup bounce" v-if="toggleShowPupup">
 			<div class="card_popup__mask" @click="toggleShowPupup = false"></div>
 			<div class="card_popup__content">
 
@@ -109,41 +109,53 @@
 						</div>
 						<!-- END Description -->
 						<!-- CheckLists -->
-						<div class="card_popup__item" v-for="(item, index) in checkListPrint">
-							<i class="fa fa-check-square-o" aria-hidden="true"></i>
-							<div class="check_list">
-								<h3 class="h3">{{ item.name }}</h3>
-								<div class="check_list_add_form_wrp">
-									<div class="check_list_add_form__label" v-if="item.checkListFormShow" @click="item.checkListFormShow = false">Добавить элемент....</div>
-									<div class="check_list_add_form" v-else>
-										<textarea name="name" placeholder="Добавить элемент...."></textarea>
-										<div class="desk__addСard_left">
-											<button class="green_btn">Сохранить</button> 
-											<button class="close_btn" @click="item.checkListFormShow = true">
-												<i aria-hidden="true" class="fa fa-times"></i>
-											</button>
+						<draggable>
+							<div class="card_popup__item" v-for="(item, index) in desks[currentDeskIndex].cards[currentCardIndex].checkLists">
+								<i class="fa fa-check-square-o" aria-hidden="true"></i>
+								<div class="check_list">
+									<h3 class="h3">{{ item.name }}</h3>
+									<!-- CheckBoxis -->
+									<label class="wrp_checkboxis" v-for="(checkbox, childIndex) in item.checkBoxis">
+										<input type="checkbox" name="name" class="checkbox">
+										<span class="wrp_custom_checkbox">
+											<span class="checkbox_custom"></span>
+											<span class="checkbox_name">{{ checkbox.name }}</span>
+										</span>
+										<button class="remove_checkbox" title="Удалить" @click="checkBoxRemove(index, childIndex);"><i class="fa fa-times"></i></button>
+									</label>
+									<!-- END CheckBoxis -->
+									<div class="check_list_add_form_wrp">
+										<div class="check_list_add_form__label" v-if="item.checkListFormShow" @click="item.checkListFormShow = false">Добавить элемент....</div>
+										<div class="check_list_add_form" v-else>
+											<textarea name="name" placeholder="Добавить элемент...." v-model="checkBoxName"></textarea>
+											<div class="desk__addСard_left">
+												<button class="green_btn" @click="checkBoxAdd(index);">Сохранить</button> 
+												<button class="close_btn" @click="item.checkListFormShow = true">
+													<i aria-hidden="true" class="fa fa-times"></i>
+												</button>
+											</div>
 										</div>
 									</div>
 								</div>
-							</div>
-							<!-- Windget remove CheckLists -->
-							<div class="remove_checklist_wrp">
-								<button class="removeCheckList" @click="item.checkListRemoveWidgetShow = !item.checkListRemoveWidgetShow"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-								<div class="popup_widget" v-if="item.checkListRemoveWidgetShow">
-									<div class="popup_widget__title">
-										<h3>Удаление чек-листа Чек-лист</h3>
-										<button class="close_btn" @click="item.checkListRemoveWidgetShow = false"><i class="fa fa-times" aria-hidden="true"></i></button>
-									</div>
-									<div class="popup_widget__content">
-										<div class="remove_checklist">
-											<p>Удаление чек-листа необратимо и не будет возможности его вернуть.</p>
-											<button class="red_btn" @click="removeCheckList(index);">Удалить чек лист</button>
+								<!-- Windget remove CheckLists -->
+								<div class="remove_checklist_wrp">
+									<button class="removeCheckList" @click="item.checkListRemoveWidgetShow = !item.checkListRemoveWidgetShow"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+									<div class="popup_widget" v-if="item.checkListRemoveWidgetShow">
+										<div class="popup_widget__title">
+											<h3>Удаление Чек-листа</h3>
+											<button class="close_btn" @click="item.checkListRemoveWidgetShow = false"><i class="fa fa-times" aria-hidden="true"></i></button>
+										</div>
+										<div class="popup_widget__content">
+											<div class="remove_checklist">
+												<p>Удаление чек-листа необратимо и не будет возможности его вернуть.</p>
+												<button class="red_btn" @click="removeCheckList(index);">Удалить чек лист</button>
+											</div>
 										</div>
 									</div>
 								</div>
+								<!-- END Windget remove CheckLists -->
 							</div>
-							<!-- END Windget remove CheckLists -->
-						</div>
+						</draggable>
 						<!-- END CheckLists -->
 					</div>
 					<!-- END Left block -->
@@ -157,6 +169,7 @@
 										<i class="fa fa-check-square-o" aria-hidden="true"></i>
 										Чек лист
 									</button>
+									<!-- Widget -->
 									<div class="popup_widget" v-if="сheckListWidgetShow">
 										<div class="popup_widget__title">
 											<h3>Добавление чек-листа</h3>
@@ -170,12 +183,27 @@
 											</div>
 										</div>
 									</div>
+									<!-- END Widget -->
 								</li>
 								<li>
-									<button class="pupup_function_btn" @click="removeCard">
+									<button class="pupup_function_btn" @click="widgetShow('removeCardWidgetToggleShow');">
 										<i class="fa fa-trash-o" aria-hidden="true"></i>
 										Удалить карточку
 									</button>
+									<!-- Widget -->
+									<div class="popup_widget" v-if="removeCardWidgetToggleShow">
+										<div class="popup_widget__title">
+											<h3>Удаление карточки</h3>
+											<button class="close_btn" @click="widgetHide('removeCardWidgetToggleShow');"><i class="fa fa-times" aria-hidden="true"></i></button>
+										</div>
+										<div class="popup_widget__content">
+											<div class="remove_checklist">
+												<p>Удаление карточки необратимо и не будет возможности её вернуть.</p>
+												<button class="red_btn" @click="removeCard">Удалить карточку</button>
+											</div>
+										</div>
+									</div>
+									<!-- END Widget -->
 								</li>
 							</ul>
 						</div>
@@ -216,16 +244,16 @@ export default {
 			desksMenuBoolean: [],
 			addCardsBoolean: [],
 			addCardValue: '',
+			removeCardWidgetToggleShow: false,
 			toggleShowPupup: false,
 			pupupName: '',
 			popupDescription: '',
 			popupDescriptionToggleShow: false,
 			pupupDescritpionBtnClose: false,
 			currentDeskIndex: '',
-			currentCardIndex: '',
 			сheckListWidgetShow: false,
 			checkListName: 'Чек-лист',
-			checkListPrint: []
+			checkBoxName: '',
 		}
 	},
 	created: function() {
@@ -235,6 +263,10 @@ export default {
 		}
 	},
 	methods: {
+		mainHideElements: function() {
+			this.deskMenuHide(); 
+			this.addCardsHide();
+		},
 		addDesk: function() {
 			if( this.addDeskValue.length ) {
 				this.desks.push('');
@@ -291,13 +323,6 @@ export default {
 				this.popupDescription = '';
 				this.popupDescriptionToggleShow = false;
 			}
-			// CheckLists
-			let checkLists = this.desks[index].cards[cardIndex].checkLists;
-			if( checkLists ) {
-				this.checkListPrint = checkLists;
-			} else {
-				this.checkListPrint = [];
-			}
 			//  Indexes
 			this.currentDeskIndex = index;
 			this.currentCardIndex = cardIndex;
@@ -332,14 +357,6 @@ export default {
 						checkListRemoveWidgetShow: false
 					}
 				);
-				// Print to loyout
-				this.checkListPrint.push(
-					{
-						name: this.checkListName, 
-						checkListFormShow: true,
-						checkListRemoveWidgetShow: false
-					}
-				);
 			} else {
 				this.desks[this.currentDeskIndex].cards[this.currentCardIndex].checkLists = [];
 				this.desks[this.currentDeskIndex].cards[this.currentCardIndex].checkLists.push(
@@ -349,16 +366,26 @@ export default {
 						checkListRemoveWidgetShow: false
 					}
 				);
-				// Print to loyout
-				this.checkListPrint.push({name: this.checkListName, checkListFormShow: true})
 			}
 			// Reset value
 			this.checkListName = 'Чек-лист';
 		},
 		removeCheckList: function(index) {
 			this.$delete(this.desks[this.currentDeskIndex].cards[this.currentCardIndex].checkLists, index);
-			// Remove to loyout
-			this.checkListPrint.splice(index, 1);
+		},
+		checkBoxAdd: function(index) {
+			if( this.checkBoxName.length ) {
+				let el = this.desks[this.currentDeskIndex].cards[this.currentCardIndex].checkLists[index];
+				if( !el.checkBoxis ) {
+					el.checkBoxis = [];
+				}
+				el.checkBoxis.push({name: this.checkBoxName});
+				// Reset value
+				this.checkBoxName = '';
+			}
+		},
+		checkBoxRemove: function(index, childIndex) {
+			this.$delete(this.desks[this.currentDeskIndex].cards[this.currentCardIndex].checkLists[index].checkBoxis, childIndex);
 		}
 	}
 }
@@ -366,6 +393,59 @@ export default {
 
 <style lang="sass">
 @import '/sass/reset'
+
+.wrp_checkboxis
+	cursor: pointer
+	display: flex
+	align-items: center
+	width: 100%
+	padding: 6px 0
+	margin-bottom: 8px
+	padding-left: 4px
+	border-radius: 3px
+	position: relative
+	&:hover
+		background: #E2E4E6
+	.checkbox
+		display: none
+		&:checked + .wrp_custom_checkbox .checkbox_custom
+			background: transparent
+		&:checked + .wrp_custom_checkbox .checkbox_custom:before
+			content: '\f00c'
+			display: block
+			font-family: FontAwesome
+			width: 100%
+			height: 100%
+			text-align: center
+			line-height: 20px
+			font-size: 14px
+			color: #A0A1A1
+		&:checked + .wrp_custom_checkbox .checkbox_name
+			color: #8c8c8c
+			text-decoration: line-through
+			font-style: italic
+	.remove_checkbox
+		position: absolute
+		right: 4px
+		top: 50%
+		transform: translateY(-50%)
+		font-size: 13px !important
+
+.wrp_custom_checkbox
+	display: flex
+	align-items: center
+	.checkbox_custom
+		display: inline-block
+		width: 20px
+		height: 20px
+		border: 1px solid #d6dadc
+		border-radius: 3px
+		background: #fff
+		box-shadow: 0 2px 3px rgba(0,0,0,.1)
+		margin-right: 16px
+	.checkbox_name
+		font-size: 14px
+		color: #333
 
 .remove_checklist_wrp
 	position: absolute
@@ -574,6 +654,7 @@ export default {
 		top: 20px
 		font-size: 25px
 		color: #999
+		z-index: 99
 	&__item
 		display: flex
 		flex-wrap: wrap
