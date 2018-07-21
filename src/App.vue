@@ -2,13 +2,12 @@
   <div id="app" @click="mainHideElements();">
    	<!-- Desks -->
 		<div class="desks">
-			
 			<!-- desk -->
 			<draggable class="desks__inner">
 				<div class="desk" v-for="(item, index) in desks">
 					<!-- Menu with top-->
 					<div class="desk__top">
-						<textarea name="name" class="input_title" :value="item.name"></textarea>
+						<textarea name="name" class="input_title" v-model="item.name" @keyup="setNameDesk(index);"></textarea>
 						<button class="btn_desk_menu" @click.stop="desksMenuToggleShow(index);">
 							<span></span>
 						</button>
@@ -24,7 +23,7 @@
 					<!-- END Menu with top-->
 					<!-- Cards -->
 					<div class="cards">
-						<draggable>
+						<draggable class="dragArea" :options="{group:'people'}">
 							<div class="card" v-for="(item, cardIndex) in item.cards" @click="infoToPopup(item, index, cardIndex);">
 								<span class="card__name">{{ item.cardName }}</span>
 							</div>
@@ -50,7 +49,6 @@
 				</div>
 			</draggable>
 			<!-- desk -->
-
 			<!-- Btn Add desk -->
 			<div class="wrp_add_desk">
 				<button class="add_desk" v-if="addDeskBoolean" @click="addDeskBoolean = !addDeskBoolean"> 
@@ -69,22 +67,17 @@
 				</div>
 			</div>
 			<!-- END Btn Add desk -->
-
 		</div>
 		<!-- END Desks -->
-
 		<!-- Popup -->
-		<div class="card_popup bounce" v-if="toggleShowPupup">
+		<div class="card_popup bounce" v-if="toggleShowPupup" @click="popupClickHideElements">
 			<div class="card_popup__mask" @click="toggleShowPupup = false"></div>
 			<div class="card_popup__content">
-
 				<button class="card_popup__close" @click="toggleShowPupup = false"><i class="fa fa-times"></i></button>
-
 				<div class="card_popup__item">
 					<i class="fa fa-columns" aria-hidden="true"></i>
-					<textarea name="name" class="input_title" :value="pupupName"></textarea>
+					<textarea name="name" class="input_title" v-model="pupupName" @keyup="cardEditName"></textarea>
 				</div>
-
 				<div class="card_popup__flexWrp">
 					<!-- Left block -->
 					<div class="card_popup__left">
@@ -115,14 +108,16 @@
 								<div class="check_list">
 									<h3 class="h3">{{ item.name }}</h3>
 									<!-- CheckBoxis -->
-									<label class="wrp_checkboxis" v-for="(checkbox, childIndex) in item.checkBoxis">
-										<input type="checkbox" name="name" class="checkbox">
-										<span class="wrp_custom_checkbox">
-											<span class="checkbox_custom"></span>
-											<span class="checkbox_name">{{ checkbox.name }}</span>
-										</span>
-										<button class="remove_checkbox" title="Удалить" @click="checkBoxRemove(index, childIndex);"><i class="fa fa-times"></i></button>
-									</label>
+									<draggable>
+										<label class="wrp_checkboxis" v-for="(checkbox, childIndex) in item.checkBoxis">
+											<input type="checkbox" name="name" class="checkbox">
+											<span class="wrp_custom_checkbox">
+												<span class="checkbox_custom"></span>
+												<span class="checkbox_name">{{ checkbox.name }}</span>
+											</span>
+											<button class="remove_checkbox" title="Удалить" @click="checkBoxRemove(index, childIndex);"><i class="fa fa-times"></i></button>
+										</label>
+									</draggable>
 									<!-- END CheckBoxis -->
 									<div class="check_list_add_form_wrp">
 										<div class="check_list_add_form__label" v-if="item.checkListFormShow" @click="item.checkListFormShow = false">Добавить элемент....</div>
@@ -165,12 +160,12 @@
 							<h3>Функции</h3>
 							<ul>
 								<li>
-									<button class="pupup_function_btn" @click="widgetShow('сheckListWidgetShow');">
+									<button class="pupup_function_btn" @click.stop="widgetShow('сheckListWidgetShow');">
 										<i class="fa fa-check-square-o" aria-hidden="true"></i>
 										Чек лист
 									</button>
 									<!-- Widget -->
-									<div class="popup_widget" v-if="сheckListWidgetShow">
+									<div class="popup_widget" v-if="сheckListWidgetShow" @click.stop>
 										<div class="popup_widget__title">
 											<h3>Добавление чек-листа</h3>
 											<button class="close_btn" @click="widgetHide('сheckListWidgetShow');"><i class="fa fa-times" aria-hidden="true"></i></button>
@@ -179,19 +174,19 @@
 											<div class="add_checklist">
 												<label for="name_checklist">Название</label>
 												<input type="text" name="name" id="name_checklist" v-model="checkListName">
-												<button class="green_btn" @click="addCheckList">Добавить</button>
+												<button class="green_btn" @click.stop="addCheckList">Добавить</button>
 											</div>
 										</div>
 									</div>
 									<!-- END Widget -->
 								</li>
 								<li>
-									<button class="pupup_function_btn" @click="widgetShow('removeCardWidgetToggleShow');">
+									<button class="pupup_function_btn" @click.stop="widgetShow('removeCardWidgetToggleShow');">
 										<i class="fa fa-trash-o" aria-hidden="true"></i>
 										Удалить карточку
 									</button>
 									<!-- Widget -->
-									<div class="popup_widget" v-if="removeCardWidgetToggleShow">
+									<div class="popup_widget" v-if="removeCardWidgetToggleShow" @click.stop>
 										<div class="popup_widget__title">
 											<h3>Удаление карточки</h3>
 											<button class="close_btn" @click="widgetHide('removeCardWidgetToggleShow');"><i class="fa fa-times" aria-hidden="true"></i></button>
@@ -210,7 +205,6 @@
 					</div>
 					<!-- END Right block -->
 				</div>
-
 			</div>
 		</div>
 		<!-- END Popup -->
@@ -228,19 +222,7 @@ export default {
 			addDeskBoolean: true,
 			addDeskValue: '',
 			addDeskText: 'Добавить список',
-			desks: [
-				{
-					name: 'Desk #1',
-					cards: [
-						{
-							cardName: "test"
-						},
-						{
-							cardName: "test 2"
-						}
-					]
-				}
-			],
+			desks: [], // Main array
 			desksMenuBoolean: [],
 			addCardsBoolean: [],
 			addCardValue: '',
@@ -267,6 +249,11 @@ export default {
 			this.deskMenuHide(); 
 			this.addCardsHide();
 		},
+		popupClickHideElements: function() {
+			// Windgets
+			this.removeCardWidgetToggleShow = false;
+			this.сheckListWidgetShow = false;
+		},
 		addDesk: function() {
 			if( this.addDeskValue.length ) {
 				this.desks.push('');
@@ -275,8 +262,12 @@ export default {
 				this.addDeskText = 'Добавьте еще одну колонку';
 			}
 		},
+		setNameDesk: function(index) {
+			this.desks[index].name = this.desks[index].name;
+		},
 		removeDesk: function(index) {
 			this.$delete(this.desks, index);
+			this.deskMenuHide(); 
 		},
 		deskMenuHide: function(index) {
 			for(let i = 0; i < this.desksMenuBoolean.length; i++) {
@@ -327,6 +318,9 @@ export default {
 			this.currentDeskIndex = index;
 			this.currentCardIndex = cardIndex;
 		},
+		cardEditName: function() {
+			this.desks[this.currentDeskIndex].cards[this.currentCardIndex].cardName = this.pupupName;
+		},
 		description: function() {
 			this.popupDescriptionToggleShow = false;
 			this.pupupDescritpionBtnClose = true;
@@ -339,6 +333,7 @@ export default {
 			}
 		},
 		widgetShow: function(el) {
+			this.popupClickHideElements();
 			this[el] = !this[el];
 		},
 		widgetHide: function(el) {
@@ -393,6 +388,9 @@ export default {
 
 <style lang="sass">
 @import '/sass/reset'
+
+.dragArea
+	min-height: 10px
 
 .wrp_checkboxis
 	cursor: pointer
@@ -620,6 +618,8 @@ export default {
 		cursor: pointer
 		font-weight: normal
 		font-size: 14px
+		word-break: break-all
+		max-width: 521px
 
 .card_popup
 	position: absolute
@@ -699,14 +699,13 @@ export default {
 	& > *
 		align-self: flex-start
 		margin-right: 8px
-		&:first-child
-			margin-left: 8px
 
 .desks__inner
 	padding-top: 0
+	margin-left: 8px
 
 .desk
-	min-width: 272px
+	width: 272px
 	border-radius: 3px
 	background: #e2e4e6
 	position: relative
@@ -884,6 +883,7 @@ export default {
 		height: 30px
 		font-weight: bold
 		font-size: 16px
+		word-break: break-all
 		padding: 4px 8px
 		cursor: pointer
 		&:focus
@@ -917,4 +917,5 @@ export default {
 	span
 		color: #444
 		font-size: 14px
+		word-break: break-all
 </style>
