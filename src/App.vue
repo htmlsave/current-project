@@ -213,6 +213,7 @@
 
 <script>
 import draggable from 'vuedraggable'
+
 export default {
 	components: {
 		draggable: draggable
@@ -243,8 +244,14 @@ export default {
 			this.desksMenuBoolean.push(false);
 			this.addCardsBoolean.push(false);
 		}
+		if(localStorage.getItem('desks')) {
+			this.desks = JSON.parse(localStorage.getItem('desks'));
+		}
 	},
 	methods: {
+		setLocalStorage: function() {
+			localStorage.setItem('desks', JSON.stringify(this.desks));
+		},
 		mainHideElements: function() {
 			this.deskMenuHide(); 
 			this.addCardsHide();
@@ -260,14 +267,20 @@ export default {
 				this.$set(this.desks, this.desks.length-1, {name: this.addDeskValue});
 				this.addDeskValue = '';
 				this.addDeskText = 'Добавьте еще одну колонку';
+				// Update local storage
+				this.setLocalStorage();
 			}
 		},
 		setNameDesk: function(index) {
 			this.desks[index].name = this.desks[index].name;
+			// Update local storage
+			this.setLocalStorage();
 		},
 		removeDesk: function(index) {
 			this.$delete(this.desks, index);
 			this.deskMenuHide(); 
+			// Update local storage
+			this.setLocalStorage();
 		},
 		deskMenuHide: function(index) {
 			for(let i = 0; i < this.desksMenuBoolean.length; i++) {
@@ -294,11 +307,15 @@ export default {
 				this.desks[index].cards.length += 1;
 				this.$set(this.desks[index].cards, this.desks[index].cards.length - 1, {cardName: this.addCardValue});
 				this.addCardValue = '';
+				// Update local storage
+				this.setLocalStorage();
 			}
 		},
 		removeCard: function() {
 			this.$delete(this.desks[this.currentDeskIndex].cards, this.currentCardIndex);
 			this.toggleShowPupup = false;
+			// Update local storage
+			this.setLocalStorage();
 		},
 		infoToPopup: function(obj, index, cardIndex) {
 			// Name
@@ -320,6 +337,8 @@ export default {
 		},
 		cardEditName: function() {
 			this.desks[this.currentDeskIndex].cards[this.currentCardIndex].cardName = this.pupupName;
+			// Update local storage
+			this.setLocalStorage();
 		},
 		description: function() {
 			this.popupDescriptionToggleShow = false;
@@ -330,6 +349,8 @@ export default {
 				let el = this.desks[this.currentDeskIndex].cards[this.currentCardIndex];
 				el.description = this.popupDescription;
 				this.popupDescriptionToggleShow = true;
+				// Update local storage
+				this.setLocalStorage();
 			}
 		},
 		widgetShow: function(el) {
@@ -352,6 +373,8 @@ export default {
 						checkListRemoveWidgetShow: false
 					}
 				);
+				// Update local storage
+				this.setLocalStorage();
 			} else {
 				this.desks[this.currentDeskIndex].cards[this.currentCardIndex].checkLists = [];
 				this.desks[this.currentDeskIndex].cards[this.currentCardIndex].checkLists.push(
@@ -361,12 +384,16 @@ export default {
 						checkListRemoveWidgetShow: false
 					}
 				);
+				// Update local storage
+				this.setLocalStorage();
 			}
 			// Reset value
 			this.checkListName = 'Чек-лист';
 		},
 		removeCheckList: function(index) {
 			this.$delete(this.desks[this.currentDeskIndex].cards[this.currentCardIndex].checkLists, index);
+			// Update local storage
+			this.setLocalStorage();
 		},
 		checkBoxAdd: function(index) {
 			if( this.checkBoxName.length ) {
@@ -377,10 +404,14 @@ export default {
 				el.checkBoxis.push({name: this.checkBoxName});
 				// Reset value
 				this.checkBoxName = '';
+				// Update local storage
+				this.setLocalStorage();
 			}
 		},
 		checkBoxRemove: function(index, childIndex) {
 			this.$delete(this.desks[this.currentDeskIndex].cards[this.currentCardIndex].checkLists[index].checkBoxis, childIndex);
+			// Update local storage
+			this.setLocalStorage();
 		}
 	}
 }
