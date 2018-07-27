@@ -1079,6 +1079,7 @@
 }
 
 .training_plan__name span {
+  font-family: ArialMTBold, sans-serif;
   font-size: 12px;
   color: #a4a4bb;
   display: block;
@@ -1107,6 +1108,7 @@
 }
 
 .training_plan__status span {
+  font-family: ArialMTBold, sans-serif;
   display: inline-block;
   padding: 9px 14px;
   background-color: #eeeeee;
@@ -1245,8 +1247,90 @@
           border-radius: 0 0 3px 3px;
 }
 
+.formation_ipr .tab_common__nuv ul li:not(:last-of-type) .tab_common__nuv_active {
+  border-color: transparent !important;
+}
+
+.formation_ipr .tab_common__nuv ul li:not(:last-of-type) a {
+  border-right: 1px solid #c2c2c2;
+}
+
+.formation_ipr .tab_common__nuv ul li:not(:last-of-type) a:hover {
+  border-color: transparent;
+}
+
+.formation_ipr .tab_common__nuv ul li:not(:first-of-type) a {
+  position: relative;
+}
+
+.formation_ipr .tab_common__nuv ul li:not(:first-of-type) a:before {
+  content: '';
+  display: block;
+  width: 1px;
+  height: 100%;
+  background-color: transparent;
+  left: -1px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+.formation_ipr .tab_common__nuv ul li:not(:first-of-type) a:hover:before {
+  background-color: #fff;
+}
+
+.formation_ipr .tab_common__nuv ul li:not(:first-of-type) .tab_common__nuv_active:before {
+  background-color: #fff;
+}
+
 .formation_ipr__recommended {
   padding: 44px 30px 35px 29px;
+  display: none;
+}
+
+.formation_ipr__new, .formation_ipr__library {
+  display: none;
+  padding: 44px 30px 35px 29px;
+}
+
+.formation_ipr__add_activity {
+  padding: 33px 29px 61px 28px;
+}
+
+.formation_ipr__add_activity .formation_ipr__filter .choose_competention_select {
+  width: 810px;
+}
+
+.formation_ipr__add_activity__actions {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.formation_ipr__add_activity__actions button {
+  font-family: TrebuchetMS, sans-serif;
+  font-size: 14px;
+  color: #001689;
+  padding: 11px 26px;
+  border: 2px solid #001689;
+  -webkit-transition: all .25s ease;
+  -o-transition: all .25s ease;
+  transition: all .25s ease;
+}
+
+.formation_ipr__add_activity__actions button:hover {
+  color: #fff;
+  background-color: #001689;
+}
+
+.formation_ipr__add_activity__actions button:not(:last-of-type) {
+  margin-right: 19px;
+}
+
+.formation_ipr__add_activity__actions .send_application {
+  background-color: #001689;
+  color: #fff;
 }
 
 .formation_ipr__filters {
@@ -1266,6 +1350,59 @@
   font-size: 14px;
   color: #b1b1b1;
   margin-bottom: 5px;
+}
+
+.formation_ipr__filter_checkboxes {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+
+.formation_ipr__filter_checkbox {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 11px !important;
+}
+
+.formation_ipr__filter_checkbox:not(:last-of-type) {
+  margin-right: 25px;
+}
+
+.formation_ipr__filter_checkbox .checkbox {
+  display: none;
+}
+
+.formation_ipr__filter_checkbox .checkbox:checked + .custom_checkbox {
+  background-color: #cc003d;
+  background-image: url(../img/icons/yes.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.formation_ipr__filter_checkbox .custom_checkbox {
+  display: block;
+  width: 22px;
+  height: 23px;
+  -webkit-border-radius: 2px;
+          border-radius: 2px;
+  border: 1px solid #dadada;
+  margin-right: 13px;
+}
+
+.formation_ipr__filter_checkbox .name {
+  font-family: ArialMT, sans-serif;
+  font-size: 14px;
 }
 
 .formation_ipr__filter__apply_wrp {
@@ -1394,6 +1531,98 @@
   font-family: ArialMT, sans-serif;
   font-size: 14px;
   color: #606060;
+}
+
+.formation_ipr__add_activity_table {
+  margin-bottom: 23px;
+}
+
+.formation_ipr__add_activity_table table {
+  width: 100%;
+}
+
+.formation_ipr__add_activity_table table th,
+.formation_ipr__add_activity_table table td {
+  border: 1px solid #e6e6e6;
+}
+
+.formation_ipr__add_activity_table table th {
+  padding: 15px 0;
+  font-weight: normal;
+  font-family: ArialMT, sans-serif;
+  font-size: 12px;
+  color: #a1a4c8;
+  text-transform: uppercase;
+}
+
+.formation_ipr__add_activity_table table td {
+  padding: 20px 0;
+}
+
+.formation_ipr__add_activity_table table td label {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 16px;
+}
+
+.formation_ipr__add_activity_table table td label .checkbox {
+  display: none;
+}
+
+.formation_ipr__add_activity_table table td label .checkbox:checked + .custom_checkbox {
+  background-color: #cc003d;
+  background-image: url(../img/icons/yes.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.formation_ipr__add_activity_table table td label .custom_checkbox {
+  display: block;
+  min-width: 22px;
+  height: 23px;
+  -webkit-border-radius: 2px;
+          border-radius: 2px;
+  border: 1px solid #dadada;
+  margin-right: 13px;
+}
+
+.formation_ipr__add_activity_table table td label .name {
+  font-family: ArialMT, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.formation_ipr__add_activity_table table td .choose_competention_select {
+  width: 112px;
+  height: 32px;
+  margin: 0 auto;
+}
+
+.formation_ipr__add_activity_table table td .choose_competention_select .placeholder_select {
+  padding: 9px 12px 0 12px;
+}
+
+.formation_ipr__add_activity_table table td .choose_competention_select .placeholder_select:before {
+  right: 9px;
+}
+
+.formation_ipr__add_activity_table table td .choose_competention_select .select_items {
+  bottom: -1px;
+}
+
+.formation_ipr__add_activity_table table td .choose_competention_select .select_items li {
+  padding: 9px 12px 0 12px;
+  height: 32px;
+}
+
+.formation_ipr__add_activity_table table td .choose_competention_select .select_items li:not(:last-of-type) {
+  border-bottom: 1px solid #e6e6e6;
 }
 
 /*========================

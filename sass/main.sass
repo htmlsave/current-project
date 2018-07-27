@@ -588,6 +588,7 @@
 		margin-right: 11px
 	&__name
 		span
+			font-family: ArialMTBold, sans-serif
 			font-size: 12px
 			color: #a4a4bb
 			display: block
@@ -601,6 +602,7 @@
 		display: flex
 		justify-content: flex-end
 		span
+			font-family: ArialMTBold, sans-serif
 			display: inline-block
 			padding: 9px 14px
 			background-color: #eeeeee
@@ -696,8 +698,63 @@
 // END Select
 
 .formation_ipr
+	.tab_common__nuv
+		ul
+			li
+				&:not(:last-of-type)
+					.tab_common__nuv_active
+						border-color: transparent !important
+					a
+						border-right: 1px solid #c2c2c2
+						&:hover
+							border-color: transparent
+				&:not(:first-of-type)
+					a
+						position: relative
+						&:before
+							content: ''
+							display: block
+							width: 1px 
+							height: 100%
+							background-color: transparent
+							left: -1px
+							position: absolute
+							top: 0
+							bottom: 0
+						&:hover:before
+							background-color: #fff
+					.tab_common__nuv_active
+						&:before
+							background-color: #fff
 	&__recommended
 		padding: 44px 30px 35px 29px
+		display: none
+	&__new,
+	&__library
+		display: none
+		padding: 44px 30px 35px 29px
+	&__add_activity
+		padding: 33px 29px 61px 28px
+		.formation_ipr__filter
+			.choose_competention_select
+				width: 810px
+		&__actions
+			display: flex
+			button
+				font-family: TrebuchetMS, sans-serif
+				font-size: 14px
+				color: $blue
+				padding: 11px 26px
+				border: 2px solid $blue
+				transition: all .25s ease
+				&:hover
+					color: #fff
+					background-color: $blue
+				&:not(:last-of-type)
+					margin-right: 19px
+			.send_application
+				background-color: $blue
+				color: #fff
 	&__filters
 		margin-bottom: 25px
 	&__filter
@@ -709,6 +766,33 @@
 			font-size: 14px
 			color: #b1b1b1
 			margin-bottom: 5px
+		&_checkboxes
+			display: flex
+			flex-wrap: wrap
+		&_checkbox
+			cursor: pointer
+			display: flex
+			align-items: center
+			margin-top: 11px !important
+			&:not(:last-of-type)
+				margin-right: 25px
+			.checkbox
+				display: none
+				&:checked + .custom_checkbox
+					background-color: $red
+					background-image: url(../img/icons/yes.png)
+					background-repeat: no-repeat
+					background-position: center
+			.custom_checkbox
+				display: block
+				width: 22px
+				height: 23px
+				border-radius: 2px
+				border: 1px solid #dadada
+				margin-right: 13px
+			.name
+				font-family: ArialMT, sans-serif
+				font-size: 14px
 		&__apply_wrp
 			text-align: right
 			button
@@ -786,6 +870,59 @@
 			font-family: ArialMT, sans-serif
 			font-size: 14px
 			color: #606060
+	&__add_activity_table
+		margin-bottom: 23px
+		table
+			width: 100%
+			th,
+			td
+				border: 1px solid #e6e6e6
+			th
+				padding: 15px 0
+				font-weight: normal
+				font-family: ArialMT, sans-serif
+				font-size: 12px
+				color: #a1a4c8
+				text-transform: uppercase
+			td
+				padding: 20px 0
+				label
+					display: flex
+					align-items: center
+					padding-left: 16px
+					.checkbox
+						display: none
+						&:checked + .custom_checkbox
+							background-color: $red
+							background-image: url(../img/icons/yes.png)
+							background-repeat: no-repeat
+							background-position: center
+					.custom_checkbox
+						display: block
+						min-width: 22px
+						height: 23px
+						border-radius: 2px
+						border: 1px solid #dadada
+						margin-right: 13px
+					.name
+						font-family: ArialMT, sans-serif
+						font-size: 14px
+						line-height: 20px
+				.choose_competention_select
+					width: 112px
+					height: 32px
+					margin: 0 auto
+					.placeholder_select
+						padding: 9px 12px 0 12px
+						&:before
+							right: 9px
+					.select_items
+						bottom: -1px
+						li
+							padding: 9px 12px 0 12px
+							height: 32px
+							&:not(:last-of-type)
+								border-bottom: 1px solid #e6e6e6
 
 
 @import "_media"
