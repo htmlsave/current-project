@@ -104,6 +104,7 @@
 .dynamic_ipr
 	display: flex
 	justify-content: space-between
+	margin-bottom: 65px !important
 	&__left
 		width: 830px
 	&__right
@@ -113,6 +114,7 @@
 	&__nuv
 		ul
 			display: flex
+			min-height: 56px
 			li
 				flex-grow: 1
 				a
@@ -126,6 +128,7 @@
 					padding: 18px 0
 					transition: all .25s ease
 					height: 100%
+					background-color: #EAEAF0
 					&:hover
 						background-color: #fff
 						color: $blue
@@ -205,6 +208,17 @@
 			font-family: ArialMT, sans-serif
 			font-size: 12px
 			color: #a4a4bb
+
+.bg_blue
+	background-color: #5faeff
+.bg_pink
+	background-color: #cd60a0
+.bg_indigo
+	background-color: #4a7fea
+.bg_yellow
+	background-color: #f8b31e
+.bg_purple
+	background-color: #5f00c9
 
 .line_blue
 	background-color: #5faeff
@@ -346,6 +360,7 @@
 		  background: none
 		  appearance: none
 		  border: none
+		  color: transparent
 		  height: 6px
 		  width: 100%
 		  background-color: #eaeaf0
@@ -356,5 +371,421 @@
 		  background: none
 		input[type="range"]::-ms-tooltip
 		  display: none
+
+.competency_assessment
+	margin-bottom: 68px !important
+	.graphic
+		padding: 37px 37px 93px 22px
+		background-color: #fff
+		display: flex
+		&__column
+			&:not(:last-of-type)
+				margin-bottom: 116px
+			.graphic__filter_item
+				width: 25px
+		&__left
+			margin-right: 81px
+		&__right
+			min-width: 213px
+		&__description
+			margin-bottom: 20px
+			ul
+				display: flex
+				li
+					display: flex
+					align-items: center
+					&:not(:last-of-type)
+						margin-right: 34px
+					.circle
+						width: 15px
+						height: 15px
+						border-radius: 50%
+						margin-right: 10px
+					.circle_blue
+						background-color: #4a7fea
+					.circle_indigo
+						background-color: $blue
+					p
+						font-family: TrebuchetMS, sans-serif
+						font-size: 14px
+						color: #000000
+		&__points
+			font-size: 12px
+			color: #c6c6c6
+			margin-bottom: 36px
+			position: relative
+			span
+				font-size: 16px
+				text-transform: uppercase
+				position: absolute
+				left: 50%
+				top: 50%
+				transform: translate(-50%, -50%)
+		&__wrapper
+			position: relative
+			height: 145px
+			display: inline-flex
+			justify-content: center
+			align-items: center
+		&__numbar
+			position: absolute
+			top: 0
+			right: 0
+			bottom: 0
+			left: 0
+			width: 100%
+			height: 100%
+			ul
+				height: 100%
+				li
+					height: 48px
+					position: relative
+					&:after
+						content: ''
+						display: block
+						position: absolute
+						left: 0
+						top: 0
+						bottom: 0
+						height: 100%
+						width: 37px
+						background-color: #fff
+					&:before
+						content: ''
+						display: block
+						position: absolute
+						top: 0
+						right: 0
+						left: 0
+						background-color: #e6e6e6
+						height: 1px
+						width: 100%
+					span
+						display: inline-block
+						font-family: PragmaticaSlabExtraLight, sans-serif
+						font-size: 20px
+						color: #c6c6c6
+						background-color: #fff
+						position: relative
+						transform: translateY(-50%)
+						z-index: 9
+						padding-left: 10px
+		&__items
+			display: inline-flex
+			height: 100%
+			padding-left: 36px
+		&__item
+			align-self: flex-end
+			position: relative
+			width: 30px
+			display: flex
+			margin-right: 77px
+			&:first-child
+				margin-left: 77px
+			.fill
+				width: 50%
+				align-self: flex-end
+			.fill_full
+				width: 100%
+				align-self: flex-end
+			.fill_blue
+				background-color: #4a7fea
+			.fill_indigo
+				background-color: $blue
+			&_name
+				width: 95px
+				position: absolute
+				left: 50%
+				bottom: -12px
+				transform: translate(-50%, 100%)
+				font-size: 12px
+				color: #a4a4bb
+				text-transform: uppercase
+				text-align: center
+				line-height: 18px
+		&__filter
+			&_title
+				font-family: TrebuchetMS, sans-serif
+				font-size: 14px
+				color: #b1b1b1
+				margin-bottom: 15px
+			&_items
+				display: inline-block
+			&_item
+				cursor: pointer
+				display: flex
+				align-items: center
+				margin-bottom: 17px
+				&:last-child
+					margin-bottom: 21px
+				.checkbox
+					display: none
+					&:checked + .custom_checkbox
+						background-color: $red
+						background-image: url(../img/icons/yes.png)
+						background-repeat: no-repeat
+						background-position: center
+				.custom_checkbox
+					display: block
+					width: 22px
+					height: 23px
+					border-radius: 2px
+					border: 1px solid #dadada
+					margin-right: 9px
+				&_name
+					font-size: 14px
+					color: #000000
+			&_show
+				font-family: TrebuchetMS, sans-serif
+				font-size: 14px
+				color: $blue
+				padding: 11px 26px
+				border: 2px solid $blue
+				transition: all .25s ease
+				&:hover
+					color: #fff
+					background-color: $blue
+
+.past_evaluations
+	display: none
+	.graphic__left
+		margin-right: 53px
+
+.training_plan
+	margin-bottom: 95px !important
+	&__flex
+		display: flex
+		justify-content: space-between
+	&__column
+		.training_plan__items
+			&:not(:last-of-type)
+				margin-bottom: 42px
+	&__items
+		box-sizing: border-box
+		width: 529px
+		background-color: #fff
+		padding: 24px 34px 28px 29px
+		&>h2
+			font-weight: bold
+			font-family: ArialMTBold, sans-serif
+			font-size: 18px
+			color: #000000
+			margin-bottom: 30px
+	&__item
+		display: flex
+		align-items: center
+		margin-bottom: 22px
+		&:last-child
+			margin-bottom: 32px
+	&__icon
+		width: 50px
+		height: 50px
+		display: flex
+		justify-content: center
+		align-items: center
+		box-shadow: 3px 8px 10px rgba(0, 0, 0, 0.15)
+		border-radius: 50%
+		margin-right: 11px
+	&__name
+		span
+			font-size: 12px
+			color: #a4a4bb
+			display: block
+			margin-bottom: 5px
+		p
+			font-family: ArialMTBold, sans-serif
+			font-weight: bold
+			font-size: 14px
+	&__status
+		flex-grow: 1
+		display: flex
+		justify-content: flex-end
+		span
+			display: inline-block
+			padding: 9px 14px
+			background-color: #eeeeee
+			border-radius: 4px
+			font-size: 12px
+	&__actions
+		display: flex
+		a
+			text-decoration: none
+			font-family: TrebuchetMS, sans-serif
+			font-size: 14px
+			color: $blue
+			padding: 11px 26px
+			border: 2px solid $blue
+			transition: all .25s ease
+			&:hover
+				color: #fff
+				background-color: $blue
+			&:not(:last-of-type)
+				margin-right: 19px
+
+// Select
+.hide_select
+  width: 0.1px
+  height: 0.1px
+  opacity: 0
+  position: absolute
+  left: -999999999px
+
+.select_common
+	width: 327px
+	height: 40px
+	position: relative
+	border: 1px solid #e6e6e6
+	background-color: #ffffff
+	border-radius: 3px
+	cursor: pointer
+	.placeholder_select
+		font-family: ArialMT, sans-serif
+		position: relative
+		padding: 12px 11px 0 11px
+		font-size: 14px
+		box-sizing: border-box
+		height: 100%
+		&:before
+			content: ''
+			display: block
+			width: 0
+			border-top: 8px solid $red
+			border-right: 5px solid transparent
+			border-left: 5px solid transparent
+			position: absolute
+			right: 15px
+			top: 50%
+			transform: translateY(-50%)
+			.fixed_placeholder
+				padding-right: 5px
+				color: #7CA95C
+	.select_items
+		width: calc(100% + 2px)
+		position: absolute
+		transform: translateY(100%)
+		left: -1px
+		right: 0
+		bottom: 13px
+		z-index: 5
+		display: none
+		border-left: 1px solid #e6e6e6
+		border-right: 1px solid #e6e6e6
+		border-bottom: 1px solid #e6e6e6
+		background-color: #fff
+		li
+			font-family: ArialMT, sans-serif
+			padding: 15px 11px 0 11px
+			font-size: 14px
+			transition: all .15s ease-in-out
+			&:hover
+				padding-left: 18px
+			&:last-child
+				padding-bottom: 15px
+	      
+.select_active
+  border-radius: 3px 3px 0 0
+  .placeholder_select
+    &:before
+      border-top: none
+      border-bottom: 8px solid $red
+      border-right: 5px solid transparent
+      border-left: 5px solid transparent
+  .select_items
+    display: block
+    border-radius: 0 0 3px 3px
+// END Select
+
+.formation_ipr
+	&__recommended
+		padding: 44px 30px 35px 29px
+	&__filters
+		margin-bottom: 25px
+	&__filter
+		margin-bottom: 20px
+		&:last-child
+			margin-bottom: 12px
+		p
+			font-family: ArialMT, sans-serif
+			font-size: 14px
+			color: #b1b1b1
+			margin-bottom: 5px
+		&__apply_wrp
+			text-align: right
+			button
+				font-family: TrebuchetMS, sans-serif
+				font-size: 14px
+				color: $blue
+				padding: 11px 26px
+				border: 2px solid $blue
+				transition: all .25s ease
+				&:hover
+					color: #fff
+					background-color: $blue
+	&__row
+		display: flex
+		width: 879px
+		margin-bottom: 30px
+	&__checkbox
+		margin-right: 12px
+		cursor: pointer
+		.checkbox
+			display: none
+			&:checked + .custom_checkbox
+				background-color: $red
+				background-image: url(../img/icons/yes.png)
+				background-repeat: no-repeat
+				background-position: center
+		.custom_checkbox
+			display: block
+			width: 22px
+			height: 23px
+			border-radius: 2px
+			border: 1px solid #dadada
+			margin-right: 13px
+	&__item
+		display: flex
+	&__img
+		min-width: 180px
+		height: 140px
+		background-size: cover
+		background-position: center
+		background-repeat: no-repeat
+		position: relative
+		margin-right: 32px
+		border-radius: 3px
+		oberflow: hidden
+	&__label
+		position: absolute
+		width: 50px
+		height: 50px
+		box-shadow: 3px 8px 10px rgba(0, 0, 0, 0.15)
+		border-radius: 50%
+		top: 6px
+		right: 7px
+		display: flex
+		justify-content: center
+		align-items: center
+	&__name
+		&>span
+			font-family: ArialMT, sans-serif
+			display: block
+			font-size: 12px
+			color: #a4a4bb
+			margin-bottom: 13px
+		h4
+			font-family: ArialMTBold, sans-serif
+			font-size: 14px
+			font-weight: bold
+			line-height: 18px
+			margin-bottom: 4px
+			span
+				display: block
+				font-family: ArialMT, sans-serif
+				font-size: 12px
+		p
+			font-family: ArialMT, sans-serif
+			font-size: 14px
+			color: #606060
+
 
 @import "_media"

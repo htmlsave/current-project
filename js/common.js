@@ -3,7 +3,7 @@ $(document).ready(function() {
 	$('.tab_common__nuv ul > li > a').click(function(e) {
 		e.preventDefault();
 		//Toggle class
-		$('.tab_common__nuv ul > li a').removeClass('tab_common__nuv_active');
+		$(this).parents('.tab_common__nuv').find('ul > li a').removeClass('tab_common__nuv_active');
 		$(this).addClass('tab_common__nuv_active');
 		// Toggle show
 		let takeHref = $(this).attr('href');
@@ -16,22 +16,18 @@ $(document).ready(function() {
 	$('.showers_ipr input[type="range"]').each(function() {
 		let takeMax    = Number($(this).attr('max')),
 				takeVal    = Number($(this).val()),
-				fill       = ($(this).outerWidth()/(takeMax-1)) * takeVal,
+				currentVal = ($(this).outerWidth()/(takeMax-1)) * takeVal,
 				maxWidth   = $(this).outerWidth() / (takeMax-1);
 
-		for(let i = 1; i < takeMax; i++) { 
-			let setClass = maxWidth*i > fill - maxWidth ? 'circle_grey' : null;
-			let el = '<span class="circle '+setClass+'" style="left:'+maxWidth*i+'px"></span>';
+		let firstEl = '<span class="circle circle_first" style="left: 0px;"></span>';
+		$(this).parent().prepend(firstEl);
 
-			if(i === takeMax-1) {
-				let last = '<span class="circle circle_first" style="left: 0px;"></span>';
-				$(this).parent().append(el);
-				$(this).parent().prepend(last);
-			} else {
-				$(this).parent().append(el);
-			}
+		for(let i = 1; i < takeMax; i++) { 
+			let setClass = maxWidth*i > currentVal - maxWidth ? 'circle_grey' : '';
+			let el = '<span class="circle '+setClass+'" style="left:'+maxWidth*i+'px"></span>';
+			$(this).parent().append(el);
 		}
-		let fillResulr = takeVal === 1 ? '0' : fill - maxWidth;
+		let fillResulr = takeVal === 1 ? '0' : currentVal - maxWidth;
 		$(this).parent().append('<div class="fill" style="width:'+fillResulr+'px;"></div>');
 	});
 });
