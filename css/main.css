@@ -78,7 +78,7 @@
 
 .lk-top {
   background-color: #f8f8f8;
-  padding: 50px 0;
+  padding: 60px 0;
 }
 
 .lk-top section {
@@ -91,10 +91,11 @@
 }
 
 .lk-top .main_title {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .lk-top .main_title h1 {
+  font-weight: bold;
   font-family: PragmaticaSlabBook, sans-serif;
   font-size: 24px;
   color: #010033;
@@ -109,20 +110,21 @@
 }
 
 .lk-top .title {
-  margin-bottom: 23px;
+  margin-bottom: 20px;
 }
 
 .lk-top .title h2 {
+  font-weight: bold;
   font-family: PragmaticaSlabBold, sans-serif;
   font-size: 16px;
 }
 
 .lk-top .ads {
-  margin-bottom: 61px;
+  margin-bottom: 59px;
 }
 
 .ads_new {
-  padding: 26px 30px 22px 67px;
+  padding: 34px 30px 22px 67px;
   background-color: #fff;
   -webkit-box-shadow: 3px 8px 8px rgba(107, 114, 173, 0.15);
           box-shadow: 3px 8px 8px rgba(107, 114, 173, 0.15);
@@ -133,7 +135,7 @@
   font-family: PragmaticaSlabBold, sans-serif;
   font-size: 16px;
   color: #001689;
-  margin-bottom: 14px;
+  margin-bottom: 9px;
 }
 
 .ads_new > p {
@@ -141,7 +143,7 @@
   font-size: 14px;
   line-height: 22px;
   color: #373737;
-  margin-bottom: 14px;
+  margin-bottom: 10px;
 }
 
 .ads_link {
@@ -224,19 +226,12 @@
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   margin-bottom: 65px !important;
 }
 
 .dynamic_ipr__left {
   width: 830px;
-}
-
-.dynamic_ipr__right {
-  width: 201px;
+  margin-right: 45px;
 }
 
 .tab_common__nuv ul {
@@ -244,7 +239,6 @@
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  min-height: 56px;
 }
 
 .tab_common__nuv ul li {
@@ -252,6 +246,10 @@
   -webkit-flex-grow: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .tab_common__nuv ul li a {
@@ -271,11 +269,11 @@
   font-family: TrebuchetMS, sans-serif;
   font-size: 14px;
   color: #a4a4bb;
-  padding: 18px 0;
+  width: 100%;
+  padding: 15px 0;
   -webkit-transition: all .25s ease;
   -o-transition: all .25s ease;
   transition: all .25s ease;
-  height: 100%;
   background-color: #EAEAF0;
 }
 
@@ -334,13 +332,13 @@
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin-top: 14px;
+  margin-top: 8px;
 }
 
 .main_dinamic_active__name {
   min-width: 60px;
   text-align: center;
-  margin-right: 9px;
+  margin-right: 13px;
   position: relative;
 }
 
@@ -560,14 +558,14 @@
 }
 
 .showers_ipr__item {
-  margin-top: 28px;
+  margin-top: 20px;
 }
 
 .showers_ipr__item > p {
   font-family: TrebuchetMS, sans-serif;
   font-size: 14px;
   color: #c0c0c0;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 
 .showers_ipr__item > span {
@@ -575,7 +573,7 @@
   font-family: PragmaticaSlabBold, sans-serif;
   font-size: 16px;
   color: #010101;
-  margin-bottom: 7px;
+  margin-bottom: 6px;
 }
 
 .showers_ipr__item > a {
@@ -1037,7 +1035,7 @@
   font-family: ArialMTBold, sans-serif;
   font-size: 18px;
   color: #000000;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 
 .training_plan__item {
@@ -1122,6 +1120,7 @@
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  margin-top: 28px;
 }
 
 .training_plan__actions a {
@@ -1129,7 +1128,7 @@
   font-family: TrebuchetMS, sans-serif;
   font-size: 14px;
   color: #001689;
-  padding: 11px 26px;
+  padding: 9px 26px;
   border: 2px solid #001689;
   -webkit-transition: all .25s ease;
   -o-transition: all .25s ease;
@@ -1285,7 +1284,6 @@
 
 .formation_ipr__recommended {
   padding: 44px 30px 35px 29px;
-  display: none;
 }
 
 .formation_ipr__new, .formation_ipr__library {
@@ -1294,6 +1292,7 @@
 }
 
 .formation_ipr__add_activity {
+  display: none;
   padding: 33px 29px 61px 28px;
 }
 
@@ -1312,7 +1311,7 @@
   font-family: TrebuchetMS, sans-serif;
   font-size: 14px;
   color: #001689;
-  padding: 11px 26px;
+  padding: 9px 26px;
   border: 2px solid #001689;
   -webkit-transition: all .25s ease;
   -o-transition: all .25s ease;
@@ -1325,7 +1324,7 @@
 }
 
 .formation_ipr__add_activity__actions button:not(:last-of-type) {
-  margin-right: 19px;
+  margin-right: 16px;
 }
 
 .formation_ipr__add_activity__actions .send_application {
@@ -1338,7 +1337,11 @@
 }
 
 .formation_ipr__filter {
-  margin-bottom: 20px;
+  margin-bottom: 31px;
+}
+
+.formation_ipr__filter:nth-child(2) {
+  margin-bottom: 11px;
 }
 
 .formation_ipr__filter:last-child {
@@ -1349,7 +1352,7 @@
   font-family: ArialMT, sans-serif;
   font-size: 14px;
   color: #b1b1b1;
-  margin-bottom: 5px;
+  margin-bottom: 4px;
 }
 
 .formation_ipr__filter_checkboxes {
@@ -1372,7 +1375,7 @@
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 11px !important;
+  margin-top: 10px !important;
 }
 
 .formation_ipr__filter_checkbox:not(:last-of-type) {
@@ -1397,7 +1400,7 @@
   -webkit-border-radius: 2px;
           border-radius: 2px;
   border: 1px solid #dadada;
-  margin-right: 13px;
+  margin-right: 9px;
 }
 
 .formation_ipr__filter_checkbox .name {
@@ -1413,7 +1416,7 @@
   font-family: TrebuchetMS, sans-serif;
   font-size: 14px;
   color: #001689;
-  padding: 11px 26px;
+  padding: 9px 28px;
   border: 2px solid #001689;
   -webkit-transition: all .25s ease;
   -o-transition: all .25s ease;
@@ -1510,14 +1513,14 @@
   display: block;
   font-size: 12px;
   color: #a4a4bb;
-  margin-bottom: 13px;
+  margin-bottom: 9px;
 }
 
 .formation_ipr__name h4 {
   font-family: ArialMTBold, sans-serif;
   font-size: 14px;
   font-weight: bold;
-  line-height: 18px;
+  line-height: 14px;
   margin-bottom: 4px;
 }
 
@@ -1525,6 +1528,7 @@
   display: block;
   font-family: ArialMT, sans-serif;
   font-size: 12px;
+  padding-bottom: 4px;
 }
 
 .formation_ipr__name p {
@@ -1534,7 +1538,7 @@
 }
 
 .formation_ipr__add_activity_table {
-  margin-bottom: 23px;
+  margin-bottom: 26px;
 }
 
 .formation_ipr__add_activity_table table {
@@ -1547,7 +1551,7 @@
 }
 
 .formation_ipr__add_activity_table table th {
-  padding: 15px 0;
+  padding: 14px 0;
   font-weight: normal;
   font-family: ArialMT, sans-serif;
   font-size: 12px;
@@ -1556,10 +1560,13 @@
 }
 
 .formation_ipr__add_activity_table table td {
-  padding: 20px 0;
+  padding: 16px 0;
 }
 
 .formation_ipr__add_activity_table table td label {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  cursor: pointer;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1569,6 +1576,7 @@
       -ms-flex-align: center;
           align-items: center;
   padding-left: 16px;
+  width: 731px;
 }
 
 .formation_ipr__add_activity_table table td label .checkbox {

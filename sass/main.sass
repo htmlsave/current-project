@@ -5,15 +5,16 @@
 
 .lk-top
 	background-color: #f8f8f8
-	padding: 50px 0
+	padding: 60px 0
 	section
 		position: relative
 	.CENTERER
 		width: 1099px
 		margin: 0 auto
 	.main_title
-		margin-bottom: 30px
+		margin-bottom: 20px
 		h1
+			font-weight: bold
 			font-family: PragmaticaSlabBook, sans-serif
 			font-size: 24px
 			color: #010033
@@ -24,16 +25,17 @@
 				color: #7074ae
 				margin-top: 10px
 	.title
-		margin-bottom: 23px
+		margin-bottom: 20px
 		h2
+			font-weight: bold
 			font-family: PragmaticaSlabBold, sans-serif
 			font-size: 16px
 	.ads
-		margin-bottom: 61px
+		margin-bottom: 59px
 
 .ads
 	&_new
-		padding: 26px 30px 22px 67px
+		padding: 34px 30px 22px 67px
 		background-color: #fff
 		box-shadow: 3px 8px 8px rgba(107, 114, 173, 0.15)
 		position: relative
@@ -41,13 +43,13 @@
 			font-family: PragmaticaSlabBold, sans-serif
 			font-size: 16px
 			color: $blue
-			margin-bottom: 14px
+			margin-bottom: 9px
 		&>p
 			font-family: ArialMT, sans-serif
 			font-size: 14px
 			line-height: 22px
 			color: #373737
-			margin-bottom: 14px
+			margin-bottom: 10px
 	&_link
 		text-align: right
 		a
@@ -103,20 +105,18 @@
 
 .dynamic_ipr
 	display: flex
-	justify-content: space-between
 	margin-bottom: 65px !important
 	&__left
 		width: 830px
-	&__right
-		width: 201px
+		margin-right: 45px
 
 .tab_common
 	&__nuv
 		ul
 			display: flex
-			min-height: 56px
 			li
 				flex-grow: 1
+				display: flex
 				a
 					text-decoration: none
 					display: flex
@@ -125,9 +125,9 @@
 					font-family: TrebuchetMS, sans-serif
 					font-size: 14px
 					color: #a4a4bb
-					padding: 18px 0
+					width: 100%
+					padding: 15px 0
 					transition: all .25s ease
-					height: 100%
 					background-color: #EAEAF0
 					&:hover
 						background-color: #fff
@@ -157,11 +157,11 @@
 	&__item
 		width: calc(50% - 28px)
 		display: flex
-		margin-top: 14px
+		margin-top: 8px
 	&__name
 		min-width: 60px
 		text-align: center
-		margin-right: 9px
+		margin-right: 13px
 		position: relative
 		.icon_wrp
 			width: 60px
@@ -287,18 +287,18 @@
 		display: block
 		border-radius: 50%
 	&__item
-		margin-top: 28px
+		margin-top: 20px
 		&>p
 			font-family: TrebuchetMS, sans-serif
 			font-size: 14px
 			color: #c0c0c0
-			margin-bottom: 6px
+			margin-bottom: 4px
 		&>span
 			display: block
 			font-family: PragmaticaSlabBold, sans-serif
 			font-size: 16px
 			color: #010101
-			margin-bottom: 7px
+			margin-bottom: 6px
 		&>a
 			font-family: TrebuchetMS, sans-serif
 			font-size: 14px
@@ -570,7 +570,7 @@
 			font-family: ArialMTBold, sans-serif
 			font-size: 18px
 			color: #000000
-			margin-bottom: 30px
+			margin-bottom: 25px
 	&__item
 		display: flex
 		align-items: center
@@ -610,12 +610,13 @@
 			font-size: 12px
 	&__actions
 		display: flex
+		margin-top: 28px
 		a
 			text-decoration: none
 			font-family: TrebuchetMS, sans-serif
 			font-size: 14px
 			color: $blue
-			padding: 11px 26px
+			padding: 9px 26px
 			border: 2px solid $blue
 			transition: all .25s ease
 			&:hover
@@ -728,12 +729,12 @@
 							background-color: #fff
 	&__recommended
 		padding: 44px 30px 35px 29px
-		display: none
 	&__new,
 	&__library
 		display: none
 		padding: 44px 30px 35px 29px
 	&__add_activity
+		display: none
 		padding: 33px 29px 61px 28px
 		.formation_ipr__filter
 			.choose_competention_select
@@ -744,28 +745,30 @@
 				font-family: TrebuchetMS, sans-serif
 				font-size: 14px
 				color: $blue
-				padding: 11px 26px
+				padding: 9px 26px
 				border: 2px solid $blue
 				transition: all .25s ease
 				&:hover
 					color: #fff
 					background-color: $blue
 				&:not(:last-of-type)
-					margin-right: 19px
+					margin-right: 16px
 			.send_application
 				background-color: $blue
 				color: #fff
 	&__filters
 		margin-bottom: 25px
 	&__filter
-		margin-bottom: 20px
+		margin-bottom: 31px
+		&:nth-child(2)
+			margin-bottom: 11px
 		&:last-child
 			margin-bottom: 12px
 		p
 			font-family: ArialMT, sans-serif
 			font-size: 14px
 			color: #b1b1b1
-			margin-bottom: 5px
+			margin-bottom: 4px
 		&_checkboxes
 			display: flex
 			flex-wrap: wrap
@@ -773,7 +776,7 @@
 			cursor: pointer
 			display: flex
 			align-items: center
-			margin-top: 11px !important
+			margin-top: 10px !important
 			&:not(:last-of-type)
 				margin-right: 25px
 			.checkbox
@@ -789,7 +792,7 @@
 				height: 23px
 				border-radius: 2px
 				border: 1px solid #dadada
-				margin-right: 13px
+				margin-right: 9px
 			.name
 				font-family: ArialMT, sans-serif
 				font-size: 14px
@@ -799,7 +802,7 @@
 				font-family: TrebuchetMS, sans-serif
 				font-size: 14px
 				color: $blue
-				padding: 11px 26px
+				padding: 9px 28px
 				border: 2px solid $blue
 				transition: all .25s ease
 				&:hover
@@ -855,41 +858,45 @@
 			display: block
 			font-size: 12px
 			color: #a4a4bb
-			margin-bottom: 13px
+			margin-bottom: 9px
 		h4
 			font-family: ArialMTBold, sans-serif
 			font-size: 14px
 			font-weight: bold
-			line-height: 18px
+			line-height: 14px
 			margin-bottom: 4px
 			span
 				display: block
 				font-family: ArialMT, sans-serif
 				font-size: 12px
+				padding-bottom: 4px
 		p
 			font-family: ArialMT, sans-serif
 			font-size: 14px
 			color: #606060
 	&__add_activity_table
-		margin-bottom: 23px
+		margin-bottom: 26px
 		table
 			width: 100%
 			th,
 			td
 				border: 1px solid #e6e6e6
 			th
-				padding: 15px 0
+				padding: 14px 0
 				font-weight: normal
 				font-family: ArialMT, sans-serif
 				font-size: 12px
 				color: #a1a4c8
 				text-transform: uppercase
 			td
-				padding: 20px 0
+				padding: 16px 0
 				label
+					box-sizing: border-box
+					cursor: pointer
 					display: flex
 					align-items: center
 					padding-left: 16px
+					width: 731px
 					.checkbox
 						display: none
 						&:checked + .custom_checkbox
