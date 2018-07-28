@@ -927,6 +927,34 @@
 .all_books
 	padding: 30px 29px 38px 29px !important
 	background-color: #fff
+	&__competention
+		display: none
+		.competention_select
+			width: 260px
+			height: auto
+			min-height: 37px
+			box-sizing: border-box
+			.placeholder_select
+				padding: 0 12px
+				font-family: ArialMTBold, sans-serif
+				font-weight: bold
+				font-size: 14px
+				color: #cc003d
+				padding-top: 4px
+				.fixed_placeholder
+					display: block
+					font-family: ArialMT, sans-serif
+					font-weight: normal
+					font-size: 11px
+					color: #a4a4bb
+			.select_items
+				bottom: 4px
+				li
+					padding-top: 9px
+					&:first-child
+						padding-top: 13px
+					&:last-child
+						padding-bottom: 13px
 	&__head
 		display: flex
 		align-items: center
@@ -995,6 +1023,18 @@
 		display: flex
 		&:not(:last-of-type)
 			margin-bottom: 46px
+		&_column
+			&:not(:last-of-type)
+				margin-bottom: 59px
+			&_title
+				margin-bottom: 25px
+				h2
+					font-weight: bold
+					font-family: ArialMTBold, sans-serif
+					font-size: 18px
+					color: #cfd2e7
+					span
+						color: $red
 		&_thumb
 			min-width: 180px
 			height: 140px

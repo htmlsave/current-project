@@ -45,4 +45,16 @@ $(document).ready(function() {
 	$('.picker').click(function(e) {
 		e.stopPropagation();
 	});
+
+	// Tab books
+	$('.all_books__nuv > ul > li > a').click(function(e) {
+		e.preventDefault();
+		// Toggle class
+		$('.all_books__nuv > ul > li > a').removeClass('all_books__nuv_active');
+		$(this).addClass('all_books__nuv_active');
+		//Toggle show
+		let takeHref = $(this).attr('href');
+		$('.all_books__inner > div').hide();
+		$(takeHref).fadeIn();
+	});
 });

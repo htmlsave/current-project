@@ -23,170 +23,495 @@
 					</div>
 					<div class="all_books__nuv">
 						<ul>
-							<li><a href="#" class="all_books__nuv_active">Отображать по алфавиту</a></li>
-							<li><a href="#">Отображать по компетенциям</a></li>
+							<li><a href=".all_books__alphabet" class="all_books__nuv_active">Отображать по алфавиту</a></li>
+							<li><a href=".all_books__competention">Отображать по компетенциям</a></li>
 						</ul>
 					</div>
 				</div>
-				<div class="all_books__alphabet">
-					<div class="all_books__filter_flex">
-						<div class="all_books__add_books">
-							<button>Добавить книги</button>
+				<div class="all_books__inner">
+
+					<div class="all_books__alphabet">
+						<div class="all_books__filter_flex">
+							<div class="all_books__add_books">
+								<button>Добавить книги</button>
+							</div>
+							<div class="all_books__filter">
+								<select name="status" data-fixed-placeholder="Статус:" data-placeholder="Все">
+									<option value="1">Назначено</option>
+									<option value="2">В процессе</option>
+									<option value="3">Завершено</option>
+									<option value="4">Все</option>
+								</select>
+							</div>
 						</div>
-						<div class="all_books__filter">
-							<select name="status" data-fixed-placeholder="Статус:" data-placeholder="Все">
-								<option value="1">Назначено</option>
-								<option value="2">В процессе</option>
-								<option value="3">Завершено</option>
-								<option value="4">Все</option>
-							</select>
+						<div class="all_books__items">
+							<!-- item -->
+							<div class="all_books__item">
+								<div class="all_books__item_thumb" style="background-image: url('img/боженька.png');">
+									<div class="all_books__item_thumb_label bg_orange">В процессе</div>
+									<div class="all_books__item_thumb_icon bg_blue">
+										<img src="img/icons/open-book.png" alt="icon">
+									</div>
+								</div>
+								<div class="all_books__item_content">
+									<h4><span>Айн Рэнд </span>Атлант расправил плечи </h4>
+									<ul>
+										<li>Преодоление себя</li>
+										<li>Лидерство как служение</li>
+										<li>Стрессоустойчивость</li>
+									</ul>
+									<p>Отзывов: <a href="#">2</a></p>
+								</div>
+								<div class="all_books__item_filters">
+									<div class="all_books__item_filter">
+										<p>Начало активности</p>
+										<div class="datapicker_wrp">
+											<input type="text" class="all_books__item_filter_date" data-theme="my-style" data-lang="ru" data-large-default="true" data-default-date="28.08.2018" data-large-mode="true">
+										</div>
+									</div>
+									<div class="all_books__item_filter">
+										<p>Конец активности</p>
+										<div class="datapicker_wrp">
+											<input type="text" class="all_books__item_filter_date" data-theme="my-style" data-lang="ru" data-large-default="true" data-default-date="30.08.2018" data-large-mode="true">
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- end item -->
+							<!-- item -->
+							<div class="all_books__item">
+								<div class="all_books__item_thumb" style="background-image: url('img/нетю.png');">
+									<div class="all_books__item_thumb_label bg_orange">В процессе</div>
+									<div class="all_books__item_thumb_icon bg_blue">
+										<img src="img/icons/open-book.png" alt="icon">
+									</div>
+								</div>
+								<div class="all_books__item_content">
+									<h4><span>Айн Рэнд </span>Атлант расправил плечи </h4>
+									<ul>
+										<li>Преодоление себя</li>
+										<li>Лидерство как служение</li>
+										<li>Стрессоустойчивость</li>
+										<li>Преодоление себя</li>
+										<li>Стрессоустойчивость</li>
+										<li>Преодоление себя</li>
+										<li>Лидерство как служение</li>
+										<li>Лидерство как служение</li>
+									</ul>
+									<p>Отзывов: <a href="#">0</a></p>
+								</div>
+								<div class="all_books__item_filters">
+									<div class="all_books__item_filter">
+										<p>Начало активности</p>
+										<div class="datapicker_wrp">
+											<input type="text" class="all_books__item_filter_date" data-theme="my-style" data-lang="ru" data-large-default="true" data-default-date="28.08.2018" data-large-mode="true">
+										</div>
+									</div>
+									<div class="all_books__item_filter">
+										<p>Конец активности</p>
+										<div class="datapicker_wrp">
+											<input type="text" class="all_books__item_filter_date" data-theme="my-style" data-lang="ru" data-large-default="true" data-default-date="30.08.2018" data-large-mode="true">
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- end item -->
+							<!-- item -->
+							<div class="all_books__item">
+								<div class="all_books__item_thumb" style="background-image: url('img/нетю.png');">
+									<div class="all_books__item_thumb_label bg_indigo">Назначено</div>
+									<div class="all_books__item_thumb_icon bg_blue">
+										<img src="img/icons/open-book.png" alt="icon">
+									</div>
+								</div>
+								<div class="all_books__item_content">
+									<h4><span>Айн Рэнд </span>Атлант расправил плечи </h4>
+									<ul>
+										<li>Преодоление себя</li>
+										<li>Лидерство как служение</li>
+										<li>Стрессоустойчивость</li>
+										<li>Преодоление себя</li>
+									</ul>
+									<p>Отзывов: <a href="#">0</a></p>
+								</div>
+								<div class="all_books__item_filters">
+									<div class="all_books__item_filter">
+										<p>Начало активности</p>
+										<div class="datapicker_wrp">
+											<input type="text" class="all_books__item_filter_date" data-theme="my-style" data-lang="ru" data-large-default="true" data-default-date="28.08.2018" data-large-mode="true">
+										</div>
+									</div>
+									<div class="all_books__item_filter">
+										<p>Конец активности</p>
+										<div class="datapicker_wrp">
+											<input type="text" class="all_books__item_filter_date" data-theme="my-style" data-lang="ru" data-large-default="true" data-default-date="30.08.2018" data-large-mode="true">
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- end item -->
+							<!-- item -->
+							<div class="all_books__item">
+								<div class="all_books__item_thumb" style="background-image: url('img/нетю.png');">
+									<div class="all_books__item_thumb_label bg_green">Завершено</div>
+									<div class="all_books__item_thumb_icon bg_blue">
+										<img src="img/icons/open-book.png" alt="icon">
+									</div>
+								</div>
+								<div class="all_books__item_content">
+									<h4><span>Айн Рэнд </span>Атлант расправил плечи </h4>
+									<ul>
+										<li>Преодоление себя</li>
+										<li>Лидерство как служение</li>
+										<li>Стрессоустойчивость</li>
+										<li>Преодоление себя</li>
+										<li>Стрессоустойчивость</li>
+										<li>Преодоление себя</li>
+										<li>Лидерство как служение</li>
+										<li>Лидерство как служение</li>
+									</ul>
+									<p>Отзывов: <a href="#">0</a></p>
+								</div>
+								<div class="all_books__item_filters">
+									<div class="all_books__item_filter">
+										<p>Начало активности</p>
+										<div class="datapicker_wrp">
+											<input type="text" class="all_books__item_filter_date" data-theme="my-style" data-lang="ru" data-large-default="true" data-default-date="28.08.2018" data-large-mode="true">
+										</div>
+									</div>
+									<div class="all_books__item_filter">
+										<p>Конец активности</p>
+										<div class="datapicker_wrp">
+											<input type="text" class="all_books__item_filter_date" data-theme="my-style" data-lang="ru" data-large-default="true" data-default-date="30.08.2018" data-large-mode="true">
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- end item -->
 						</div>
 					</div>
-				</div>
-				<div class="all_books__items">
-					<!-- item -->
-					<div class="all_books__item">
-						<div class="all_books__item_thumb" style="background-image: url('img/боженька.png');">
-							<div class="all_books__item_thumb_label bg_orange">В процессе</div>
-							<div class="all_books__item_thumb_icon bg_blue">
-								<img src="img/icons/open-book.png" alt="icon">
+					
+					<div class="all_books__competention">
+						<div class="all_books__filter_flex">
+							<div class="all_books__add_books">
+								<button>Добавить книги</button>
+							</div>
+							<div class="all_books__filter">
+								<select name="competention" data-fixed-placeholder="Компетенции:" data-placeholder="Все">
+									<option value="1">Преодоление себя</option>
+									<option value="2">Стрессоусточивость</option>
+									<option value="3">Лидерство как служение</option>
+									<option value="4">Гибкость и открытость изменениям</option>
+									<option value="5">Энергия</option>
+									<option value="6">Работа в команде</option>
+									<option value="7">Все</option>
+								</select>
 							</div>
 						</div>
-						<div class="all_books__item_content">
-							<h4><span>Айн Рэнд </span>Атлант расправил плечи </h4>
-							<ul>
-								<li>Преодоление себя</li>
-								<li>Лидерство как служение</li>
-								<li>Стрессоустойчивость</li>
-							</ul>
-							<p>Отзывов: <a href="#">2</a></p>
-						</div>
-						<div class="all_books__item_filters">
-							<div class="all_books__item_filter">
-								<p>Начало активности</p>
-								<div class="datapicker_wrp">
-									<input type="text" class="all_books__item_filter_date" data-theme="my-style" data-lang="ru" data-large-default="true" data-default-date="28.08.2018" data-large-mode="true">
+						<div class="all_books__items">
+							<!-- ITEM -->
+							<div class="all_books__item_column">
+								<div class="all_books__item_column_title">
+									<h2>Компетенция: <span>Преодоление себя</span></h2>
 								</div>
-							</div>
-							<div class="all_books__item_filter">
-								<p>Конец активности</p>
-								<div class="datapicker_wrp">
-									<input type="text" class="all_books__item_filter_date" data-theme="my-style" data-lang="ru" data-large-default="true" data-default-date="30.08.2018" data-large-mode="true">
+								<!-- item -->
+								<div class="all_books__item">
+									<div class="all_books__item_thumb" style="background-image: url('img/боженька.png');">
+										<div class="all_books__item_thumb_label bg_orange">В процессе</div>
+										<div class="all_books__item_thumb_icon bg_blue">
+											<img src="img/icons/open-book.png" alt="icon">
+										</div>
+									</div>
+									<div class="all_books__item_content">
+										<h4><span>Айн Рэнд </span>Атлант расправил плечи </h4>
+										<ul>
+											<li>Преодоление себя</li>
+											<li>Лидерство как служение</li>
+											<li>Стрессоустойчивость</li>
+										</ul>
+										<p>Отзывов: <a href="#">2</a></p>
+									</div>
+									<div class="all_books__item_filters">
+										<div class="all_books__item_filter">
+											<p>Начало активности</p>
+											<div class="datapicker_wrp">
+												<input type="text" class="all_books__item_filter_date" data-theme="my-style" data-lang="ru" data-large-default="true" data-default-date="28.08.2018" data-large-mode="true">
+											</div>
+										</div>
+										<div class="all_books__item_filter">
+											<p>Конец активности</p>
+											<div class="datapicker_wrp">
+												<input type="text" class="all_books__item_filter_date" data-theme="my-style" data-lang="ru" data-large-default="true" data-default-date="30.08.2018" data-large-mode="true">
+											</div>
+										</div>
+									</div>
 								</div>
+								<!-- end item -->
+								<!-- item -->
+								<div class="all_books__item">
+									<div class="all_books__item_thumb" style="background-image: url('img/нетю.png');">
+										<div class="all_books__item_thumb_label bg_orange">В процессе</div>
+										<div class="all_books__item_thumb_icon bg_blue">
+											<img src="img/icons/open-book.png" alt="icon">
+										</div>
+									</div>
+									<div class="all_books__item_content">
+										<h4><span>Айн Рэнд </span>Атлант расправил плечи </h4>
+										<ul>
+											<li>Преодоление себя</li>
+											<li>Лидерство как служение</li>
+											<li>Стрессоустойчивость</li>
+											<li>Преодоление себя</li>
+											<li>Стрессоустойчивость</li>
+											<li>Преодоление себя</li>
+											<li>Лидерство как служение</li>
+											<li>Лидерство как служение</li>
+										</ul>
+										<p>Отзывов: <a href="#">0</a></p>
+									</div>
+									<div class="all_books__item_filters">
+										<div class="all_books__item_filter">
+											<p>Начало активности</p>
+											<div class="datapicker_wrp">
+												<input type="text" class="all_books__item_filter_date" data-theme="my-style" data-lang="ru" data-large-default="true" data-default-date="28.08.2018" data-large-mode="true">
+											</div>
+										</div>
+										<div class="all_books__item_filter">
+											<p>Конец активности</p>
+											<div class="datapicker_wrp">
+												<input type="text" class="all_books__item_filter_date" data-theme="my-style" data-lang="ru" data-large-default="true" data-default-date="30.08.2018" data-large-mode="true">
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- end item -->
+								<!-- item -->
+								<div class="all_books__item">
+									<div class="all_books__item_thumb" style="background-image: url('img/нетю.png');">
+										<div class="all_books__item_thumb_label bg_indigo">Назначено</div>
+										<div class="all_books__item_thumb_icon bg_blue">
+											<img src="img/icons/open-book.png" alt="icon">
+										</div>
+									</div>
+									<div class="all_books__item_content">
+										<h4><span>Айн Рэнд </span>Атлант расправил плечи </h4>
+										<ul>
+											<li>Преодоление себя</li>
+											<li>Лидерство как служение</li>
+											<li>Стрессоустойчивость</li>
+											<li>Преодоление себя</li>
+										</ul>
+										<p>Отзывов: <a href="#">0</a></p>
+									</div>
+									<div class="all_books__item_filters">
+										<div class="all_books__item_filter">
+											<p>Начало активности</p>
+											<div class="datapicker_wrp">
+												<input type="text" class="all_books__item_filter_date" data-theme="my-style" data-lang="ru" data-large-default="true" data-default-date="28.08.2018" data-large-mode="true">
+											</div>
+										</div>
+										<div class="all_books__item_filter">
+											<p>Конец активности</p>
+											<div class="datapicker_wrp">
+												<input type="text" class="all_books__item_filter_date" data-theme="my-style" data-lang="ru" data-large-default="true" data-default-date="30.08.2018" data-large-mode="true">
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- end item -->
+								<!-- item -->
+								<div class="all_books__item">
+									<div class="all_books__item_thumb" style="background-image: url('img/нетю.png');">
+										<div class="all_books__item_thumb_label bg_green">Завершено</div>
+										<div class="all_books__item_thumb_icon bg_blue">
+											<img src="img/icons/open-book.png" alt="icon">
+										</div>
+									</div>
+									<div class="all_books__item_content">
+										<h4><span>Айн Рэнд </span>Атлант расправил плечи </h4>
+										<ul>
+											<li>Преодоление себя</li>
+											<li>Лидерство как служение</li>
+											<li>Стрессоустойчивость</li>
+											<li>Преодоление себя</li>
+											<li>Стрессоустойчивость</li>
+											<li>Преодоление себя</li>
+											<li>Лидерство как служение</li>
+											<li>Лидерство как служение</li>
+										</ul>
+										<p>Отзывов: <a href="#">0</a></p>
+									</div>
+									<div class="all_books__item_filters">
+										<div class="all_books__item_filter">
+											<p>Начало активности</p>
+											<div class="datapicker_wrp">
+												<input type="text" class="all_books__item_filter_date" data-theme="my-style" data-lang="ru" data-large-default="true" data-default-date="28.08.2018" data-large-mode="true">
+											</div>
+										</div>
+										<div class="all_books__item_filter">
+											<p>Конец активности</p>
+											<div class="datapicker_wrp">
+												<input type="text" class="all_books__item_filter_date" data-theme="my-style" data-lang="ru" data-large-default="true" data-default-date="30.08.2018" data-large-mode="true">
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- end item -->
 							</div>
+							<!-- END ITEM -->
+							<!-- ITEM -->
+							<div class="all_books__item_column">
+								<div class="all_books__item_column_title">
+									<h2>Компетенция: <span>Преодоление себя</span></h2>
+								</div>
+								<!-- item -->
+								<div class="all_books__item">
+									<div class="all_books__item_thumb" style="background-image: url('img/боженька.png');">
+										<div class="all_books__item_thumb_label bg_orange">В процессе</div>
+										<div class="all_books__item_thumb_icon bg_blue">
+											<img src="img/icons/open-book.png" alt="icon">
+										</div>
+									</div>
+									<div class="all_books__item_content">
+										<h4><span>Айн Рэнд </span>Атлант расправил плечи </h4>
+										<ul>
+											<li>Преодоление себя</li>
+											<li>Лидерство как служение</li>
+											<li>Стрессоустойчивость</li>
+										</ul>
+										<p>Отзывов: <a href="#">2</a></p>
+									</div>
+									<div class="all_books__item_filters">
+										<div class="all_books__item_filter">
+											<p>Начало активности</p>
+											<div class="datapicker_wrp">
+												<input type="text" class="all_books__item_filter_date" data-theme="my-style" data-lang="ru" data-large-default="true" data-default-date="28.08.2018" data-large-mode="true">
+											</div>
+										</div>
+										<div class="all_books__item_filter">
+											<p>Конец активности</p>
+											<div class="datapicker_wrp">
+												<input type="text" class="all_books__item_filter_date" data-theme="my-style" data-lang="ru" data-large-default="true" data-default-date="30.08.2018" data-large-mode="true">
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- end item -->
+								<!-- item -->
+								<div class="all_books__item">
+									<div class="all_books__item_thumb" style="background-image: url('img/нетю.png');">
+										<div class="all_books__item_thumb_label bg_orange">В процессе</div>
+										<div class="all_books__item_thumb_icon bg_blue">
+											<img src="img/icons/open-book.png" alt="icon">
+										</div>
+									</div>
+									<div class="all_books__item_content">
+										<h4><span>Айн Рэнд </span>Атлант расправил плечи </h4>
+										<ul>
+											<li>Преодоление себя</li>
+											<li>Лидерство как служение</li>
+											<li>Стрессоустойчивость</li>
+											<li>Преодоление себя</li>
+											<li>Стрессоустойчивость</li>
+											<li>Преодоление себя</li>
+											<li>Лидерство как служение</li>
+											<li>Лидерство как служение</li>
+										</ul>
+										<p>Отзывов: <a href="#">0</a></p>
+									</div>
+									<div class="all_books__item_filters">
+										<div class="all_books__item_filter">
+											<p>Начало активности</p>
+											<div class="datapicker_wrp">
+												<input type="text" class="all_books__item_filter_date" data-theme="my-style" data-lang="ru" data-large-default="true" data-default-date="28.08.2018" data-large-mode="true">
+											</div>
+										</div>
+										<div class="all_books__item_filter">
+											<p>Конец активности</p>
+											<div class="datapicker_wrp">
+												<input type="text" class="all_books__item_filter_date" data-theme="my-style" data-lang="ru" data-large-default="true" data-default-date="30.08.2018" data-large-mode="true">
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- end item -->
+								<!-- item -->
+								<div class="all_books__item">
+									<div class="all_books__item_thumb" style="background-image: url('img/нетю.png');">
+										<div class="all_books__item_thumb_label bg_indigo">Назначено</div>
+										<div class="all_books__item_thumb_icon bg_blue">
+											<img src="img/icons/open-book.png" alt="icon">
+										</div>
+									</div>
+									<div class="all_books__item_content">
+										<h4><span>Айн Рэнд </span>Атлант расправил плечи </h4>
+										<ul>
+											<li>Преодоление себя</li>
+											<li>Лидерство как служение</li>
+											<li>Стрессоустойчивость</li>
+											<li>Преодоление себя</li>
+										</ul>
+										<p>Отзывов: <a href="#">0</a></p>
+									</div>
+									<div class="all_books__item_filters">
+										<div class="all_books__item_filter">
+											<p>Начало активности</p>
+											<div class="datapicker_wrp">
+												<input type="text" class="all_books__item_filter_date" data-theme="my-style" data-lang="ru" data-large-default="true" data-default-date="28.08.2018" data-large-mode="true">
+											</div>
+										</div>
+										<div class="all_books__item_filter">
+											<p>Конец активности</p>
+											<div class="datapicker_wrp">
+												<input type="text" class="all_books__item_filter_date" data-theme="my-style" data-lang="ru" data-large-default="true" data-default-date="30.08.2018" data-large-mode="true">
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- end item -->
+								<!-- item -->
+								<div class="all_books__item">
+									<div class="all_books__item_thumb" style="background-image: url('img/нетю.png');">
+										<div class="all_books__item_thumb_label bg_green">Завершено</div>
+										<div class="all_books__item_thumb_icon bg_blue">
+											<img src="img/icons/open-book.png" alt="icon">
+										</div>
+									</div>
+									<div class="all_books__item_content">
+										<h4><span>Айн Рэнд </span>Атлант расправил плечи </h4>
+										<ul>
+											<li>Преодоление себя</li>
+											<li>Лидерство как служение</li>
+											<li>Стрессоустойчивость</li>
+											<li>Преодоление себя</li>
+											<li>Стрессоустойчивость</li>
+											<li>Преодоление себя</li>
+											<li>Лидерство как служение</li>
+											<li>Лидерство как служение</li>
+										</ul>
+										<p>Отзывов: <a href="#">0</a></p>
+									</div>
+									<div class="all_books__item_filters">
+										<div class="all_books__item_filter">
+											<p>Начало активности</p>
+											<div class="datapicker_wrp">
+												<input type="text" class="all_books__item_filter_date" data-theme="my-style" data-lang="ru" data-large-default="true" data-default-date="28.08.2018" data-large-mode="true">
+											</div>
+										</div>
+										<div class="all_books__item_filter">
+											<p>Конец активности</p>
+											<div class="datapicker_wrp">
+												<input type="text" class="all_books__item_filter_date" data-theme="my-style" data-lang="ru" data-large-default="true" data-default-date="30.08.2018" data-large-mode="true">
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- end item -->
+							</div>
+							<!-- END ITEM -->
 						</div>
 					</div>
-					<!-- end item -->
-					<!-- item -->
-					<div class="all_books__item">
-						<div class="all_books__item_thumb" style="background-image: url('img/нетю.png');">
-							<div class="all_books__item_thumb_label bg_orange">В процессе</div>
-							<div class="all_books__item_thumb_icon bg_blue">
-								<img src="img/icons/open-book.png" alt="icon">
-							</div>
-						</div>
-						<div class="all_books__item_content">
-							<h4><span>Айн Рэнд </span>Атлант расправил плечи </h4>
-							<ul>
-								<li>Преодоление себя</li>
-								<li>Лидерство как служение</li>
-								<li>Стрессоустойчивость</li>
-								<li>Преодоление себя</li>
-								<li>Стрессоустойчивость</li>
-								<li>Преодоление себя</li>
-								<li>Лидерство как служение</li>
-								<li>Лидерство как служение</li>
-							</ul>
-							<p>Отзывов: <a href="#">0</a></p>
-						</div>
-						<div class="all_books__item_filters">
-							<div class="all_books__item_filter">
-								<p>Начало активности</p>
-								<div class="datapicker_wrp">
-									<input type="text" class="all_books__item_filter_date" data-theme="my-style" data-lang="ru" data-large-default="true" data-default-date="28.08.2018" data-large-mode="true">
-								</div>
-							</div>
-							<div class="all_books__item_filter">
-								<p>Конец активности</p>
-								<div class="datapicker_wrp">
-									<input type="text" class="all_books__item_filter_date" data-theme="my-style" data-lang="ru" data-large-default="true" data-default-date="30.08.2018" data-large-mode="true">
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- end item -->
-					<!-- item -->
-					<div class="all_books__item">
-						<div class="all_books__item_thumb" style="background-image: url('img/нетю.png');">
-							<div class="all_books__item_thumb_label bg_indigo">Назначено</div>
-							<div class="all_books__item_thumb_icon bg_blue">
-								<img src="img/icons/open-book.png" alt="icon">
-							</div>
-						</div>
-						<div class="all_books__item_content">
-							<h4><span>Айн Рэнд </span>Атлант расправил плечи </h4>
-							<ul>
-								<li>Преодоление себя</li>
-								<li>Лидерство как служение</li>
-								<li>Стрессоустойчивость</li>
-								<li>Преодоление себя</li>
-							</ul>
-							<p>Отзывов: <a href="#">0</a></p>
-						</div>
-						<div class="all_books__item_filters">
-							<div class="all_books__item_filter">
-								<p>Начало активности</p>
-								<div class="datapicker_wrp">
-									<input type="text" class="all_books__item_filter_date" data-theme="my-style" data-lang="ru" data-large-default="true" data-default-date="28.08.2018" data-large-mode="true">
-								</div>
-							</div>
-							<div class="all_books__item_filter">
-								<p>Конец активности</p>
-								<div class="datapicker_wrp">
-									<input type="text" class="all_books__item_filter_date" data-theme="my-style" data-lang="ru" data-large-default="true" data-default-date="30.08.2018" data-large-mode="true">
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- end item -->
-					<!-- item -->
-					<div class="all_books__item">
-						<div class="all_books__item_thumb" style="background-image: url('img/нетю.png');">
-							<div class="all_books__item_thumb_label bg_green">Завершено</div>
-							<div class="all_books__item_thumb_icon bg_blue">
-								<img src="img/icons/open-book.png" alt="icon">
-							</div>
-						</div>
-						<div class="all_books__item_content">
-							<h4><span>Айн Рэнд </span>Атлант расправил плечи </h4>
-							<ul>
-								<li>Преодоление себя</li>
-								<li>Лидерство как служение</li>
-								<li>Стрессоустойчивость</li>
-								<li>Преодоление себя</li>
-								<li>Стрессоустойчивость</li>
-								<li>Преодоление себя</li>
-								<li>Лидерство как служение</li>
-								<li>Лидерство как служение</li>
-							</ul>
-							<p>Отзывов: <a href="#">0</a></p>
-						</div>
-						<div class="all_books__item_filters">
-							<div class="all_books__item_filter">
-								<p>Начало активности</p>
-								<div class="datapicker_wrp">
-									<input type="text" class="all_books__item_filter_date" data-theme="my-style" data-lang="ru" data-large-default="true" data-default-date="28.08.2018" data-large-mode="true">
-								</div>
-							</div>
-							<div class="all_books__item_filter">
-								<p>Конец активности</p>
-								<div class="datapicker_wrp">
-									<input type="text" class="all_books__item_filter_date" data-theme="my-style" data-lang="ru" data-large-default="true" data-default-date="30.08.2018" data-large-mode="true">
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- end item -->
+	
 				</div>
 			</section>
 
