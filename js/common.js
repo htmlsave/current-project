@@ -30,4 +30,19 @@ $(document).ready(function() {
 		let fillResulr = takeVal === 1 ? '0' : currentVal - maxWidth;
 		$(this).parent().append('<div class="fill" style="width:'+fillResulr+'px;"></div>');
 	});
+
+	// Filter date
+	$('.all_books__item_filter_date').dateDropper();
+	$('.datapicker_wrp').click(function(e) {
+		$(this).addClass('datapicker_wrp_active');
+	});
+	$('.select_common').click(function() {
+		$('.datedropper').removeClass('picker-focus');
+	});
+	$('body').click(function(e) {
+		$('.datapicker_wrp').removeClass('datapicker_wrp_active');
+	});
+	$('.picker').click(function(e) {
+		e.stopPropagation();
+	});
 });
