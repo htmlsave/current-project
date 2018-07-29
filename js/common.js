@@ -13,7 +13,7 @@ $(document).ready(function() {
 	});
 	
 	// Range slider
-	$('.showers_ipr input[type="range"]').each(function() {
+	$('.lk-top input[type="range"]').each(function() {
 		let takeMax    = Number($(this).attr('max')),
 				takeVal    = Number($(this).val()),
 				currentVal = ($(this).outerWidth()/(takeMax-1)) * takeVal,
@@ -31,7 +31,7 @@ $(document).ready(function() {
 		$(this).parent().append('<div class="fill" style="width:'+fillResulr+'px;"></div>');
 	});
 
-	// Filter date
+	// Filter date all-books.html
 	$('.all_books__item_filter_date').dateDropper();
 	$('.datapicker_wrp').click(function(e) {
 		$(this).addClass('datapicker_wrp_active');
@@ -45,6 +45,8 @@ $(document).ready(function() {
 	$('.picker').click(function(e) {
 		e.stopPropagation();
 	});
+	// Filter date
+	$('.dinamic_active_item_date').dateDropper();
 
 	// Tab books
 	$('.all_books__nuv > ul > li > a').click(function(e) {

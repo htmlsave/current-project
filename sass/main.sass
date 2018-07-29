@@ -6,6 +6,15 @@
 .lk-top
 	background-color: #f8f8f8
 	padding: 60px 0
+	input[type="range"]::-webkit-slider-thumb
+		background: none
+		appearance: none
+	input[type="range"]::-moz-range-thumb
+	  background: none
+	  appearance: none
+	input[type="range"]::-ms-thumb
+	  background: none
+	  appearance: none
 	section
 		position: relative
 	.CENTERER
@@ -20,6 +29,7 @@
 			color: #010033
 			span
 				display: block
+				font-weight: normal
 				font-family: ArialMT, sans-serif
 				font-size: 18px
 				color: #7074ae
@@ -213,6 +223,8 @@
 	background-color: #5faeff
 .bg_pink
 	background-color: #cd60a0
+.bg_pink_2
+	background-color: #e07fe3
 .bg_indigo
 	background-color: #4a7fea
 .bg_yellow
@@ -331,15 +343,6 @@
 		input[type="range"]
 			appearance: none
 			width: 100%
-		input[type="range"]::-webkit-slider-thumb
-			background: none
-			appearance: none
-		input[type="range"]::-moz-range-thumb
-		  background: none
-		  appearance: none
-		input[type="range"]::-ms-thumb
-		  background: none
-		  appearance: none
 		input[type="range"]::-webkit-slider-runnable-track
 		  background: none
 		  appearance: none
@@ -365,12 +368,6 @@
 		  width: 100%
 		  background-color: #eaeaf0
 		  border-radius: 10px
-		input[type=range]::-ms-fill-lower
-		  background: none
-		input[type=range]::-ms-fill-upper
-		  background: none
-		input[type="range"]::-ms-tooltip
-		  display: none
 
 .competency_assessment
 	margin-bottom: 68px !important
@@ -1116,42 +1113,44 @@
 		&_filter
 			&:not(:last-of-type)
 				margin-bottom: 10px
-			.datapicker_wrp
-				position: relative
-				&:before
-					content: ''
-					user-select: none
-					display: block
-					width: 0
-					border-top: 8px solid $red
-					border-right: 5px solid transparent
-					border-left: 5px solid transparent
-					position: absolute
-					right: 8px
-					top: 50%
-					transform: translateY(-50%)
-			.datapicker_wrp_active
-				&:before
-					border-top: none
-					border-bottom: 8px solid $red
-					border-right: 5px solid transparent
-					border-left: 5px solid transparent
 			p
 				font-family: ArialMT, sans-serif
 				font-size: 11px
 				color: #a4a4bb
 				margin-bottom: 5px
-			input
-				border: none
-				width: 140px
-				height: 28px
-				border-radius: 3px
-				border: 1px solid #e6e6e6
-				background-color: #ffffff
-				font-family: ArialMT, sans-serif
-				font-size: 14px
-				color: #000000
-				padding: 8px 11px
+
+.datapicker_wrp
+	position: relative
+	&:before
+		content: ''
+		user-select: none
+		display: block
+		width: 0
+		border-top: 8px solid $red
+		border-right: 5px solid transparent
+		border-left: 5px solid transparent
+		position: absolute
+		right: 8px
+		top: 50%
+		transform: translateY(-50%)
+	input
+		border: none
+		width: 140px
+		height: 28px
+		border-radius: 3px
+		border: 1px solid #e6e6e6
+		background-color: #ffffff
+		font-family: ArialMT, sans-serif
+		font-size: 14px
+		color: #000000
+		padding: 8px 11px
+
+.datapicker_wrp_active
+	&:before
+		border-top: none
+		border-bottom: 8px solid $red
+		border-right: 5px solid transparent
+		border-left: 5px solid transparent
 
 .pick-h,
 .pick-y,
@@ -1223,5 +1222,230 @@ div.datedropper.picker-lg
 		li.pick-sl
 			color: #fff
 			font-size: 14px !important
+
+.dinamic_active_item
+	display: flex
+	align-items: center
+	margin-bottom: 32px
+	&_icon
+		width: 60px
+		height: 60px
+		box-shadow: -4px 7px 10px rgba(0, 0, 0, 0.15)
+		border-radius: 50%
+		display: flex
+		justify-content: center
+		align-items: center
+		margin-right: 10px
+	.dinamic_active_item_progress
+		flex-grow: 1
+		.line
+			width: 100%
+			height: 10px
+			border-radius: 5px
+			background-color: #eeeeee
+			position: relative
+			margin-bottom: 5px
+			.line_fill
+				position: absolute
+				left: 0
+				top: 0
+				bottom: 0
+				height: inherit
+				border-radius: 5px
+				.procent
+					position: absolute
+					right: 0
+					top: -10px
+					transform: translate(50%, -100%)
+					font-weight: bold
+					font-family: ArialMTBold, sans-serif
+					font-size: 14px
+					color: #000000
+		.dinamic_active_item_status
+			font-family: ArialMT, sans-serif
+			font-size: 12px
+			color: #a4a4bb
+
+
+.office_head
+	padding: 24px 27px 56px 27px !important
+	background-color: #fff
+	display: flex
+	flex-wrap: wrap
+	justify-content: space-between
+	&__left
+		width: 635px
+		margin-right: 70px
+		&_title
+			margin-bottom: 27px
+			h2
+				font-weight: bold
+				font-family: ArialMTBold, sans-serif
+				font-size: 22px
+				color: #000000
+		&_name
+			margin-bottom: 14px
+			span
+				font-family: ArialMT, sans-serif
+				font-size: 14px
+				color: #9a9a9a
+				display: block
+				padding-bottom: 6px
+			h2
+				font-weight: bold
+				font-family: PragmaticaSlabBold, sans-serif
+				font-size: 20px
+				color: $blue
+		&_tags
+			margin-bottom: 14px
+			ul
+				display: flex
+				flex-wrap: wrap
+				li
+					padding: 9px 12px
+					border-radius: 3px
+					background-color: #eeeeee
+					font-family: ArialMT, sans-serif
+					font-size: 12px
+					margin-bottom: 10px
+					&:not(:last-of-type)
+						margin-right: 10px
+		&_description
+			margin-bottom: 20px
+			p
+				font-family: ArialMT, sans-serif
+				font-size: 14px
+		&_actions
+			display: flex
+			button
+				font-family: TrebuchetMS, sans-serif
+				font-size: 14px
+				color: $blue
+				padding: 9px 26px
+				border: 2px solid $blue
+				transition: all .25s ease
+				&:hover
+					color: #fff
+					background-color: $blue
+				&:not(:last-of-type)
+					margin-right: 16px
+			button.active_btn
+				color: #fff
+				background-color: $blue
+	&__right
+		flex-grow: 1
+		&_title
+			margin-bottom: 24px
+			h2
+				font-weight: bold
+				font-family: ArialMTBold, sans-serif
+				font-size: 18px
+		&_finished
+			ul
+				display: flex
+				li
+					&:not(:last-of-type)
+						margin-right: 41px
+					p
+						font-family: ArialMT, sans-serif
+						font-size: 11px
+						color: #a4a4bb
+						margin-bottom: 6px
+					span
+						font-family: ArialMT, sans-serif
+						font-size: 14px
+		&_current
+			margin-bottom: 18px
+			ul
+				display: flex
+				li
+					&:not(:last-of-type)
+						margin-right: 29px
+					p
+						font-family: ArialMT, sans-serif
+						font-size: 11px
+						color: #a4a4bb
+						line-height: 18px
+		&_actions
+			button
+				font-family: TrebuchetMS, sans-serif
+				font-size: 14px
+				color: $blue
+				padding: 9px 26px
+				border: 2px solid $blue
+				transition: all .25s ease
+				&:hover
+					background-color: #F2F3F9
+				&:not(:last-of-type)
+					margin-right: 16px
+	&__bottom
+		margin-top: 40px
+		width: 100%
+		&_title
+			h2
+				font-weight: bold
+				font-family: ArialMTBold, sans-serif
+				font-size: 18px
+				margin-bottom: 20px
+		&_write_review
+			margin-bottom: 29px
+			a
+				font-family: TrebuchetMS, sans-serif
+				font-size: 14px
+				color: #001689
+
+.reviews_item
+	display: flex
+	&:not(:last-of-type)
+		margin-bottom: 25px
+	&__thumb
+		min-width: 46px
+		max-width: 46px
+		height: 46px
+		border: 1px solid #c1c1c1
+		background-color: #f8f8f8
+		border-radius: 50%
+		overflow: hidden
+		margin-right: 14px
+	&__content
+		h3
+			font-weight: bold
+			font-family: TrebuchetMS, sans-serif
+			font-size: 14px
+			margin-bottom: 8px
+		span
+			font-family: ArialMT, sans-serif
+			font-size: 12px
+			color: #adafbc
+			display: block
+			margin-bottom: 5px
+		p
+			font-family: ArialMT, sans-serif
+			font-size: 14px
+
+.dinamic_active_item_range_wrp
+	h3
+		font-weight: bold
+		font-family: ArialMTBold, sans-serif
+		font-size: 14px
+		line-height: 18px
+	.dinamic_active_item_range
+		position: relative
+		display: flex
+		input[type="range"]
+			display: none
+		.fill
+			display: none
+		.circle
+			width: 20px
+			height: 10px
+			border-radius: 5px
+			background-color: #5f00c9
+			margin: 8px 0
+			&:not(:last-of-type)
+				margin-right: 5px
+		.circle_grey
+			background-color: #eee
+
 
 @import "_media"
