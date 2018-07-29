@@ -5,23 +5,26 @@
 
 .lk-top
 	background-color: #f8f8f8
-	padding: 60px 0
+	padding: 50px 0
 	input[type="range"]::-webkit-slider-thumb
 		background: none
 		appearance: none
+		border: none
 	input[type="range"]::-moz-range-thumb
 	  background: none
 	  appearance: none
+	  border: none
 	input[type="range"]::-ms-thumb
 	  background: none
 	  appearance: none
+	  border: none
 	section
 		position: relative
 	.CENTERER
 		width: 1099px
 		margin: 0 auto
 	.main_title
-		margin-bottom: 20px
+		margin-bottom: 31px
 		h1
 			font-weight: bold
 			font-family: PragmaticaSlabBook, sans-serif
@@ -45,7 +48,7 @@
 
 .ads
 	&_new
-		padding: 34px 30px 22px 67px
+		padding: 24px 30px 22px 67px
 		background-color: #fff
 		box-shadow: 3px 8px 8px rgba(107, 114, 173, 0.15)
 		position: relative
@@ -88,13 +91,13 @@
 			height: 100%
 			.center
 				position: absolute
-				bottom: 36px
-				left: -22px
+				bottom: 35px
+				left: -24px
 				background-color: $red
 				width: 104px
-				height: 20px
-				line-height: 20px
-				transform: rotate(-45deg)
+				height: 24px
+				line-height: 25px
+				transform: rotate(-46deg)
 				transform-origin: center
 				box-shadow: 3px 8px 8px rgba(0, 0, 0, 0.15)
 			.top,
@@ -107,10 +110,10 @@
 				z-index: -1
 			.top
 				top: 0
-				right: 10px
+				right: 11px
 			.bottom
 				transform: rotate(-90deg)
-				bottom: 13px
+				bottom: 12px
 				left: -12px
 
 .dynamic_ipr
@@ -160,18 +163,16 @@
 		background-color: #fff
 
 .main_dinamic_active
-	padding: 59px 39px
+	padding: 50px 39px
 	display: flex
 	justify-content: space-between
 	flex-wrap: wrap
 	&__item
 		width: calc(50% - 28px)
 		display: flex
-		margin-top: 8px
+		margin-top: 13px
 	&__name
-		min-width: 60px
 		text-align: center
-		margin-right: 13px
 		position: relative
 		.icon_wrp
 			width: 60px
@@ -183,7 +184,7 @@
 			display: flex
 			align-items: center
 			justify-content: center
-			margin-bottom: 9px
+			margin-bottom: 6px
 		span
 			font-family: ArialMT, sans-serif
 			font-size: 12px
@@ -212,7 +213,7 @@
 					color: #000
 					position: absolute
 					right: 0
-					top: -10px
+					top: -7px
 					transform: translate(50%, -100%)
 		&>p
 			font-family: ArialMT, sans-serif
@@ -343,6 +344,7 @@
 		input[type="range"]
 			appearance: none
 			width: 100%
+			color: transparent
 		input[type="range"]::-webkit-slider-runnable-track
 		  background: none
 		  appearance: none
@@ -678,7 +680,7 @@
 			font-size: 14px
 			transition: all .15s ease-in-out
 			&:hover
-				padding-left: 18px
+				padding-left: 16px
 			&:last-child
 				padding-bottom: 15px
 	      
@@ -893,7 +895,7 @@
 					display: flex
 					align-items: center
 					padding-left: 16px
-					width: 731px
+					width: 721px
 					.checkbox
 						display: none
 						&:checked + .custom_checkbox
@@ -917,7 +919,7 @@
 					height: 32px
 					margin: 0 auto
 					.placeholder_select
-						padding: 9px 12px 0 12px
+						padding: 7px 12px 0 12px
 						&:before
 							right: 9px
 					.select_items
@@ -929,7 +931,7 @@
 								border-bottom: 1px solid #e6e6e6
 
 .all_books
-	padding: 30px 29px 38px 29px !important
+	padding: 27px 29px 38px 30px !important
 	background-color: #fff
 	&__competention
 		display: none
@@ -963,7 +965,7 @@
 		display: flex
 		align-items: center
 		justify-content: space-between
-		margin-bottom: 35px
+		margin-bottom: 38px
 	&__title
 		h2
 			font-weight: bold
@@ -993,12 +995,11 @@
 			font-family: TrebuchetMS, sans-serif
 			font-size: 14px
 			color: $blue
-			padding: 11px 26px
+			padding: 8px 37px
 			border: 2px solid $blue
 			transition: all .25s ease
 			&:hover
-				color: #fff
-				background-color: $blue
+				background-color: #F2F3F9
 	&__filter
 		.status_select
 			width: 200px
@@ -1009,12 +1010,15 @@
 				font-weight: bold
 				font-size: 14px
 				color: #cc003d
+				&:before
+					right: 7px
 				.fixed_placeholder
 					display: block
 					font-family: ArialMT, sans-serif
 					font-weight: normal
 					font-size: 11px
 					color: #a4a4bb
+					margin-top: -1px
 			.select_items
 				bottom: 4px
 				li
@@ -1047,7 +1051,7 @@
 			background-position: center
 			background-repeat: no-repeat
 			position: relative
-			margin-right: 31px
+			margin-right: 33px
 			&_icon
 				width: 50px
 				height: 50px
@@ -1080,18 +1084,20 @@
 				font-family: ArialMTBold, sans-serif
 				font-size: 14px
 				font-weight: bold
-				line-height: 18px
-				margin-bottom: 5px
+				line-height: 13px
+				margin-bottom: 9px
 				span
 					display: block
 					font-weight: normal
 					font-family: ArialMT, sans-serif
 					font-size: 12px
 					color: #a4a4bb
+					display: block
+					padding-bottom: 3px
 			ul
 				display: flex
 				flex-wrap: wrap
-				margin-bottom: 6px
+				margin-bottom: 5px
 				li
 					font-family: ArialMT, sans-serif
 					font-size: 12px
@@ -1117,7 +1123,7 @@
 				font-family: ArialMT, sans-serif
 				font-size: 11px
 				color: #a4a4bb
-				margin-bottom: 5px
+				margin-bottom: 3px
 
 .datapicker_wrp
 	position: relative
@@ -1137,13 +1143,14 @@
 		border: none
 		width: 140px
 		height: 28px
+		line-height: 28px
 		border-radius: 3px
 		border: 1px solid #e6e6e6
 		background-color: #ffffff
 		font-family: ArialMT, sans-serif
 		font-size: 14px
 		color: #000000
-		padding: 8px 11px
+		padding: 0 8px
 
 .datapicker_wrp_active
 	&:before
@@ -1161,6 +1168,16 @@
 div.datedropper.picker-lg
 	width: 227px !important
 
+div.datedropper.picker-fxs .pick-lg
+	padding-bottom: 2px
+
+div.datedropper.picker-focus
+	margin-top: 3px !important
+	transform: translateX(-101px)
+
+div.datedropper .picker .pick-lg ul li
+	line-height: 22px
+
 .picker
 	width: 100%
 	box-sizing: border-box
@@ -1168,7 +1185,7 @@ div.datedropper.picker-lg
 	border-radius: 3px
 	border: 1px solid #e6e6e6
 	background-color: #ffffff
-	padding: 14px 13px
+	padding: 6px 13px
 	.pick-m
 		font-family: ArialMT, sans-serif
 		font-size: 14px !important
@@ -1210,15 +1227,15 @@ div.datedropper.picker-lg
 	.pick-lg-b
 		li
 			width: 28px !important
-			height: 28px !important
-			line-height: 28px !important
+			height: 24px !important
+			line-height: 23px !important
 			font-family: ArialMT, sans-serif
 			font-size: 14px
 			color: #000000
 			&:before
 				background-color: $red
-				width: 28px !important
-				height: 28px !important
+				width: 26px !important
+				height: 27px !important
 		li.pick-sl
 			color: #fff
 			font-size: 14px !important

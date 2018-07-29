@@ -1,4 +1,11 @@
 $(document).ready(function() {
+	// Same width
+	let takeWidth = [];
+	$('.main_dinamic_active__item').each(function(index) {
+		takeWidth.push($(this).children('.main_dinamic_active__name').innerWidth());
+	});
+	$('.main_dinamic_active__name').css('width', Math.max.apply(null, takeWidth));
+	
 	// Common tab
 	$('.tab_common__nuv ul > li > a').click(function(e) {
 		e.preventDefault();
