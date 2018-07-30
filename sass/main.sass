@@ -185,7 +185,8 @@
 			align-items: center
 			justify-content: center
 			margin-bottom: 6px
-		span
+		a
+			text-decoration: none
 			font-family: ArialMT, sans-serif
 			font-size: 12px
 			color: #373737
@@ -542,8 +543,7 @@
 				border: 2px solid $blue
 				transition: all .25s ease
 				&:hover
-					color: #fff
-					background-color: $blue
+					background-color: #F2F3F9
 
 .past_evaluations
 	display: none
@@ -619,8 +619,7 @@
 			border: 2px solid $blue
 			transition: all .25s ease
 			&:hover
-				color: #fff
-				background-color: $blue
+				background-color: #F2F3F9
 			&:not(:last-of-type)
 				margin-right: 19px
 
@@ -805,8 +804,7 @@
 				border: 2px solid $blue
 				transition: all .25s ease
 				&:hover
-					color: #fff
-					background-color: $blue
+					background-color: #F2F3F9
 	&__row
 		display: flex
 		width: 879px
@@ -1181,7 +1179,7 @@ div.datedropper .picker .pick-lg ul li
 .picker
 	width: 100%
 	box-sizing: border-box
-	min-height: 182px
+	min-height: 148px
 	border-radius: 3px
 	border: 1px solid #e6e6e6
 	background-color: #ffffff
@@ -1193,13 +1191,13 @@ div.datedropper .picker .pick-lg ul li
 		opacity: 0.5
 		height: 25px !important
 		line-height: 25px !important
-		margin: 0 6px !important
+		margin: 0 11px 0 6px !important
 		li
 			text-align: left !important
 		.pick-arw
 			opacity: 1 !important
-			width: 5px !important
-			height: 10px !important
+			width: 12px !important
+			height: 100% !important
 			top: 50% !important
 			overflow: normal !important
 			transform: translateY(-50%) !important
@@ -1208,11 +1206,13 @@ div.datedropper .picker .pick-lg ul li
 			i
 				display: none !important
 		.pick-arw-l
-			right: 19px
+			right: 12px
 			left: auto !important
 			background-image: url(../img/icons/arrow-point-to-left.png)
+			background-position: left center !important
 		.pick-arw-r
 			background-image: url(../img/icons/arrow-point-to-right.png)
+			background-position: right center !important
 	.pick-lg-h,
 	.pick-lg-b
 		padding: 0 !important
@@ -1232,6 +1232,8 @@ div.datedropper .picker .pick-lg ul li
 			font-family: ArialMT, sans-serif
 			font-size: 14px
 			color: #000000
+			&:hover
+				text-decoration: none !important
 			&:before
 				background-color: $red
 				width: 26px !important
@@ -1243,7 +1245,7 @@ div.datedropper .picker .pick-lg ul li
 .dinamic_active_item
 	display: flex
 	align-items: center
-	margin-bottom: 32px
+	margin-bottom: 29px
 	&_icon
 		width: 60px
 		height: 60px
@@ -1252,9 +1254,19 @@ div.datedropper .picker .pick-lg ul li
 		display: flex
 		justify-content: center
 		align-items: center
-		margin-right: 10px
+		margin-right: 8px
 	.dinamic_active_item_progress
 		flex-grow: 1
+		.line_wrp
+			.procent
+				display: inline-block
+				position: relative
+				transform: translateX(-50%)
+				font-weight: bold
+				font-family: ArialMTBold, sans-serif
+				font-size: 14px
+				color: #000000
+				top: -6px
 		.line
 			width: 100%
 			height: 10px
@@ -1269,15 +1281,6 @@ div.datedropper .picker .pick-lg ul li
 				bottom: 0
 				height: inherit
 				border-radius: 5px
-				.procent
-					position: absolute
-					right: 0
-					top: -10px
-					transform: translate(50%, -100%)
-					font-weight: bold
-					font-family: ArialMTBold, sans-serif
-					font-size: 14px
-					color: #000000
 		.dinamic_active_item_status
 			font-family: ArialMT, sans-serif
 			font-size: 12px
@@ -1285,16 +1288,16 @@ div.datedropper .picker .pick-lg ul li
 
 
 .office_head
-	padding: 24px 27px 56px 27px !important
+	padding: 20px 29px 56px 29px !important
 	background-color: #fff
 	display: flex
 	flex-wrap: wrap
 	justify-content: space-between
 	&__left
 		width: 635px
-		margin-right: 70px
+		margin-right: 68px
 		&_title
-			margin-bottom: 27px
+			margin-bottom: 23px
 			h2
 				font-weight: bold
 				font-family: ArialMTBold, sans-serif
@@ -1307,28 +1310,28 @@ div.datedropper .picker .pick-lg ul li
 				font-size: 14px
 				color: #9a9a9a
 				display: block
-				padding-bottom: 6px
+				padding-bottom: 3px
 			h2
 				font-weight: bold
 				font-family: PragmaticaSlabBold, sans-serif
 				font-size: 20px
 				color: $blue
 		&_tags
-			margin-bottom: 14px
+			margin-bottom: 12px
 			ul
 				display: flex
 				flex-wrap: wrap
 				li
-					padding: 9px 12px
+					padding: 8px 14px
 					border-radius: 3px
 					background-color: #eeeeee
 					font-family: ArialMT, sans-serif
 					font-size: 12px
 					margin-bottom: 10px
 					&:not(:last-of-type)
-						margin-right: 10px
+						margin-right: 8px
 		&_description
-			margin-bottom: 20px
+			margin-bottom: 21px
 			p
 				font-family: ArialMT, sans-serif
 				font-size: 14px
@@ -1338,7 +1341,7 @@ div.datedropper .picker .pick-lg ul li
 				font-family: TrebuchetMS, sans-serif
 				font-size: 14px
 				color: $blue
-				padding: 9px 26px
+				padding: 9px 30px
 				border: 2px solid $blue
 				transition: all .25s ease
 				&:hover
@@ -1353,6 +1356,7 @@ div.datedropper .picker .pick-lg ul li
 		flex-grow: 1
 		&_title
 			margin-bottom: 24px
+			margin-top: 3px
 			h2
 				font-weight: bold
 				font-family: ArialMTBold, sans-serif
@@ -1396,7 +1400,7 @@ div.datedropper .picker .pick-lg ul li
 				&:not(:last-of-type)
 					margin-right: 16px
 	&__bottom
-		margin-top: 40px
+		margin-top: 36px
 		width: 100%
 		&_title
 			h2
@@ -1405,7 +1409,7 @@ div.datedropper .picker .pick-lg ul li
 				font-size: 18px
 				margin-bottom: 20px
 		&_write_review
-			margin-bottom: 29px
+			margin-bottom: 25px
 			a
 				font-family: TrebuchetMS, sans-serif
 				font-size: 14px
@@ -1414,7 +1418,7 @@ div.datedropper .picker .pick-lg ul li
 .reviews_item
 	display: flex
 	&:not(:last-of-type)
-		margin-bottom: 25px
+		margin-bottom: 27px
 	&__thumb
 		min-width: 46px
 		max-width: 46px

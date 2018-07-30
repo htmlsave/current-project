@@ -30,7 +30,7 @@ $(document).ready(function() {
 		$(this).parent().prepend(firstEl);
 
 		for(let i = 1; i < takeMax; i++) { 
-			let setClass = maxWidth*i > currentVal - maxWidth ? 'circle_grey' : '';
+			let setClass = maxWidth*i > (currentVal - maxWidth) + 1 ? 'circle_grey' : '';
 			let el = '<span class="circle '+setClass+'" style="left:'+maxWidth*i+'px"></span>';
 			$(this).parent().append(el);
 		}
@@ -41,19 +41,17 @@ $(document).ready(function() {
 	// Filter date all-books.html
 	$('.all_books__item_filter_date').dateDropper();
 	$('.datapicker_wrp').click(function(e) {
+		e.stopPropagation();
 		$(this).addClass('datapicker_wrp_active');
 	});
-	$('.select_common').click(function() {
-		$('.datedropper').removeClass('picker-focus');
-	});
-	$('body').click(function(e) {
+	$('body').click(function() {
 		$('.datapicker_wrp').removeClass('datapicker_wrp_active');
 	});
-	$('.picker').click(function(e) {
-		e.stopPropagation();
-	});
-	// Filter date
-	$('.dinamic_active_item_date').dateDropper();
+	setInterval(function() {
+		$('.datedropper').click(function(e) {
+			e.stopPropagation();
+		});
+	}, 250);
 
 	// Tab books
 	$('.all_books__nuv > ul > li > a').click(function(e) {
@@ -65,5 +63,15 @@ $(document).ready(function() {
 		let takeHref = $(this).attr('href');
 		$('.all_books__inner > div').hide();
 		$(takeHref).fadeIn();
+	});
+
+	// Filter date _2.html/_3.html/_4.html/_5.html/_6.html
+	$('.dinamic_active_item_date').dateDropper();
+
+	// Check .procent
+	$('.procent').each(function() {
+		let offsetProcent = $('.procent').text().slice(0, -1);
+		if(offsetProcent === '100')
+			$(this).css('transform', 'translateX(-100%)');
 	});
 });

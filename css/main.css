@@ -385,7 +385,8 @@
   margin-bottom: 6px;
 }
 
-.main_dinamic_active__name span {
+.main_dinamic_active__name a {
+  text-decoration: none;
   font-family: ArialMT, sans-serif;
   font-size: 12px;
   color: #373737;
@@ -986,8 +987,7 @@
 }
 
 .competency_assessment .graphic__filter_show:hover {
-  color: #fff;
-  background-color: #001689;
+  background-color: #F2F3F9;
 }
 
 .past_evaluations {
@@ -1131,8 +1131,7 @@
 }
 
 .training_plan__actions a:hover {
-  color: #fff;
-  background-color: #001689;
+  background-color: #F2F3F9;
 }
 
 .training_plan__actions a:not(:last-of-type) {
@@ -1419,8 +1418,7 @@
 }
 
 .formation_ipr__filter__apply_wrp button:hover {
-  color: #fff;
-  background-color: #001689;
+  background-color: #F2F3F9;
 }
 
 .formation_ipr__row {
@@ -2037,7 +2035,7 @@ div.datedropper .picker .pick-lg ul li {
   width: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  min-height: 182px;
+  min-height: 148px;
   -webkit-border-radius: 3px;
           border-radius: 3px;
   border: 1px solid #e6e6e6;
@@ -2052,7 +2050,7 @@ div.datedropper .picker .pick-lg ul li {
   opacity: 0.5;
   height: 25px !important;
   line-height: 25px !important;
-  margin: 0 6px !important;
+  margin: 0 11px 0 6px !important;
 }
 
 .picker .pick-m li {
@@ -2061,8 +2059,8 @@ div.datedropper .picker .pick-lg ul li {
 
 .picker .pick-m .pick-arw {
   opacity: 1 !important;
-  width: 5px !important;
-  height: 10px !important;
+  width: 12px !important;
+  height: 100% !important;
   top: 50% !important;
   overflow: normal !important;
   -webkit-transform: translateY(-50%) !important;
@@ -2078,13 +2076,15 @@ div.datedropper .picker .pick-lg ul li {
 }
 
 .picker .pick-m .pick-arw-l {
-  right: 19px;
+  right: 12px;
   left: auto !important;
   background-image: url(../img/icons/arrow-point-to-left.png);
+  background-position: left center !important;
 }
 
 .picker .pick-m .pick-arw-r {
   background-image: url(../img/icons/arrow-point-to-right.png);
+  background-position: right center !important;
 }
 
 .picker .pick-lg-h,
@@ -2110,6 +2110,10 @@ div.datedropper .picker .pick-lg ul li {
   color: #000000;
 }
 
+.picker .pick-lg-b li:hover {
+  text-decoration: none !important;
+}
+
 .picker .pick-lg-b li:before {
   background-color: #cc003d;
   width: 26px !important;
@@ -2130,7 +2134,7 @@ div.datedropper .picker .pick-lg ul li {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 32px;
+  margin-bottom: 29px;
 }
 
 .dinamic_active_item_icon {
@@ -2152,7 +2156,7 @@ div.datedropper .picker .pick-lg ul li {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-right: 10px;
+  margin-right: 8px;
 }
 
 .dinamic_active_item .dinamic_active_item_progress {
@@ -2160,6 +2164,19 @@ div.datedropper .picker .pick-lg ul li {
   -webkit-flex-grow: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+}
+
+.dinamic_active_item .dinamic_active_item_progress .line_wrp .procent {
+  display: inline-block;
+  position: relative;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-weight: bold;
+  font-family: ArialMTBold, sans-serif;
+  font-size: 14px;
+  color: #000000;
+  top: -6px;
 }
 
 .dinamic_active_item .dinamic_active_item_progress .line {
@@ -2182,19 +2199,6 @@ div.datedropper .picker .pick-lg ul li {
           border-radius: 5px;
 }
 
-.dinamic_active_item .dinamic_active_item_progress .line .line_fill .procent {
-  position: absolute;
-  right: 0;
-  top: -10px;
-  -webkit-transform: translate(50%, -100%);
-      -ms-transform: translate(50%, -100%);
-          transform: translate(50%, -100%);
-  font-weight: bold;
-  font-family: ArialMTBold, sans-serif;
-  font-size: 14px;
-  color: #000000;
-}
-
 .dinamic_active_item .dinamic_active_item_progress .dinamic_active_item_status {
   font-family: ArialMT, sans-serif;
   font-size: 12px;
@@ -2202,7 +2206,7 @@ div.datedropper .picker .pick-lg ul li {
 }
 
 .office_head {
-  padding: 24px 27px 56px 27px !important;
+  padding: 20px 29px 56px 29px !important;
   background-color: #fff;
   display: -webkit-box;
   display: -webkit-flex;
@@ -2219,11 +2223,11 @@ div.datedropper .picker .pick-lg ul li {
 
 .office_head__left {
   width: 635px;
-  margin-right: 70px;
+  margin-right: 68px;
 }
 
 .office_head__left_title {
-  margin-bottom: 27px;
+  margin-bottom: 23px;
 }
 
 .office_head__left_title h2 {
@@ -2242,7 +2246,7 @@ div.datedropper .picker .pick-lg ul li {
   font-size: 14px;
   color: #9a9a9a;
   display: block;
-  padding-bottom: 6px;
+  padding-bottom: 3px;
 }
 
 .office_head__left_name h2 {
@@ -2253,7 +2257,7 @@ div.datedropper .picker .pick-lg ul li {
 }
 
 .office_head__left_tags {
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
 
 .office_head__left_tags ul {
@@ -2267,7 +2271,7 @@ div.datedropper .picker .pick-lg ul li {
 }
 
 .office_head__left_tags ul li {
-  padding: 9px 12px;
+  padding: 8px 14px;
   -webkit-border-radius: 3px;
           border-radius: 3px;
   background-color: #eeeeee;
@@ -2277,11 +2281,11 @@ div.datedropper .picker .pick-lg ul li {
 }
 
 .office_head__left_tags ul li:not(:last-of-type) {
-  margin-right: 10px;
+  margin-right: 8px;
 }
 
 .office_head__left_description {
-  margin-bottom: 20px;
+  margin-bottom: 21px;
 }
 
 .office_head__left_description p {
@@ -2300,7 +2304,7 @@ div.datedropper .picker .pick-lg ul li {
   font-family: TrebuchetMS, sans-serif;
   font-size: 14px;
   color: #001689;
-  padding: 9px 26px;
+  padding: 9px 30px;
   border: 2px solid #001689;
   -webkit-transition: all .25s ease;
   -o-transition: all .25s ease;
@@ -2330,6 +2334,7 @@ div.datedropper .picker .pick-lg ul li {
 
 .office_head__right_title {
   margin-bottom: 24px;
+  margin-top: 3px;
 }
 
 .office_head__right_title h2 {
@@ -2403,7 +2408,7 @@ div.datedropper .picker .pick-lg ul li {
 }
 
 .office_head__bottom {
-  margin-top: 40px;
+  margin-top: 36px;
   width: 100%;
 }
 
@@ -2415,7 +2420,7 @@ div.datedropper .picker .pick-lg ul li {
 }
 
 .office_head__bottom_write_review {
-  margin-bottom: 29px;
+  margin-bottom: 25px;
 }
 
 .office_head__bottom_write_review a {
@@ -2432,7 +2437,7 @@ div.datedropper .picker .pick-lg ul li {
 }
 
 .reviews_item:not(:last-of-type) {
-  margin-bottom: 25px;
+  margin-bottom: 27px;
 }
 
 .reviews_item__thumb {
