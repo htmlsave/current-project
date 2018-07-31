@@ -38,21 +38,6 @@ $(document).ready(function() {
 		$(this).parent().append('<div class="fill" style="width:'+fillResulr+'px;"></div>');
 	});
 
-	// Filter date all-books.html
-	$('.all_books__item_filter_date').dateDropper();
-	$('.datapicker_wrp').click(function(e) {
-		e.stopPropagation();
-		$(this).addClass('datapicker_wrp_active');
-	});
-	$('body').click(function() {
-		$('.datapicker_wrp').removeClass('datapicker_wrp_active');
-	});
-	setInterval(function() {
-		$('.datedropper').click(function(e) {
-			e.stopPropagation();
-		});
-	}, 250);
-
 	// Tab books
 	$('.all_books__nuv > ul > li > a').click(function(e) {
 		e.preventDefault();
@@ -61,17 +46,66 @@ $(document).ready(function() {
 		$(this).addClass('all_books__nuv_active');
 		//Toggle show
 		let takeHref = $(this).attr('href');
-		$('.all_books__inner > div').hide();
-		$(takeHref).fadeIn();
+		$('.all_books__inner > div').each(function() {
+			$(this).hasClass( takeHref.slice(1) ) ? $(this).fadeIn() : $(this).hide();
+		});
 	});
-
-	// Filter date _2.html/_3.html/_4.html/_5.html/_6.html
-	$('.dinamic_active_item_date').dateDropper();
 
 	// Check .procent
 	$('.procent').each(function() {
 		let offsetProcent = $('.procent').text().slice(0, -1);
 		if(offsetProcent === '100')
 			$(this).css('transform', 'translateX(-100%)');
+	});
+
+	// Filters date init
+	$('.all_books__item_filter_date').dateDropper();
+	$('.dinamic_active_item_date').dateDropper();
+
+	// Filter date common events
+	$('.datapicker_wrp').click(function(e) {
+		e.stopPropagation();
+		let takeId = $(this).find('input').attr('data-id');
+		// Remove classes from not current elements
+		$('.select_common').removeClass('select_active');
+		$('.datapicker_wrp > input').each(function() {
+			if( $(this).attr('data-id') !== takeId ) 
+				$(this).parent().removeClass('datapicker_wrp_active');
+		});
+		$('.datedropper').each(function() {
+			if( $(this).attr('id') !== takeId ) 
+				$(this).removeClass('picker-focus');
+		});
+		// Toggle classes from current element
+		$('#'+takeId).toggleClass('picker-focus');
+		$(this).toggleClass('datapicker_wrp_active');
+	});
+	$('body, .select_common').click(function() {
+		$('.datapicker_wrp').removeClass('datapicker_wrp_active');
+		$('.datedropper').removeClass('picker-focus');
+	});
+	setTimeout(function() {
+		$('.datedropper').click(function(e) {
+			e.stopPropagation();
+		});
+	}, 250);
+
+	// After choose date and open popup if have
+	$('.pick-lg-b > li').click(function() {
+		$('.datapicker_wrp').removeClass('datapicker_wrp_active');
+		$('.datedropper').removeClass('picker-focus');
+		// Popup
+		let popupSelector = $('.popup_postponement_term');
+		if(popupSelector) $(popupSelector).fadeIn();
+	});
+
+	// Popup rewies
+	$('.js-to_write_popups').click(function(e) {
+		e.preventDefault();
+		let takeHref = $(this).attr('href');
+		$(takeHref).fadeIn(200);
+	});
+	$('.js-popup_close').click(function() {
+		$(this).closest('.popup').fadeOut(170);
 	});
 });

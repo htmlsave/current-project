@@ -105,6 +105,10 @@
   position: relative;
 }
 
+.lk-top p {
+  line-height: 1.5;
+}
+
 .lk-top .CENTERER {
   width: 1099px;
   margin: 0 auto;
@@ -296,18 +300,6 @@
   -o-transition: all .25s ease;
   transition: all .25s ease;
   background-color: #EAEAF0;
-}
-
-.tab_common__nuv ul li a:hover {
-  background-color: #fff;
-  color: #001689;
-}
-
-.tab_common__nuv ul li a:hover svg path {
-  -webkit-transition: all .25s ease;
-  -o-transition: all .25s ease;
-  transition: all .25s ease;
-  fill: #001689;
 }
 
 .tab_common__nuv ul li a svg {
@@ -914,6 +906,7 @@
   -webkit-transform: translate(-50%, 100%);
       -ms-transform: translate(-50%, 100%);
           transform: translate(-50%, 100%);
+  font-family: ArialMT, sans-serif;
   font-size: 12px;
   color: #a4a4bb;
   text-transform: uppercase;
@@ -1248,10 +1241,6 @@
   border-right: 1px solid #c2c2c2;
 }
 
-.formation_ipr .tab_common__nuv ul li:not(:last-of-type) a:hover {
-  border-color: transparent;
-}
-
 .formation_ipr .tab_common__nuv ul li:not(:first-of-type) a {
   position: relative;
 }
@@ -1266,10 +1255,6 @@
   position: absolute;
   top: 0;
   bottom: 0;
-}
-
-.formation_ipr .tab_common__nuv ul li:not(:first-of-type) a:hover:before {
-  background-color: #fff;
 }
 
 .formation_ipr .tab_common__nuv ul li:not(:first-of-type) .tab_common__nuv_active:before {
@@ -1313,8 +1298,7 @@
 }
 
 .formation_ipr__add_activity__actions button:hover {
-  color: #fff;
-  background-color: #001689;
+  background-color: #F2F3F9;
 }
 
 .formation_ipr__add_activity__actions button:not(:last-of-type) {
@@ -1714,14 +1698,15 @@
 }
 
 .all_books__nuv ul li a {
+  text-decoration: none;
   font-family: ArialMT, sans-serif;
   font-size: 14px;
-  color: #001689;
+  color: #c0c0c0;
 }
 
 .all_books__nuv ul li a.all_books__nuv_active {
-  text-decoration: none;
-  color: #c0c0c0;
+  text-decoration: underline;
+  color: #001689;
 }
 
 .all_books__filter_flex {
@@ -1985,17 +1970,20 @@
 
 .datapicker_wrp input {
   border: none;
+  cursor: pointer;
   width: 140px;
   height: 28px;
   line-height: 28px;
   -webkit-border-radius: 3px;
           border-radius: 3px;
   border: 1px solid #e6e6e6;
-  background-color: #ffffff;
+  background-color: transparent;
   font-family: ArialMT, sans-serif;
   font-size: 14px;
   color: #000000;
   padding: 0 8px;
+  position: relative;
+  z-index: 2;
 }
 
 .datapicker_wrp_active:before {
@@ -2312,8 +2300,7 @@ div.datedropper .picker .pick-lg ul li {
 }
 
 .office_head__left_actions button:hover {
-  color: #fff;
-  background-color: #001689;
+  background-color: #F8F9FB;
 }
 
 .office_head__left_actions button:not(:last-of-type) {
@@ -2341,29 +2328,6 @@ div.datedropper .picker .pick-lg ul li {
   font-weight: bold;
   font-family: ArialMTBold, sans-serif;
   font-size: 18px;
-}
-
-.office_head__right_finished ul {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.office_head__right_finished ul li:not(:last-of-type) {
-  margin-right: 41px;
-}
-
-.office_head__right_finished ul li p {
-  font-family: ArialMT, sans-serif;
-  font-size: 11px;
-  color: #a4a4bb;
-  margin-bottom: 6px;
-}
-
-.office_head__right_finished ul li span {
-  font-family: ArialMT, sans-serif;
-  font-size: 14px;
 }
 
 .office_head__right_current {
@@ -2512,21 +2476,134 @@ div.datedropper .picker .pick-lg ul li {
   background-color: #eee;
 }
 
+.popup {
+  width: 100%;
+  height: 100%;
+  position: fixed !important;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9;
+  display: none;
+}
+
+.popup__mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.popup__content {
+  width: 525px;
+  background-color: #fff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  padding: 27px 27px 21px 27px;
+}
+
+.popup__form label {
+  font-family: TrebuchetMS, sans-serif;
+  font-size: 14px;
+  color: #b1b1b1;
+  line-height: 24px;
+}
+
+.popup__form textarea {
+  border: none;
+  outline: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  height: 120px;
+  border: 1px solid #e6e6e6;
+  padding: 15px 12px;
+  -webkit-border-radius: 3px;
+          border-radius: 3px;
+  font-family: ArialMT, sans-serif;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.popup__form textarea::-webkit-input-placeholder {
+  color: #bdbdbd;
+  font-style: italic;
+}
+
+.popup__form textarea::-moz-placeholder {
+  color: #bdbdbd;
+  font-style: italic;
+}
+
+.popup__form textarea:-ms-input-placeholder {
+  color: #bdbdbd;
+  font-style: italic;
+}
+
+.popup__form textarea::-ms-input-placeholder {
+  color: #bdbdbd;
+  font-style: italic;
+}
+
+.popup__form textarea::placeholder {
+  color: #bdbdbd;
+  font-style: italic;
+}
+
+.popup__form_actions {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.popup__form_actions button {
+  font-family: TrebuchetMS, sans-serif;
+  font-size: 14px;
+  color: #001689;
+  padding: 9px 26px;
+  border: 2px solid #001689;
+  -webkit-transition: all .25s ease;
+  -o-transition: all .25s ease;
+  transition: all .25s ease;
+}
+
+.popup__form_actions button:hover {
+  background-color: #F2F3F9;
+}
+
+.popup__form_actions button:not(:last-of-type) {
+  margin-right: 14px;
+}
+
+.popup__form_actions button.popup__form_btn_save {
+  background-color: #001689;
+  color: #fff;
+}
+
 /*========================
 	@Media запросы
 	@mixin =======================*/
-@media only screen and (max-width: 1280px) {
-  /**/
-}
-
-@media only screen and (max-width: 992px) {
-  /**/
-}
-
-@media only screen and (max-width: 768px) {
-  /**/
-}
-
-@media only screen and (max-width: 480px) {
-  /**/
+@media only screen and (max-width: 1099px) {
+  body {
+    width: 1114px;
+  }
 }

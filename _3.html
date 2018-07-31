@@ -3,9 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<meta name="viewport" content="width=1014">
 	<title>Document</title>
-	<link rel="stylesheet" href="libs/Datedropper3-master/datedropper.min.css">
+	<link rel="stylesheet" href="libs/datedropper/datedropper.min.css">
 	<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
@@ -67,13 +66,13 @@
 							<li>
 								<p>Начало активности</p>
 								<div class="datapicker_wrp">
-									<input type="text" class="dinamic_active_item_date" data-theme="my-style" data-lang="ru" data-large-default="true" data-default-date="30.08.2018" data-large-mode="true">
+									<input type="text" class="dinamic_active_item_date" data-theme="my-style" data-lang="ru" data-large-default="true" data-default-date="19.08.2018" data-large-mode="true">
 								</div>
 							</li>
 							<li>
 								<p>Завершение активности</p>
 								<div class="datapicker_wrp">
-									<input type="text" class="dinamic_active_item_date" data-theme="my-style" data-lang="ru" data-large-default="true" data-default-date="30.08.2018" data-large-mode="true">
+									<input type="text" class="dinamic_active_item_date" data-theme="my-style" data-lang="ru" data-large-default="true" data-default-date="28.08.2018" data-large-mode="true">
 								</div>
 							</li>
 						</ul>
@@ -88,7 +87,7 @@
 						<h2>Отзывы</h2>
 					</div>
 					<div class="office_head__bottom_write_review">
-						<a href="#">Написать отзыв</a>
+						<a href=".popup_write_review" class="js-to_write_popups">Написать отзыв</a>
 					</div>
 					<div class="reviews_items">
 						<!-- item -->
@@ -121,13 +120,43 @@
 			</section>
 
 		</div>
+
+		<!-- Popups -->
+		<div class="popup popup_write_review">
+			<div class="popup__mask js-popup_close"></div>
+			<div class="popup__content">
+				<form action="#" class="popup__form">
+					<label for="write_text">Напишите ваш отзыв</label>
+					<textarea name="text" placeholder="Введите текст" id="write_text"></textarea>
+					<div class="popup__form_actions">
+						<button class="popup__form_btn_save">Сохранить</button>
+						<button class="js-popup_close">Отмена</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="popup popup_postponement_term">
+			<div class="popup__mask js-popup_close"></div>
+			<div class="popup__content">
+				<form action="#" class="popup__form">
+					<label for="choose_reason">Причина переноса сроков завершения активности</label>
+					<textarea name="text" placeholder="Введите причину" id="choose_reason"></textarea>
+					<div class="popup__form_actions">
+						<button class="popup__form_btn_save">Сохранить</button>
+						<button class="js-popup_close">Отмена</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<!-- END Popups -->
+
 	</div>
 	
 
 	<!-- Scripts -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script src="libs/nativejs-select/nativejs-select.min.js"></script>
-	<script src="libs/Datedropper3-master/datedropper.min.js"></script>
+	<script src="libs/datedropper/datedropper.js"></script>
 	<script src="js/common.js"></script>
 </body>
 </html>
