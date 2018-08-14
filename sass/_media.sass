@@ -3,6 +3,66 @@
 /*========================
 	@Media запросы
 	========================*/
-@media only screen and (max-width: 1099px)
-	body
-		width: 1114px
+@media only screen and (max-width: 1170px)
+	.CENTERER
+		padding: 0 15px
+
+@media only screen and (max-width: 992px)
+	.mobile_menu_active
+		padding-right: 0
+	.header__menu
+		display: none
+	.header__middle
+		.to_mobile_menu
+			display: block
+	.last_projects__item
+		width: 33.333%
+		&:not(:last-of-type)
+			margin-right: 0
+
+
+@media only screen and (max-width: 768px)
+	.header__top,
+	.header_prev, 
+	.header_next 
+		display: none !important
+	.header__middle
+		position: static
+		background-color: #1A1A1A
+		padding: 10px 0
+	.header_slider
+		min-height: inherit
+		.draggable,
+		.slick-track,
+		.slick-slide
+			min-height: 100%
+		.header_slider__item .CENTERER
+			width: 100%
+		.header_slider__item
+			padding-top: 0
+			padding: 30px 0
+			height: 100%
+	.header__bottom
+		position: relative
+		height: auto
+		min-height: 300px
+	.about,
+	.last_projects
+		padding: 50px 0
+	.last_projects__items
+		flex-direction: column
+		justify-content: center
+		align-items: center
+	.last_projects__item
+		width: auto
+		&:not(:last-of-type)
+			margin-bottom: 30px
+	.last_projects__previes img
+		width: auto
+		display: block
+		margin: 0 auto
+
+
+@media only screen and (max-width: 480px)
+	.last_projects__previes img
+		width: 100%

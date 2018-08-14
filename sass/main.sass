@@ -3,1522 +3,357 @@
 @import "_fonts"
 @import "_reset"
 
-.lk-top
-	background-color: #f8f8f8
-	padding: 50px 0
-	input[type="range"]::-webkit-slider-thumb
-		background: none
-		appearance: none
-		border: none
-	input[type="range"]::-moz-range-thumb
-	  background: none
-	  appearance: none
-	  border: none
-	input[type="range"]::-ms-thumb
-	  background: none
-	  appearance: none
-	  border: none
-	section
-		position: relative
-	p
-		line-height: 1.5
-	.CENTERER
-		width: 1099px
-		margin: 0 auto
-	.main_title
-		margin-bottom: 31px
-		h1
-			font-weight: bold
-			font-family: PragmaticaSlabBook, sans-serif
-			font-size: 24px
-			color: #010033
-			span
-				display: block
-				font-weight: normal
-				font-family: ArialMT, sans-serif
-				font-size: 18px
-				color: #7074ae
-				margin-top: 10px
-	.title
-		margin-bottom: 20px
-		h2
-			font-weight: bold
-			font-family: PragmaticaSlabBold, sans-serif
-			font-size: 16px
-	.ads
-		margin-bottom: 59px
-
-.ads
-	&_new
-		padding: 24px 30px 22px 67px
-		background-color: #fff
-		box-shadow: 3px 8px 8px rgba(107, 114, 173, 0.15)
-		position: relative
-		&>h2
-			font-family: PragmaticaSlabBold, sans-serif
-			font-size: 16px
-			color: $blue
-			margin-bottom: 9px
-		&>p
-			font-family: ArialMT, sans-serif
-			font-size: 14px
-			line-height: 22px
-			color: #373737
-			margin-bottom: 10px
-	&_link
-		text-align: right
-		a
-			display: inline-block
-			text-decoration: none
-			font-family: ArialMT, sans-serif
-			font-size: 14px
-			color: #fff
-			padding: 10px 28px
-			background-color: $red
-	&_label
-		width: 84px
-		height: 76px
-		position: absolute
-		left: -5px
-		top: -5px
-		font-family: ArialMT, sans-serif
-		font-size: 13px
-		color: #fff
-		text-transform: uppercase
-		text-align: center
-		overflow: hidden
-		z-index: 1
-		.ads_label__new
-			width: 100%
-			height: 100%
-			.center
-				position: absolute
-				bottom: 35px
-				left: -24px
-				background-color: $red
-				width: 104px
-				height: 24px
-				line-height: 25px
-				transform: rotate(-46deg)
-				transform-origin: center
-				box-shadow: 3px 8px 8px rgba(0, 0, 0, 0.15)
-			.top,
-			.bottom
-				display: block
-				width: 27px
-				height: 5px
-				background-color: #9a002e
-				position: absolute
-				z-index: -1
-			.top
-				top: 0
-				right: 11px
-			.bottom
-				transform: rotate(-90deg)
-				bottom: 12px
-				left: -12px
-
-.dynamic_ipr
+html
 	display: flex
-	margin-bottom: 65px !important
-	&__left
-		width: 830px
-		margin-right: 45px
 
-.tab_common
-	&__nuv
+body
+	display: flex
+	flex-direction: column
+	width: 100%
+	min-height: 100vh
+
+main
+	flex-grow: 1
+
+section
+	position: relative
+
+*
+	font-family: Roboto, sans-serif
+
+.mobile_menu_active
+	padding-right: 18px
+	overflow: hidden
+	.mobile_menu
+		display: block
+		&__body
+			left: 0
+
+.CENTERER
+	max-width: 1170px
+	margin: 0 auto
+
+.header
+	position: relative
+	&__top
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		background-color: rgba(0, 0, 0, .2)
+		padding: 16px 0
+		z-index: 2
 		ul
 			display: flex
 			li
-				flex-grow: 1
 				display: flex
+				align-items: center
+				color: $grey
+				&:not(:last-of-type)
+					margin-right: 15px
 				a
 					text-decoration: none
-					display: flex
-					align-items: center
-					justify-content: center
-					font-family: TrebuchetMS, sans-serif
 					font-size: 14px
-					color: #a4a4bb
-					width: 100%
-					padding: 15px 0
-					transition: all .25s ease
-					background-color: #EAEAF0
-					svg
-						margin-right: 11px
-						path
-							fill: #a4a4bb
-				a.tab_common__nuv_active
-					background-color: #fff
-					color: $blue
-					svg
-						path
-							fill: $blue
-	&__content
-		background-color: #fff
-
-.main_dinamic_active
-	padding: 50px 39px
-	display: flex
-	justify-content: space-between
-	flex-wrap: wrap
-	&__item
-		width: calc(50% - 28px)
-		display: flex
-		margin-top: 13px
-	&__name
-		text-align: center
-		position: relative
-		.icon_wrp
-			width: 60px
-			height: 60px
-			margin: 0 auto
-			line-height: 68px
-			box-shadow: 3px 8px 10px rgba(0, 0, 0, 0.15)
-			border-radius: 50%
+					color: $grey
+					&:hover
+						text-decoration: underline
+				i
+					margin-right: 10px
+	&__middle
+		position: absolute
+		top: 80px
+		left: 0
+		right: 0
+		z-index: 2
+		&_flex
 			display: flex
 			align-items: center
-			justify-content: center
-			margin-bottom: 6px
-		a
-			text-decoration: none
-			font-family: ArialMT, sans-serif
-			font-size: 12px
-			color: #373737
-			line-height: 16px
-			display: block
-			text-align: center
-	&__level
-		flex-grow: 1
-		.line_bg
-			width: 100%
-			height: 10px
-			border-radius: 5px
-			background-color: #eeeeee
-			margin: 24px 0 7px 0
-			position: relative
-			.line
-				position: absolute
-				left: 0
-				top: 0
-				bottom: 0
-				border-radius: 5px
-				span
-					font-family: ArialMTBold, sans-serif
-					font-size: 14px
-					color: #000
+			justify-content: space-between
+		.to_mobile_menu
+			display: none
+			font-size: 40px
+			color: #fff
+	&__menu
+		.current-menu-item 
+			a
+				color: #008ed6
+		&>ul
+			display: flex
+			li
+				position: relative
+				overflow: hidden
+				&:last-child
+					.sub-menu
+						left: auto
+						right: 0
+				&:hover 
+					overflow: visible
+					.sub-menu
+						opacity: 1
+						z-index: 1
+						top: 18px
+					&>a
+						color: $blue
+				a
+					text-decoration: none
+					display: block
+					padding: 0 25px
+					font-size: 16px
+					color: #fff
+					transition: all .25s ease
+				.sub-menu
+					width: 240px
+					display: block
+					opacity: 0
+					z-index: -1
+					transition: all .25s ease-in-out
 					position: absolute
-					right: 0
-					top: -7px
-					transform: translate(50%, -100%)
-		&>p
-			font-family: ArialMT, sans-serif
-			font-size: 12px
-			color: #a4a4bb
+					top: 0
+					left: 0
+					padding-top: 25px
+					li
+						margin-bottom: 1px
+						a
+							display: block
+							padding: 10px 25px
+							background-color: #000
+							color: #fff
+							transition: all .25s ease
+							&:hover
+								color: $blue
+	&__bottom
+		height: 520px
+		position: relative
+		&:hover
+			.header_prev,
+			.header_next
+				opacity: 1
+		.header_prev,
+		.header_next
+			opacity: 0
+			position: absolute
+			top: 50%
+			left: 20px
+			transform: translateY(-50%)
+			margin-top: 48px
+			transition: all .25s ease
+		.header_next
+			left: auto
+			right: 20px
 
-.bg_blue
-	background-color: #5faeff
-.bg_pink
-	background-color: #cd60a0
-.bg_pink_2
-	background-color: #e07fe3
-.bg_indigo
-	background-color: #4a7fea
-.bg_yellow
-	background-color: #f8b31e
-.bg_purple
-	background-color: #5f00c9
 
-.line_blue
-	background-color: #5faeff
-.line_yellow
-	background-color: #f8b31e
-.line_blue_2
-	background-color: #4a7fea
-.line_pink
-	background-color: #e07fe3			
-.line_pink_2
-	background-color: #cd60a0
-.line_purple
-	background-color: #5f00c9
-
-.urgent_activities
-	padding: 37px 47px
-	display: none
-	&__flex
-		display: flex
-		align-items: center
-	&__icon
-		width: 50px
-		height: 50px
-		border-radius: 50%
-		box-shadow: 3px 8px 10px rgba(0, 0, 0, 0.15)
+.header_slider
+	height: 100%
+	.slick-list 
+		height: 100%
+	.slick-track 
+		height: 100%
+	&__item
+		height: 100%
 		display: flex
 		align-items: center
 		justify-content: center
-		margin-right: 12px
-	&__name
-		&>span
-			font-family: ArialMT, sans-serif
-			font-size: 12px
-			color: #a4a4bb
-		p
-			font-family: ArialMT, sans-serif
-			color: #373737
-			font-size: 14px
-			span
-				font-weight: bold
-				color: #000
-	table
-		width: 100%
-		th
-			font-weight: normal
-			font-family: ArialMT, sans-serif
-			font-size: 14px
-			color: #b1b1b1
-			padding-bottom: 11px
-			&:first-child
-				text-align: left
-		td
-			padding: 11px 0
-			vertical-align: middle
-		.start,
-		.finish
-			font-family: ArialMTBold, sans-serif
-			font-size: 16px
-			color: #000000
-			text-align: center
-		.finish
-			color: $red
-
-.showers_ipr
-	&__img
-		display: block
-		border-radius: 50%
-	&__item
-		margin-top: 20px
-		&>p
-			font-family: TrebuchetMS, sans-serif
-			font-size: 14px
-			color: #c0c0c0
-			margin-bottom: 4px
-		&>span
+		background-size: cover
+		background-repeat: no-repeat
+		padding-top: 133px
+		&:before
+			content: ''
 			display: block
-			font-family: PragmaticaSlabBold, sans-serif
-			font-size: 16px
-			color: #010101
-			margin-bottom: 6px
-		&>a
-			font-family: TrebuchetMS, sans-serif
-			font-size: 14px
-			color: $blue
-	&__range
-		position: relative
-		.circle
-			width: 10px
-			height: 10px
-			border-radius: 50%
-			background-color: $blue
 			position: absolute
-			left: 0
-			top: 6px
-			transform: translateX(-50%)
-		.circle_first
-			left: auto
-			right: 0
-			transform: translateX(0)
-			background-color: $blue
-		.circle_grey
-			background-color: #eaeaf0
-		.fill
-			height: 6px
-			background-color: $blue
-			border-radius: 10px
-			position: absolute
-			left: 0
-			top: 8px
-		input[type="range"]
-			appearance: none
 			width: 100%
-			color: transparent
-		input[type="range"]::-webkit-slider-runnable-track
-		  background: none
-		  appearance: none
-		  border: none
-		  height: 6px
-		  width: 100%
-		  background-color: #eaeaf0
-		  border-radius: 10px
-		input[type="range"]::-moz-range-track
-		  background: none
-		  appearance: none
-		  border: none
-		  height: 6px
-		  width: 100%
-		  background-color: #eaeaf0
-		  border-radius: 10px
-		input[type="range"]::-ms-track
-		  background: none
-		  appearance: none
-		  border: none
-		  color: transparent
-		  height: 6px
-		  width: 100%
-		  background-color: #eaeaf0
-		  border-radius: 10px
-
-.competency_assessment
-	margin-bottom: 68px !important
-	.graphic
-		padding: 37px 37px 93px 22px
-		background-color: #fff
-		display: flex
-		&__column
-			&:not(:last-of-type)
-				margin-bottom: 116px
-			.graphic__filter_item
-				width: 25px
-		&__left
-			margin-right: 81px
-		&__right
-			min-width: 213px
-		&__description
-			margin-bottom: 20px
-			ul
-				display: flex
-				li
-					display: flex
-					align-items: center
-					&:not(:last-of-type)
-						margin-right: 34px
-					.circle
-						width: 15px
-						height: 15px
-						border-radius: 50%
-						margin-right: 10px
-					.circle_blue
-						background-color: #4a7fea
-					.circle_indigo
-						background-color: $blue
-					p
-						font-family: TrebuchetMS, sans-serif
-						font-size: 14px
-						color: #000000
-		&__points
-			font-size: 12px
-			color: #c6c6c6
-			margin-bottom: 36px
-			position: relative
-			span
-				font-size: 16px
-				text-transform: uppercase
-				position: absolute
-				left: 50%
-				top: 50%
-				transform: translate(-50%, -50%)
-		&__wrapper
-			position: relative
-			height: 145px
-			display: inline-flex
-			justify-content: center
-			align-items: center
-		&__numbar
-			position: absolute
+			height: 100%
 			top: 0
 			right: 0
 			bottom: 0
 			left: 0
-			width: 100%
-			height: 100%
-			ul
-				height: 100%
-				li
-					height: 48px
-					position: relative
-					&:after
-						content: ''
-						display: block
-						position: absolute
-						left: 0
-						top: 0
-						bottom: 0
-						height: 100%
-						width: 37px
-						background-color: #fff
-					&:before
-						content: ''
-						display: block
-						position: absolute
-						top: 0
-						right: 0
-						left: 0
-						background-color: #e6e6e6
-						height: 1px
-						width: 100%
-					span
-						display: inline-block
-						font-family: PragmaticaSlabExtraLight, sans-serif
-						font-size: 20px
-						color: #c6c6c6
-						background-color: #fff
-						position: relative
-						transform: translateY(-50%)
-						z-index: 9
-						padding-left: 10px
-		&__items
-			display: inline-flex
-			height: 100%
-			padding-left: 36px
-		&__item
-			align-self: flex-end
+			background-color: rgba(0, 0, 0, .4)
+			z-index: 2
+		.CENTERER
+			margin: 0
 			position: relative
-			width: 30px
-			display: flex
-			margin-right: 77px
-			&:first-child
-				margin-left: 77px
-			.fill
-				width: 50%
-				align-self: flex-end
-			.fill_full
-				width: 100%
-				align-self: flex-end
-			.fill_blue
-				background-color: #4a7fea
-			.fill_indigo
-				background-color: $blue
-			&_name
-				width: 95px
-				position: absolute
-				left: 50%
-				bottom: -12px
-				transform: translate(-50%, 100%)
-				font-family: ArialMT, sans-serif
-				font-size: 12px
-				color: #a4a4bb
-				text-transform: uppercase
-				text-align: center
-				line-height: 18px
-		&__filter
-			&_title
-				font-family: TrebuchetMS, sans-serif
-				font-size: 14px
-				color: #b1b1b1
-				margin-bottom: 15px
-			&_items
-				display: inline-block
-			&_item
-				cursor: pointer
-				display: flex
-				align-items: center
-				margin-bottom: 17px
-				&:last-child
-					margin-bottom: 21px
-				.checkbox
-					display: none
-					&:checked + .custom_checkbox
-						background-color: $red
-						background-image: url(../img/icons/yes.png)
-						background-repeat: no-repeat
-						background-position: center
-				.custom_checkbox
-					display: block
-					width: 22px
-					height: 23px
-					border-radius: 2px
-					border: 1px solid #dadada
-					margin-right: 9px
-				&_name
-					font-size: 14px
-					color: #000000
-			&_show
-				font-family: TrebuchetMS, sans-serif
-				font-size: 14px
-				color: $blue
-				padding: 11px 26px
-				border: 2px solid $blue
-				transition: all .25s ease
-				&:hover
-					background-color: #F2F3F9
-
-.past_evaluations
-	display: none
-	.graphic__left
-		margin-right: 53px
-
-.training_plan
-	margin-bottom: 95px !important
-	&__flex
-		display: flex
-		justify-content: space-between
-	&__column
-		.training_plan__items
-			&:not(:last-of-type)
-				margin-bottom: 42px
-	&__items
-		box-sizing: border-box
-		width: 529px
-		background-color: #fff
-		padding: 24px 34px 28px 29px
-		&>h2
-			font-weight: bold
-			font-family: ArialMTBold, sans-serif
-			font-size: 18px
-			color: #000000
-			margin-bottom: 25px
-	&__item
-		display: flex
-		align-items: center
-		margin-bottom: 22px
-		&:last-child
-			margin-bottom: 32px
-	&__icon
-		width: 50px
-		height: 50px
-		display: flex
-		justify-content: center
-		align-items: center
-		box-shadow: 3px 8px 10px rgba(0, 0, 0, 0.15)
-		border-radius: 50%
-		margin-right: 11px
-	&__name
-		span
-			font-family: ArialMTBold, sans-serif
-			font-size: 12px
-			color: #a4a4bb
-			display: block
-			margin-bottom: 5px
-		p
-			font-family: ArialMTBold, sans-serif
-			font-weight: bold
-			font-size: 14px
-	&__status
-		flex-grow: 1
-		display: flex
-		justify-content: flex-end
-		span
-			font-family: ArialMTBold, sans-serif
-			display: inline-block
-			padding: 9px 14px
-			background-color: #eeeeee
-			border-radius: 4px
-			font-size: 12px
-	&__actions
-		display: flex
-		margin-top: 28px
-		a
-			text-decoration: none
-			font-family: TrebuchetMS, sans-serif
-			font-size: 14px
-			color: $blue
-			padding: 9px 26px
-			border: 2px solid $blue
-			transition: all .25s ease
-			&:hover
-				background-color: #F2F3F9
-			&:not(:last-of-type)
-				margin-right: 19px
-
-// Select
-.hide_select
-  width: 0.1px
-  height: 0.1px
-  opacity: 0
-  position: absolute
-  left: -999999999px
-
-.select_common
-	width: 327px
-	height: 40px
-	position: relative
-	border: 1px solid #e6e6e6
-	background-color: #ffffff
-	border-radius: 3px
-	cursor: pointer
-	.placeholder_select
-		font-family: ArialMT, sans-serif
-		position: relative
-		padding: 12px 11px 0 11px
-		font-size: 14px
-		box-sizing: border-box
-		height: 100%
-		&:before
-			content: ''
-			display: block
-			width: 0
-			border-top: 8px solid $red
-			border-right: 5px solid transparent
-			border-left: 5px solid transparent
-			position: absolute
-			right: 15px
-			top: 50%
-			transform: translateY(-50%)
-			.fixed_placeholder
-				padding-right: 5px
-				color: #7CA95C
-	.select_items
-		width: calc(100% + 2px)
-		position: absolute
-		transform: translateY(100%)
-		left: -1px
-		right: 0
-		bottom: 13px
-		z-index: 5
-		display: none
-		border-left: 1px solid #e6e6e6
-		border-right: 1px solid #e6e6e6
-		border-bottom: 1px solid #e6e6e6
-		background-color: #fff
-		li
-			font-family: ArialMT, sans-serif
-			padding: 15px 11px 0 11px
-			font-size: 14px
-			transition: all .15s ease-in-out
-			&:hover
-				padding-left: 16px
-			&:last-child
-				padding-bottom: 15px
-	      
-.select_active
-  border-radius: 3px 3px 0 0
-  .placeholder_select
-    &:before
-      border-top: none
-      border-bottom: 8px solid $red
-      border-right: 5px solid transparent
-      border-left: 5px solid transparent
-  .select_items
-    display: block
-    border-radius: 0 0 3px 3px
-// END Select
-
-.formation_ipr
-	.tab_common__nuv
-		ul
-			li
-				&:not(:last-of-type)
-					.tab_common__nuv_active
-						border-color: transparent !important
-					a
-						border-right: 1px solid #c2c2c2
-				&:not(:first-of-type)
-					a
-						position: relative
-						&:before
-							content: ''
-							display: block
-							width: 1px 
-							height: 100%
-							background-color: transparent
-							left: -1px
-							position: absolute
-							top: 0
-							bottom: 0
-					.tab_common__nuv_active
-						&:before
-							background-color: #fff
-	&__recommended
-		padding: 44px 30px 35px 29px
-	&__new,
-	&__library
-		display: none
-		padding: 44px 30px 35px 29px
-	&__add_activity
-		display: none
-		padding: 33px 29px 61px 28px
-		.formation_ipr__filter
-			.choose_competention_select
-				width: 810px
-		&__actions
-			display: flex
-			button
-				font-family: TrebuchetMS, sans-serif
-				font-size: 14px
-				color: $blue
-				padding: 9px 26px
-				border: 2px solid $blue
-				transition: all .25s ease
-				&:hover
-					background-color: #F2F3F9
-				&:not(:last-of-type)
-					margin-right: 16px
-			.send_application
-				background-color: $blue
+			z-index: 3
+			width: 528px
+			text-align: center
+			h1
 				color: #fff
-	&__filters
-		margin-bottom: 25px
-	&__filter
-		margin-bottom: 31px
-		&:nth-child(2)
-			margin-bottom: 11px
-		&:last-child
-			margin-bottom: 12px
-		p
-			font-family: ArialMT, sans-serif
-			font-size: 14px
-			color: #b1b1b1
-			margin-bottom: 4px
-		&_checkboxes
-			display: flex
-			flex-wrap: wrap
-		&_checkbox
-			cursor: pointer
-			display: flex
-			align-items: center
-			margin-top: 10px !important
-			&:not(:last-of-type)
-				margin-right: 25px
-			.checkbox
-				display: none
-				&:checked + .custom_checkbox
-					background-color: $red
-					background-image: url(../img/icons/yes.png)
-					background-repeat: no-repeat
-					background-position: center
-			.custom_checkbox
-				display: block
-				width: 22px
-				height: 23px
-				border-radius: 2px
-				border: 1px solid #dadada
-				margin-right: 9px
-			.name
-				font-family: ArialMT, sans-serif
-				font-size: 14px
-		&__apply_wrp
-			text-align: right
-			button
-				font-family: TrebuchetMS, sans-serif
-				font-size: 14px
-				color: $blue
-				padding: 9px 28px
-				border: 2px solid $blue
-				transition: all .25s ease
-				&:hover
-					background-color: #F2F3F9
-	&__row
-		display: flex
-		width: 879px
-		margin-bottom: 30px
-	&__checkbox
-		margin-right: 12px
-		cursor: pointer
-		.checkbox
-			display: none
-			&:checked + .custom_checkbox
-				background-color: $red
-				background-image: url(../img/icons/yes.png)
-				background-repeat: no-repeat
-				background-position: center
-		.custom_checkbox
-			display: block
-			width: 22px
-			height: 23px
-			border-radius: 2px
-			border: 1px solid #dadada
-			margin-right: 13px
-	&__item
-		display: flex
-	&__img
-		min-width: 180px
-		height: 140px
-		background-size: cover
-		background-position: center
-		background-repeat: no-repeat
-		position: relative
-		margin-right: 32px
-		border-radius: 3px
-		oberflow: hidden
-	&__label
-		position: absolute
-		width: 50px
-		height: 50px
-		box-shadow: 3px 8px 10px rgba(0, 0, 0, 0.15)
-		border-radius: 50%
-		top: 6px
-		right: 7px
-		display: flex
-		justify-content: center
-		align-items: center
-	&__name
-		&>span
-			font-family: ArialMT, sans-serif
-			display: block
-			font-size: 12px
-			color: #a4a4bb
-			margin-bottom: 9px
-		h4
-			font-family: ArialMTBold, sans-serif
-			font-size: 14px
-			font-weight: bold
-			line-height: 14px
-			margin-bottom: 4px
-			span
-				display: block
-				font-family: ArialMT, sans-serif
-				font-size: 12px
-				padding-bottom: 4px
-		p
-			font-family: ArialMT, sans-serif
-			font-size: 14px
-			color: #606060
-	&__add_activity_table
-		margin-bottom: 26px
-		table
-			width: 100%
-			th,
-			td
-				border: 1px solid #e6e6e6
-			th
-				padding: 14px 0
-				font-weight: normal
-				font-family: ArialMT, sans-serif
-				font-size: 12px
-				color: #a1a4c8
-				text-transform: uppercase
-			td
-				padding: 16px 0
-				label
-					box-sizing: border-box
-					cursor: pointer
-					display: flex
-					align-items: center
-					padding-left: 16px
-					width: 721px
-					.checkbox
-						display: none
-						&:checked + .custom_checkbox
-							background-color: $red
-							background-image: url(../img/icons/yes.png)
-							background-repeat: no-repeat
-							background-position: center
-					.custom_checkbox
-						display: block
-						min-width: 22px
-						height: 23px
-						border-radius: 2px
-						border: 1px solid #dadada
-						margin-right: 13px
-					.name
-						font-family: ArialMT, sans-serif
-						font-size: 14px
-						line-height: 20px
-				.choose_competention_select
-					width: 112px
-					height: 32px
-					margin: 0 auto
-					.placeholder_select
-						padding: 7px 12px 0 12px
-						&:before
-							right: 9px
-					.select_items
-						bottom: -1px
-						li
-							padding: 9px 12px 0 12px
-							height: 32px
-							&:not(:last-of-type)
-								border-bottom: 1px solid #e6e6e6
-
-.all_books
-	padding: 27px 29px 38px 30px !important
-	background-color: #fff
-	&__competention
-		display: none
-		.competention_select
-			width: 260px
-			height: auto
-			min-height: 37px
-			box-sizing: border-box
-			.placeholder_select
-				padding: 0 12px
-				font-family: ArialMTBold, sans-serif
-				font-weight: bold
-				font-size: 14px
-				color: #cc003d
-				padding-top: 4px
-				.fixed_placeholder
-					display: block
-					font-family: ArialMT, sans-serif
-					font-weight: normal
-					font-size: 11px
-					color: #a4a4bb
-			.select_items
-				bottom: 4px
-				li
-					padding-top: 9px
-					&:first-child
-						padding-top: 13px
-					&:last-child
-						padding-bottom: 13px
-	&__head
-		display: flex
-		align-items: center
-		justify-content: space-between
-		margin-bottom: 38px
-	&__title
-		h2
-			font-weight: bold
-			font-family: ArialMTBold, sans-serif
-			font-size: 22px
-	&__nuv
-		ul
-			display: flex
-			align-items: center
-			li
-				&:not(:last-of-type)
-					margin-right: 29px
-				a
-					text-decoration: none
-					font-family: ArialMT, sans-serif
-					font-size: 14px
-					color: #c0c0c0
-				a.all_books__nuv_active
-					text-decoration: underline
-					color: $blue
-	&__filter_flex
-		display: flex
-		justify-content: space-between
-		align-items: center
-		margin-bottom: 30px
-	&__add_books
-		button
-			font-family: TrebuchetMS, sans-serif
-			font-size: 14px
-			color: $blue
-			padding: 8px 37px
-			border: 2px solid $blue
-			transition: all .25s ease
-			&:hover
-				background-color: #F2F3F9
-	&__filter
-		.status_select
-			width: 200px
-			height: 37px
-			.placeholder_select
-				padding: 6px 12px
-				font-family: ArialMTBold, sans-serif
-				font-weight: bold
-				font-size: 14px
-				color: #cc003d
-				&:before
-					right: 7px
-				.fixed_placeholder
-					display: block
-					font-family: ArialMT, sans-serif
-					font-weight: normal
-					font-size: 11px
-					color: #a4a4bb
-					margin-top: -1px
-			.select_items
-				bottom: 4px
-				li
-					padding-top: 9px
-					&:first-child
-						padding-top: 13px
-					&:last-child
-						padding-bottom: 13px
-	&__item
-		display: flex
-		&:not(:last-of-type)
-			margin-bottom: 46px
-		&_column
-			&:not(:last-of-type)
-				margin-bottom: 59px
-			&_title
-				margin-bottom: 25px
-				h2
-					font-weight: bold
-					font-family: ArialMTBold, sans-serif
-					font-size: 18px
-					color: #cfd2e7
-					span
-						color: $red
-		&_thumb
-			min-width: 180px
-			height: 140px
-			border-radius: 3px
-			overflow: hidden
-			background-position: center
-			background-repeat: no-repeat
-			position: relative
-			margin-right: 33px
-			&_icon
-				width: 50px
-				height: 50px
-				box-shadow: -4px 7px 10px rgba(0, 0, 0, 0.15)
-				border-radius: 50%
-				display: flex
-				align-items: center
-				justify-content: center
-				position: absolute
-				top: 6px
-				right: 7px
-			&_label
-				position: absolute
-				bottom: 10px
-				left: 9px
-				padding: 9px 12px
-				border-radius: 3px
-				font-family: ArialMT, sans-serif
-				font-size: 12px
-				color: #ffffff
-			.bg_orange
-				background-color: #f5813b
-			.bg_indigo
-				background-color: $blue
-			.bg_green
-				background-color: #11ab2e
-		&_content
-			width: 690px
-			&>h4
-				font-family: ArialMTBold, sans-serif
-				font-size: 14px
-				font-weight: bold
-				line-height: 13px
-				margin-bottom: 9px
-				span
-					display: block
-					font-weight: normal
-					font-family: ArialMT, sans-serif
-					font-size: 12px
-					color: #a4a4bb
-					display: block
-					padding-bottom: 3px
-			ul
-				display: flex
-				flex-wrap: wrap
-				margin-bottom: 5px
-				li
-					font-family: ArialMT, sans-serif
-					font-size: 12px
-					border-radius: 3px
-					background-color: #eeeeee
-					padding: 9px 12px
-					margin-bottom: 9px
-					&:not(:last-of-type)
-						margin-right: 10px
-			&>p
-				font-family: ArialMT, sans-serif
-				font-size: 12px
-				color: #a4a4bb
-				a
-					text-decoration: none
-					color: #000
-		&_filters
-			margin-left: auto
-		&_filter
-			&:not(:last-of-type)
+				font-size: 45px
+				line-height: 1
 				margin-bottom: 10px
 			p
-				font-family: ArialMT, sans-serif
-				font-size: 11px
-				color: #a4a4bb
-				margin-bottom: 3px
-
-.datapicker_wrp
-	position: relative
-	&:before
-		content: ''
-		user-select: none
-		display: block
-		width: 0
-		border-top: 8px solid $red
-		border-right: 5px solid transparent
-		border-left: 5px solid transparent
-		position: absolute
-		right: 8px
-		top: 50%
-		transform: translateY(-50%)
-	input
-		border: none
-		cursor: pointer
-		width: 140px
-		height: 28px
-		line-height: 28px
-		border-radius: 3px
-		border: 1px solid #e6e6e6
-		background-color: transparent
-		font-family: ArialMT, sans-serif
-		font-size: 14px
-		color: #000000
-		padding: 0 8px
-		position: relative
-		z-index: 2
-
-.datapicker_wrp_active
-	&:before
-		border-top: none
-		border-bottom: 8px solid $red
-		border-right: 5px solid transparent
-		border-left: 5px solid transparent
-
-.pick-h,
-.pick-y,
-.pick-l,
-.pick-btns,
-	display: none
-
-div.datedropper.picker-lg
-	width: 227px !important
-
-div.datedropper.picker-fxs .pick-lg
-	padding-bottom: 2px
-
-div.datedropper.picker-focus
-	margin-top: 3px !important
-	transform: translateX(-101px)
-
-div.datedropper .picker .pick-lg ul li
-	line-height: 22px
-
-.picker
-	width: 100%
-	box-sizing: border-box
-	min-height: 148px
-	border-radius: 3px
-	border: 1px solid #e6e6e6
-	background-color: #ffffff
-	padding: 6px 13px
-	.pick-m
-		font-family: ArialMT, sans-serif
-		font-size: 14px !important
-		color: #000000
-		opacity: 0.5
-		height: 25px !important
-		line-height: 25px !important
-		margin: 0 11px 0 6px !important
-		li
-			text-align: left !important
-		.pick-arw
-			opacity: 1 !important
-			width: 12px !important
-			height: 100% !important
-			top: 50% !important
-			overflow: normal !important
-			transform: translateY(-50%) !important
-			font-size: 9px
-			background-size: auto !important
-			i
-				display: none !important
-		.pick-arw-l
-			right: 12px
-			left: auto !important
-			background-image: url(../img/icons/arrow-point-to-left.png)
-			background-position: left center !important
-		.pick-arw-r
-			background-image: url(../img/icons/arrow-point-to-right.png)
-			background-position: right center !important
-	.pick-lg-h,
-	.pick-lg-b
-		padding: 0 !important
-	.pick-lg-h
-		li
-			width: 28px !important
-			height: auto !important
-			line-height: auto !important
-			opacity: 0.5
-			font-family: ArialMT, sans-serif
-			color: #000000
-	.pick-lg-b
-		li
-			width: 28px !important
-			height: 24px !important
-			line-height: 23px !important
-			font-family: ArialMT, sans-serif
-			font-size: 14px
-			color: #000000
-			&:hover
-				text-decoration: none !important
-			&:before
-				background-color: $red
-				width: 26px !important
-				height: 27px !important
-		li.pick-sl
-			color: #fff
-			font-size: 14px !important
-
-.dinamic_active_item
-	display: flex
-	align-items: center
-	margin-bottom: 29px
-	&_icon
-		width: 60px
-		height: 60px
-		box-shadow: -4px 7px 10px rgba(0, 0, 0, 0.15)
-		border-radius: 50%
-		display: flex
-		justify-content: center
-		align-items: center
-		margin-right: 8px
-	.dinamic_active_item_progress
-		flex-grow: 1
-		.line_wrp
-			.procent
-				display: inline-block
-				position: relative
-				transform: translateX(-50%)
-				font-weight: bold
-				font-family: ArialMTBold, sans-serif
-				font-size: 14px
-				color: #000000
-				top: -6px
-		.line
-			width: 100%
-			height: 10px
-			border-radius: 5px
-			background-color: #eeeeee
-			position: relative
-			margin-bottom: 5px
-			.line_fill
-				position: absolute
-				left: 0
-				top: 0
-				bottom: 0
-				height: inherit
-				border-radius: 5px
-		.dinamic_active_item_status
-			font-family: ArialMT, sans-serif
-			font-size: 12px
-			color: #a4a4bb
-
-
-.office_head
-	padding: 20px 29px 56px 29px !important
-	background-color: #fff
-	display: flex
-	flex-wrap: wrap
-	justify-content: space-between
-	&__left
-		width: 635px
-		margin-right: 68px
-		&_title
-			margin-bottom: 23px
-			h2
-				font-weight: bold
-				font-family: ArialMTBold, sans-serif
-				font-size: 22px
-				color: #000000
-		&_name
-			margin-bottom: 14px
-			span
-				font-family: ArialMT, sans-serif
-				font-size: 14px
-				color: #9a9a9a
-				display: block
-				padding-bottom: 3px
-			h2
-				font-weight: bold
-				font-family: PragmaticaSlabBold, sans-serif
-				font-size: 20px
-				color: $blue
-		&_tags
-			margin-bottom: 12px
-			ul
-				display: flex
-				flex-wrap: wrap
-				li
-					padding: 8px 14px
-					border-radius: 3px
-					background-color: #eeeeee
-					font-family: ArialMT, sans-serif
-					font-size: 12px
-					margin-bottom: 10px
-					&:not(:last-of-type)
-						margin-right: 8px
-		&_description
-			margin-bottom: 21px
-			p
-				font-family: ArialMT, sans-serif
-				font-size: 14px
-		&_actions
-			display: flex
-			button
-				font-family: TrebuchetMS, sans-serif
-				font-size: 14px
-				color: $blue
-				padding: 9px 30px
-				border: 2px solid $blue
-				transition: all .25s ease
-				&:hover
-					background-color: #F8F9FB
-				&:not(:last-of-type)
-					margin-right: 16px
-			button.active_btn
+				font-size: 16px
 				color: #fff
-				background-color: $blue
-	&__right
-		flex-grow: 1
-		&_title
-			margin-bottom: 24px
-			margin-top: 3px
-			h2
-				font-weight: bold
-				font-family: ArialMTBold, sans-serif
-				font-size: 18px
-		&_current
-			margin-bottom: 18px
-			ul
-				display: flex
-				li
-					&:not(:last-of-type)
-						margin-right: 29px
-					p
-						font-family: ArialMT, sans-serif
-						font-size: 11px
-						color: #a4a4bb
-						line-height: 18px
-		&_actions
-			button
-				font-family: TrebuchetMS, sans-serif
-				font-size: 14px
-				color: $blue
-				padding: 9px 26px
-				border: 2px solid $blue
-				transition: all .25s ease
-				&:hover
-					background-color: #F2F3F9
-				&:not(:last-of-type)
-					margin-right: 16px
-	&__bottom
-		margin-top: 36px
-		width: 100%
-		&_title
-			h2
-				font-weight: bold
-				font-family: ArialMTBold, sans-serif
-				font-size: 18px
-				margin-bottom: 20px
-		&_write_review
-			margin-bottom: 25px
-			a
-				font-family: TrebuchetMS, sans-serif
-				font-size: 14px
-				color: #001689
+				line-height: 1.5
 
-.reviews_item
-	display: flex
-	&:not(:last-of-type)
-		margin-bottom: 27px
-	&__thumb
-		min-width: 46px
-		max-width: 46px
-		height: 46px
-		border: 1px solid #c1c1c1
-		background-color: #f8f8f8
-		border-radius: 50%
-		overflow: hidden
-		margin-right: 14px
-	&__content
-		h3
-			font-weight: bold
-			font-family: TrebuchetMS, sans-serif
-			font-size: 14px
-			margin-bottom: 8px
-		span
-			font-family: ArialMT, sans-serif
-			font-size: 12px
-			color: #adafbc
-			display: block
-			margin-bottom: 5px
-		p
-			font-family: ArialMT, sans-serif
-			font-size: 14px
-
-.dinamic_active_item_range_wrp
-	h3
-		font-weight: bold
-		font-family: ArialMTBold, sans-serif
-		font-size: 14px
-		line-height: 18px
-	.dinamic_active_item_range
-		position: relative
-		display: flex
-		input[type="range"]
-			display: none
-		.fill
-			display: none
-		.circle
-			width: 20px
-			height: 10px
-			border-radius: 5px
-			background-color: #5f00c9
-			margin: 8px 0
-			&:not(:last-of-type)
-				margin-right: 5px
-		.circle_grey
-			background-color: #eee
-
-.popup
+.mobile_menu
+	position: absolute
 	width: 100%
 	height: 100%
-	position: fixed !important
 	top: 0
 	right: 0
 	bottom: 0
 	left: 0
-	z-index: 9
+	z-index: 3
 	display: none
+	transition: all .25s ease
 	&__mask
+		position: absolute
 		width: 100%
 		height: 100%
-		position: fixed
 		top: 0
 		right: 0
 		bottom: 0
 		left: 0
-		background-color: rgba(0,0,0,.8)
-	&__content
-		width: 525px
-		background-color: #fff
+		background-color: rgba(0, 0, 0, .4)
+	&__close
 		position: absolute
-		left: 50%
-		top: 50%
-		transform: translate(-50%, -50%)
-		padding: 27px 27px 21px 27px
-	&__form
-		label
-			font-family: TrebuchetMS, sans-serif
+		right: 0
+		top: 0
+		padding: 10px 12px
+		font-size: 20px
+		color: #f8f8f8
+	&__body
+		width: 300px
+		height: 100vh
+		padding-top: 55px
+		position: relative
+		background-color: #393939
+		left: -100%
+		transition: all .25s ease-in-out
+		overflow-y: auto
+	&__logo
+		text-align: center
+		margin-bottom: 15px
+	&__nuv
+		&>ul
+			li
+				border-top: 1px solid #434343
+				position: relative
+				.sub-menu
+					display: none
+					margin-left: 15px
+				a
+					text-decoration: none
+					display: inline-block
+					padding: 20px 0 20px 15px
+					font-size: 14px
+					color: #f8f8f8
+		li.menu-item-has-children:after
+			cursor: pointer
+			content: '\f067'
+			font-family: FontAwesome
+			display: block
 			font-size: 14px
-			color: #b1b1b1
-			line-height: 24px
-		textarea
-			border: none
-			outline: none
-			box-sizing: border-box
+			color: #fff
+			position: absolute
+			top: 20px
+			right: 20px
+		li.menu-item-opened:after
+			content: '\f068'
+
+.title
+	margin-bottom: 50px
+	h2
+		font-weight: bold
+		color: #303745
+		padding-bottom: 20px
+		position: relative
+		&:before
+			content: ''
+			display: block
+			width: 88px
+			height: 2px
+			position: absolute
+			left: 0
+			bottom: 0
+			background-color: $blue
+
+.about
+	padding: 80px 0
+	p
+		font-size: 15px
+		color: #666
+		line-height: 26px
+
+.last_projects
+	padding: 80px 0
+	background-color: #F4F7FC
+	&__items
+		display: flex
+	&__item
+		width: 360px
+		background-color: #fff
+		transition: all .25s ease-in-out
+		position: relative
+		&:not(:last-of-type)
+			margin-right: 45px
+	&__previes
+		overflow: hidden
+		font-size: 0
+		img
 			width: 100%
-			height: 120px
-			border: 1px solid #e6e6e6
-			padding: 15px 12px
-			border-radius: 3px
-			font-family: ArialMT, sans-serif
-			font-size: 14px
-			margin-bottom: 16px
-			&::placeholder
-				color: #bdbdbd
-				font-style: italic
-		&_actions
-			width: 100%
-			display: flex
-			justify-content: center
-			align-items: center
-			button
-				font-family: TrebuchetMS, sans-serif
-				font-size: 14px
+			transition: all .30s ease-in-out
+	&__body
+		padding: 20px 30px
+		position: absolute
+		bottom: 0
+		left: 0
+		right: 0
+		background-color: rgba(0, 0, 0, 0.6)
+		a
+			&:hover
 				color: $blue
-				padding: 9px 26px
-				border: 2px solid $blue
-				transition: all .25s ease
-				&:hover
-					background-color: #F2F3F9
-				&:not(:last-of-type)
-					margin-right: 14px
-			button.popup__form_btn_save
-				background-color: $blue
+		h3
+			margin-bottom: 8px
+			a
+				text-decoration: none
+				font-size: 22px
 				color: #fff
+				line-height: 1.1
+		p
+			margin-bottom: 10px
+			a
+				text-decoration: none
+				color: #fff
+				font-size: 14px
+				line-height: 1.5
+		&__more
+			text-decoration: none
+			text-transform: uppercase
+			font-weight: bold
+			color: $blue
+			position: relative
+			&:hover:before
+				right: -13px
+			&:before
+				content: ''
+				display: block
+				width: 15px
+				height: 12px
+				background-image: url(../img/icons/readmore.png)
+				background-repeat: no-repeat
+				position: absolute
+				top: 50%
+				right: -5px
+				transform: translate(100%, -50%)
+				transition: all .25s ease-in-out
 
+.footer
+	padding: 20px 0 40px 0
+	background-color: #292929
+	text-align: center
+	a
+		text-decoration: none
+		color: #a5a5a5
+		font-size: 14px
 
-
-
+.to_top
+	display: none
+	width: 50px
+	height: 50px
+	position: fixed
+	bottom: 50px
+	right: 50px
+	background-color: rgba(0,0,0,0.2)
 
 
 @import "_media"
