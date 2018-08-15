@@ -179,12 +179,24 @@ section
 			h1
 				color: #fff
 				font-size: 45px
-				line-height: 1
-				margin-bottom: 10px
+				line-height: 1.1
+				margin-bottom: 15px
 			p
 				font-size: 16px
 				color: #fff
 				line-height: 1.5
+				margin-bottom: 20px
+			a
+				text-decoration: none
+				display: inline-block
+				padding: 16px 30px
+				text-align: center
+				background-color: $blue
+				color: #fff
+				font-size: 16px
+				transition: all .25s ease
+				&:hover
+					background-color: darken($blue, 5)
 
 .mobile_menu
 	position: absolute
@@ -365,7 +377,7 @@ section
 			background-color: #000
 		&__middle
 			position: static
-			padding: 15px 0
+			padding: 32px 0
 			background-color: #292929
 			.sub-menu
 				li
@@ -373,6 +385,7 @@ section
 						background-color: #171717
 	main
 		padding: 50px 0
+		background-color: #F5F7F8
 
 .page
 	p
@@ -380,6 +393,9 @@ section
 		color: #666
 		line-height: 23px
 		margin-bottom: 15px
+		img
+			margin-right: 5px
+			margin-top: -4px
 		a
 			text-decoration: none
 			color: $blue
@@ -405,6 +421,17 @@ section
 		img
 			display: block
 			margin: 0 auto
+	ul
+		li
+			display: flex
+			align-items: center
+			margin-bottom: 10px
+			font-size: 15px
+			color: #666
+			i
+				width: 20px
+				font-size: 20px
+				margin-right: 8px
 
 
 @import "_media"
