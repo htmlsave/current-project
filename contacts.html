@@ -4,14 +4,15 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="shortcut icon" href="img/favicon.ico" type="image/png">
-	<title>SPECPOSTAVKA </title>
+	<link rel="shortcut icon" href="img/favicon_.ico" type="image/png">
+	<title>Document</title>
 	<link rel="stylesheet" href="libs/Font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="libs/Slick-slider/slick.css">
 	<link rel="stylesheet" href="libs/Slick-slider/slick-theme.css">
 	<link rel="stylesheet" href="css/main.css">
+	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 </head>
-<body>
+<body class="other_page">
 	<header class="header">
 		<div class="header__top">
 			<div class="CENTERER">
@@ -34,11 +35,11 @@
 		<div class="header__middle">
 			<div class="CENTERER header__middle_flex">
 				<div class="header__logo">
-					<a href="#"><img src="img/logo.png" alt="logo"></a>
+					<a href="index.html"><img src="img/logo.png" alt="logo"></a>
 				</div>
 				<div class="header__menu">
 					<ul>
-						<li class="current-menu-item"><a href="#">Главная</a></li>
+						<li><a href="index.html">Главная</a></li>
 						<li>
 							<a href="#" class="js-prevent_default">Услуги</a>
 							<ul class="sub-menu">
@@ -49,7 +50,7 @@
 							</ul>
 						</li>
 						<li><a href="portfolio.html">Портфолио</a></li>
-						<li>
+						<li class="current-menu-item">
 							<a href="#" class="js-prevent_default">О нас</a>
 							<ul class="sub-menu">
 								<li><a href="about.html">О компании</a></li>
@@ -60,28 +61,6 @@
 				</div>
 				<button class="to_mobile_menu" id="js-to_mobile_menu"><i class="fa fa-bars" aria-hidden="true"></i></button>
 			</div>
-		</div>
-		<div class="header__bottom">
-			<div class="header_slider" id="header-slider">
-				<div>
-					<div class="header_slider__item" style="background-image: url(img/1.jpg);">
-						<div class="CENTERER">
-							<h1>АВТОМАТИЗАЦИЯ ПРОЦЕССА ОБУЧЕНИЯ</h1>
-							<p>Всесторонний аудит СДО, автоматизация и интеграция с другими системами компании.</p>
-						</div>
-					</div>
-				</div>
-				<div>
-					<div class="header_slider__item" style="background-image: url(img/2.jpg);">
-						<div class="CENTERER">
-							<h1>РАЗРАБОТКА ЭЛЕКТРОННЫХ КУРСОВ</h1>
-							<p>Разработка дистанционных курсов любого уровня сложности. Создание интерактивной учебной среды.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<button class="header_prev js-header_prev"><img src="img/icons/prev.png" alt="icon"></button>
-			<button class="header_next js-header_next"><img src="img/icons/next.png" alt="icon"></button>
 		</div>
 	</header>
 	<!-- mobile menu -->
@@ -94,7 +73,7 @@
 			</div>
 			<div class="mobile_menu__nuv">
 				<ul>
-					<li><a href="#">главная</a></li>
+					<li><a href="index.html">главная</a></li>
 					<li class="menu-item-has-children">
 						<a href="#" class="js-prevent_default">услуги</a>
 						<ul class="sub-menu">
@@ -106,7 +85,7 @@
 					</li>
 					<li><a href="portfolio.html">portfolio</a></li>
 					<li class="menu-item-has-children">
-						<a href="#">о нас</a>
+						<a href="#" class="js-prevent_default">о нас</a>
 						<ul class="sub-menu">
 							<li><a href="about.html">о компании</a></li>
 							<li><a href="contacts.html">контакты</a></li>
@@ -117,61 +96,26 @@
 		</div>
 	</div>
 	<!-- end mobile menu -->
-	
+
 	<main>
-		<section class="about">
+		<section class="page">
 			<div class="CENTERER">
 				<div class="title">
-					<h2>О нас</h2>
+					<h2>Контакты</h2>
 				</div>
-				<div id="map"></div>
-				<p>Мы - команда профессионалов в IT и HR областях, и наша цель - предоставление качественных услуг в сфере автоматизации работы с персоналом – подбора, учета, обучения, развития и оценки персонала, а так же сопутствующей отчетности.</p>
-				<p>Наша компания ежедневно и эффективно решает нетривиальные задачи в сфере автоматизации работы с персоналом в организациях самого различного масштаба и географического положения – от ритейла с небольшой численностью персонала до территориально-промышленных комплексов с численностью персонала в десятки тысяч человек.</p>
-			</div>
-		</section>
-		<section class="last_projects">
-			<div class="CENTERER">
-				<div class="title">
-					<h2>Наши услуги</h2>
-				</div>
-				<div class="last_projects__items">
-					<!-- item -->
-					<div class="last_projects__item">
-						<div class="last_projects__previes">
-							<img src="img/last-projects/howworks.jpg" alt="img">
-						</div>
-						<div class="last_projects__body">
-							<h3>Автоматизация</h3>
-							<p>Статьи по автоматизации различных систем.</p>
-							<a href="#" class="last_projects__body__more">Подробнее</a>
-						</div>
-					</div>
-					<!-- end item -->
-					<!-- item -->
-					<div class="last_projects__item">
-						<div class="last_projects__previes">
-							<img src="img/last-projects/mission.jpg" alt="img">
-						</div>
-						<div class="last_projects__body">
-							<h3>Портфолио </h3>
-							<p>Уже реализованные нами проекты.</p>
-							<a href="#" class="last_projects__body__more">Подробнее</a>
-						</div>
-					</div>
-					<!-- end item -->
-					<!-- item -->
-					<div class="last_projects__item">
-						<div class="last_projects__previes">
-							<img src="img/last-projects/who-we-are.jpg" alt="img">
-						</div>
-						<div class="last_projects__body">
-							<h3>О компании</h3>
-							<p>Информация о нашей компании</p>
-							<a href="#" class="last_projects__body__more">Подробнее</a>
-						</div>
-					</div>
-					<!-- end item -->
-				</div>
+				<p>ООО «СпецПоставка»<br>
+					Реквизиты:<br>
+					ИНН 7720591737/КПП 773701001<br>
+					ОГРН 1077759228073/ОКПО 82496663<br>
+					К/С 30101810400000000225<br>
+					в ПАО СБЕРБАНК <br>
+					Р/С 40702810538060147508 <br>
+					БИК 044525225<br>
+				</p>
+				<p><strong>Телефон:</strong> +7 (499) 240-05-93</p>
+				<p><strong>Адрес:</strong> 121151, Москва, Большая Дорогомиловская улица, 9к2</p>
+				<p><strong>Время работы:</strong> понедельник - пятница с 9:30 до 18:30</p>
+				<div id="map" style="width: 100%; height: 450px"></div>
 			</div>
 		</section>
 	</main>

@@ -2,15 +2,13 @@ $(document).ready(function() {
 	// Header slider
 	$('#header-slider').slick({
 		infinite: false,
+		autoplay: true,
+		autoplaySpeed: 4500,
 		prevArrow: $('.header_prev'),
 		nextArrow: $('.header_next'),
 		responsive: [
 		  {
-		    breakpoint: 768,
-		    settings: {
-		      autoplay: true,
-		      autoplaySpeed: 2000
-		    }
+		    breakpoint: 768
 		  }
 		]
 	});
@@ -24,6 +22,11 @@ $(document).ready(function() {
 	}
 	adaptiveHeight();
 	$(window).resize(adaptiveHeight);
+
+	// Menu prevent default
+	$('.js-prevent_default').click(function(e) {
+		e.preventDefault();
+	});
 
 	// Open mobile menu
 	$('#js-to_mobile_menu').click(function() {
@@ -49,4 +52,16 @@ $(document).ready(function() {
 			scrollTop: 0
 		});
 	})
+
+	// Yandex map
+	ymaps.ready(init);
+	function init(){ 
+		// Создание карты.    
+		var myMap = new ymaps.Map("map", {
+		controls: ['zoomControl'],
+		center: [55.76, 37.64],
+		zoom: 11
+		});
+	}
+
 });
